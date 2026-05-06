@@ -1,0 +1,610 @@
+import { VynaaEndpoint } from '@/types/vynaa';
+
+export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
+  // --- STATUS ---
+  {
+    id: "status_ping",
+    label: "Ping API",
+    category: "status",
+    endpoint: "/status/serverstatus/ping",
+    method: "GET",
+    params: [],
+    description: "Check Vynaa API connectivity",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "status_profile",
+    label: "Check Profile",
+    category: "status",
+    endpoint: "/status/serverstatus/cekk",
+    method: "GET",
+    params: [],
+    description: "Check your Vynaa limit and profile status",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- AI HUB ---
+  {
+    id: "ai_claude",
+    label: "Claude",
+    category: "ai",
+    endpoint: "/ai/ai/claude",
+    method: "GET",
+    params: [{ name: "text", label: "Message", type: "text", required: true }],
+    description: "Chat with Claude AI",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_simsimi",
+    label: "SimSimi",
+    category: "ai",
+    endpoint: "/ai/simsimi/ai/simi",
+    method: "GET",
+    params: [{ name: "text", label: "Message", type: "text", required: true }],
+    description: "Chat using Vynaa SimSimi endpoint",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_chatgpt35",
+    label: "ChatGPT 3.5",
+    category: "ai",
+    endpoint: "/ai/gpt/gpt35",
+    method: "GET",
+    params: [{ name: "prompt", label: "Prompt", type: "text", required: true }],
+    description: "Chat with GPT-3.5",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_chatgpt4",
+    label: "ChatGPT 4",
+    category: "ai",
+    endpoint: "/ai/gpt/chatgpt",
+    method: "GET",
+    params: [{ name: "text", label: "Message", type: "text", required: true }],
+    description: "Chat with GPT-4",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_copilot",
+    label: "Copilot",
+    category: "ai",
+    endpoint: "/ai/ai/copilot",
+    method: "GET",
+    params: [{ name: "text", label: "Message", type: "text", required: true }],
+    description: "Chat with Github Copilot AI",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_pollinations_text",
+    label: "Pollinations Text",
+    category: "ai",
+    endpoint: "/ai/pollinations/text",
+    method: "GET",
+    params: [{ name: "text", label: "Message", type: "text", required: true }],
+    description: "Generate text using Pollinations AI",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_pollinations_image",
+    label: "Pollinations Image",
+    category: "ai",
+    endpoint: "/ai/pollinations/image",
+    method: "GET",
+    params: [{ name: "text", label: "Query", type: "text", required: true }],
+    description: "Generate image using Pollinations AI",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_pollinations_audio",
+    label: "Pollinations TTS",
+    category: "ai",
+    endpoint: "/ai/pollinations/audio",
+    method: "GET",
+    params: [{ name: "text", label: "Text to Speak", type: "text", required: true }],
+    description: "Text to Speech synthesis",
+    outputType: "audio",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "ai_deepimg",
+    label: "DeepImg",
+    category: "ai",
+    endpoint: "/ai/ai/deepimg",
+    method: "GET",
+    params: [{ name: "text", label: "Prompt", type: "text", required: true }],
+    description: "Generate image using DeepImg",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- IMAGE LAB ---
+  {
+    id: "image_carbon",
+    label: "Carbon Code",
+    category: "image",
+    endpoint: "/image/maker/carbon",
+    method: "GET",
+    params: [{ name: "text", label: "Code Snippet", type: "text", required: true }],
+    description: "Generate beautiful images of your code snippets",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "image_brat",
+    label: "Brat Text",
+    category: "image",
+    endpoint: "/image/maker/brat",
+    method: "GET",
+    params: [{ name: "text", label: "Text", type: "text", required: true }],
+    description: "Create Brat style text image",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "image_qc",
+    label: "Quote Chat Bubble",
+    category: "image",
+    endpoint: "/image/maker/qc",
+    method: "GET",
+    params: [{ name: "text", label: "Quote", type: "text", required: true }],
+    description: "Generate WhatsApp style quote chat bubble",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  // Skipped: to anime / upscaler to be safe unless url is provided, since they usually require url params
+  {
+    id: "image_upscaler",
+    label: "Image Upscaler",
+    category: "image",
+    endpoint: "/image/ai/upscaler",
+    method: "GET",
+    params: [{ name: "url", label: "Image URL", type: "text", required: true }],
+    description: "Upscale an image from URL",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- ISLAMIC CORNER ---
+  {
+    id: "islamic_surah",
+    label: "Surah Reader",
+    category: "islamic",
+    endpoint: "/islamic/islamic/surah",
+    method: "GET",
+    params: [{ name: "text", label: "Surah Number/Name", type: "text", required: true }],
+    description: "Read specific Surah from Quran",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_tafsir",
+    label: "Tafsir Surah",
+    category: "islamic",
+    endpoint: "/islamic/islamic/tafsir",
+    method: "GET",
+    params: [{ name: "text", label: "Surah Name", type: "text", required: true }],
+    description: "Get Tafsir for a specific Surah",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_asmaulhusna",
+    label: "Asmaul Husna",
+    category: "islamic",
+    endpoint: "/islamic/islamic/asmaulhusna",
+    method: "GET",
+    params: [],
+    description: "99 Names of Allah",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_doaharian",
+    label: "Doa Harian",
+    category: "islamic",
+    endpoint: "/islamic/islamic/doaharian",
+    method: "GET",
+    params: [],
+    description: "Daily Prayers",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_bacaanshalat",
+    label: "Bacaan Shalat",
+    category: "islamic",
+    endpoint: "/islamic/islamic/bacaanshalat",
+    method: "GET",
+    params: [],
+    description: "Prayer readings in Islam",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_niatsholat",
+    label: "Niat Sholat",
+    category: "islamic",
+    endpoint: "/islamic/islamic/niatsholat",
+    method: "GET",
+    params: [],
+    description: "Prayer Intentions",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "islamic_kisahnabi",
+    label: "Kisah Nabi",
+    category: "islamic",
+    endpoint: "/islamic/islamic/kisahnabi",
+    method: "GET",
+    params: [{ name: "text", label: "Nama Nabi", type: "text", required: true }],
+    description: "Stories of the Prophets",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- GAMES & QUIZ ---
+  {
+    id: "games_asahotak",
+    label: "Asah Otak",
+    category: "games",
+    endpoint: "/games/games/asahotak",
+    method: "GET",
+    params: [],
+    description: "Brain teaser game",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "games_family100",
+    label: "Family 100",
+    category: "games",
+    endpoint: "/games/games/family100",
+    method: "GET",
+    params: [],
+    description: "Family 100 quiz",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "games_kuisislam",
+    label: "Kuis Islami",
+    category: "games",
+    endpoint: "/games/games/kuisislam",
+    method: "GET",
+    params: [],
+    description: "Islamic knowledge quiz",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "games_math",
+    label: "Math Quiz",
+    category: "games",
+    endpoint: "/games/games/math",
+    method: "GET",
+    params: [],
+    description: "Mathematics quiz",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "games_siapakahaku",
+    label: "Siapakah Aku",
+    category: "games",
+    endpoint: "/games/games/siapakahaku",
+    method: "GET",
+    params: [],
+    description: "Who am I quiz",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "games_tebakgambar",
+    label: "Tebak Gambar",
+    category: "games",
+    endpoint: "/games/games/tebakgambar",
+    method: "GET",
+    params: [],
+    description: "Guess the picture game",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- DOWNLOADER GALAXY ---
+  {
+    id: "dl_youtube_play",
+    label: "YouTube Play",
+    category: "downloader",
+    endpoint: "/downloader/downloader/play",
+    method: "GET",
+    params: [{ name: "text", label: "Search Query / URL", type: "text", required: true }],
+    description: "Download audio from YouTube search",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_youtube_mp4",
+    label: "YouTube MP4",
+    category: "downloader",
+    endpoint: "/downloader/downloader/ytmp4",
+    method: "GET",
+    params: [{ name: "url", label: "YouTube URL", type: "text", required: true }],
+    description: "Download video from YouTube",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_tiktok",
+    label: "TikTok Dl",
+    category: "downloader",
+    endpoint: "/downloader/downloader/tiktok",
+    method: "GET",
+    params: [{ name: "url", label: "TikTok URL", type: "text", required: true }],
+    description: "Download TikTok videos (includes slide)",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_facebook",
+    label: "Facebook Dl",
+    category: "downloader",
+    endpoint: "/downloader/downloader/facebook",
+    method: "GET",
+    params: [{ name: "url", label: "Facebook URL", type: "text", required: true }],
+    description: "Download Facebook videos",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_instagram",
+    label: "Instagram Dl",
+    category: "downloader",
+    endpoint: "/downloader/downloader/igdl",
+    method: "GET",
+    params: [{ name: "url", label: "Instagram URL", type: "text", required: true }],
+    description: "Download Instagram media",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_soundcloud",
+    label: "SoundCloud",
+    category: "downloader",
+    endpoint: "/downloader/downloader/soundcloud",
+    method: "GET",
+    params: [{ name: "url", label: "SoundCloud URL", type: "text", required: true }],
+    description: "Download SoundCloud audio",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "dl_mediafire",
+    label: "MediaFire",
+    category: "downloader",
+    endpoint: "/downloader/downloader/mediafire",
+    method: "GET",
+    params: [{ name: "url", label: "MediaFire URL", type: "text", required: true }],
+    description: "Download files from MediaFire",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- NEWS DECK ---
+  {
+    id: "news_cnbc",
+    label: "CNBC News",
+    category: "news",
+    endpoint: "/news/cnbc",
+    method: "GET",
+    params: [],
+    description: "Latest news from CNBC Indonesia",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "news_cnn",
+    label: "CNN News",
+    category: "news",
+    endpoint: "/news/cnn",
+    method: "GET",
+    params: [],
+    description: "Latest news from CNN Indonesia",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "news_detik",
+    label: "Detik News",
+    category: "news",
+    endpoint: "/news/detik",
+    method: "GET",
+    params: [],
+    description: "Latest news from Detik.com",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "news_kompas",
+    label: "Kompas News",
+    category: "news",
+    endpoint: "/news/kompas",
+    method: "GET",
+    params: [],
+    description: "Latest news from Kompas",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- SEARCH UTILITY ---
+  {
+    id: "search_google",
+    label: "Google Search",
+    category: "search",
+    endpoint: "/search/google",
+    method: "GET",
+    params: [{ name: "text", label: "Query", type: "text", required: true }],
+    description: "Search the web via Google",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "search_gimage",
+    label: "Google Image Search",
+    category: "search",
+    endpoint: "/search/gimage",
+    method: "GET",
+    params: [{ name: "text", label: "Query", type: "text", required: true }],
+    description: "Search images via Google",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "search_wikipedia",
+    label: "Wikipedia",
+    category: "search",
+    endpoint: "/search/wikipedia",
+    method: "GET",
+    params: [{ name: "text", label: "Query", type: "text", required: true }],
+    description: "Search Wikipedia",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "search_playstore",
+    label: "Playstore",
+    category: "search",
+    endpoint: "/search/playstore",
+    method: "GET",
+    params: [{ name: "text", label: "App Name", type: "text", required: true }],
+    description: "Search apps on Playstore",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "search_wallpaper",
+    label: "Wallpaper Search",
+    category: "search",
+    endpoint: "/search/wallpaper",
+    method: "GET",
+    params: [{ name: "text", label: "Query", type: "text", required: true }],
+    description: "Find wallpapers",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "search_github",
+    label: "GitHub Status",
+    category: "search",
+    endpoint: "/search/github",
+    method: "GET",
+    params: [{ name: "text", label: "Username", type: "text", required: true }],
+    description: "Search GitHub users safely",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+
+  // --- TOOLS LAB ---
+  {
+    id: "tool_urlshortener",
+    label: "URL Shortener",
+    category: "tools",
+    endpoint: "/tools/tools/shorturl",
+    method: "GET",
+    params: [{ name: "url", label: "URL to shorten", type: "text", required: true }],
+    description: "Shorten a long URL via TinyURL",
+    outputType: "json",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "tool_ssweb",
+    label: "Screenshot Web PC",
+    category: "tools",
+    endpoint: "/tools/tools/ssweb",
+    method: "GET",
+    params: [{ name: "url", label: "Website URL", type: "text", required: true }],
+    description: "Take desktop screenshot of a website",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "tool_sshp",
+    label: "Screenshot Web Mobile",
+    category: "tools",
+    endpoint: "/tools/tools/sshp",
+    method: "GET",
+    params: [{ name: "url", label: "Website URL", type: "text", required: true }],
+    description: "Take mobile screenshot of a website",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  },
+  {
+    id: "tool_qrcodegen",
+    label: "QR Code Generator",
+    category: "tools",
+    endpoint: "/image/maker/qrcode",
+    method: "GET",
+    params: [{ name: "text", label: "Content", type: "text", required: true }],
+    description: "Generate a QR Code",
+    outputType: "image",
+    safe: true,
+    enabledByDefault: true
+  }
+] as unknown as VynaaEndpoint[]);

@@ -78,7 +78,7 @@ export function GlowButton({
             React.cloneElement(children as React.ReactElement, {}, (
               <>
                 <TouchRipple ripples={ripples} onClear={removeRipple} />
-                <span className="relative z-10 flex items-center justify-center gap-2 w-full h-full">{(children as React.ReactElement).props.children}</span>
+                <span className="relative z-10 flex items-center justify-center gap-2 w-full h-full">{(children as any).props.children}</span>
               </>
             ))
           ) : content

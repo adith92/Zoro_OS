@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Home, MessageSquare, Globe, Settings, PlayCircle, Download, Joystick, BookOpen, Smile } from 'lucide-react';
+import { Home, MessageSquare, Globe, Settings, Terminal, Download, Joystick, BookOpen, Image as ImageIcon, Search, Settings2, Hash } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useSettingsStore } from '@/store/useStore';
 import { GlowButton } from '@/components/ui/GlowButton';
@@ -9,12 +9,15 @@ import { GlowButton } from '@/components/ui/GlowButton';
 const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
   { icon: MessageSquare, label: 'Zoro AI Chat', path: '/chat' },
-  { icon: Globe, label: 'Multiverse Hub', path: '/hub' },
-  { icon: PlayCircle, label: 'Anime Realm', path: '/anime' },
-  { icon: Download, label: 'Media Downloader', path: '/downloader' },
-  { icon: Joystick, label: 'Zoro Adventures', path: '/games' },
+  { icon: Terminal, label: 'AI Hub', path: '/hub' },
+  { icon: ImageIcon, label: 'Image Lab', path: '/image' },
+  { icon: Download, label: 'Downloader Galaxy', path: '/downloader' },
   { icon: BookOpen, label: 'Islamic Corner', path: '/islamic' },
-  { icon: Smile, label: 'Asupan & Fun', path: '/fun' },
+  { icon: Hash, label: 'Games & Quiz', path: '/gamesquiz' },
+  { icon: Globe, label: 'News Deck', path: '/news' },
+  { icon: Search, label: 'Search Utility', path: '/search' },
+  { icon: Settings2, label: 'Tools Lab', path: '/tools' },
+  { icon: Joystick, label: 'Zoro Adventures', path: '/games' },
   { icon: Settings, label: 'Settings', path: '/settings' },
 ];
 

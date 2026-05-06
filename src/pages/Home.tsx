@@ -14,7 +14,7 @@ const stats = [
 ];
 
 export function Home() {
-  const { selectedProvider } = useSettingsStore();
+  const { selectedProvider, vynaaApiStatus, endpointHistory } = useSettingsStore();
 
   return (
     <PageTransition className="flex-1 overflow-y-auto cyber-scrollbar p-4 sm:p-8">
@@ -63,7 +63,7 @@ export function Home() {
               transition={{ delay: idx * 0.1 + 0.2 }}
             >
               <GlassCard className="p-4 sm:p-6 flex items-center gap-4 group">
-                <div className={`p-3 sm:p-4 rounded-xl bg-black/50 border border-white/5 group-hover:scale-1get transition-transform ${stat.color}`}>
+                <div className={`p-3 sm:p-4 rounded-xl bg-black/50 border border-white/5 group-hover:scale-110 transition-transform ${stat.color}`}>
                   <stat.icon size={24} />
                 </div>
                 <div>
@@ -75,28 +75,64 @@ export function Home() {
           ))}
         </div>
 
-        {/* System Status */}
-        <GlassCard className="p-6 sm:p-8">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 text-space-starlight">
-            <Sparkles className="text-space-cyan" /> Core Systems Online
-          </h2>
-          <div className="space-y-4 font-mono text-xs sm:text-sm">
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
-              <span className="text-gray-400">Current Provider</span>
-              <span className={`px-2 py-1 rounded bg-black/50 border w-fit ${selectedProvider === 'vynaa' ? 'border-space-violet text-space-violet shadow-[0_0_5px_rgba(129,140,248,0.5)]' : 'border-space-cyan text-space-cyan shadow-[0_0_5px_rgba(56,189,248,0.5)]'}`}>
-                {selectedProvider.toUpperCase()}
-              </span>
+        {/* System Status and Recent Activity Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {/* System Status */}
+          <GlassCard className="p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 text-space-starlight">
+              <Sparkles className="text-space-cyan" /> Core Systems Online
+            </h2>
+            <div className="space-y-4 font-mono text-xs sm:text-sm">
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
+                <span className="text-gray-400">Current Provider</span>
+                <span className={`px-2 py-1 rounded bg-black/50 border w-fit ${selectedProvider === 'vynaa' ? 'border-space-violet text-space-violet shadow-[0_0_5px_rgba(129,140,248,0.5)]' : 'border-space-cyan text-space-cyan shadow-[0_0_5px_rgba(56,189,248,0.5)]'}`}>
+                  {selectedProvider.toUpperCase()}
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
+                <span className="text-gray-400">Vynaa API Engine</span>
+                <span className={`px-2 py-0.5 rounded shadow-[0_0_5px_currentColor] w-fit ${vynaaApiStatus === 'success' ? 'text-green-400 bg-green-400/10' : vynaaApiStatus === 'failed' ? 'text-red-400 bg-red-400/10' : 'text-yellow-400 bg-yellow-400/10'}`}>
+                  {vynaaApiStatus.toUpperCase()}
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
+                <span className="text-gray-400">Neural Network Sync</span>
+                <span className="text-green-400 shadow-[0_0_5px_rgba(74,222,128,0.3)] px-2 py-0.5 rounded bg-green-400/10 w-fit">99.9% STABLE</span>
+              </div>
+              <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
+                <span className="text-gray-400">Voice Synthesis Module</span>
+                <span className="text-green-400 shadow-[0_0_5px_rgba(74,222,128,0.3)] px-2 py-0.5 rounded bg-green-400/10 w-fit">READY</span>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
-              <span className="text-gray-400">Neural Network Sync</span>
-              <span className="text-green-400 shadow-[0_0_5px_rgba(74,222,128,0.3)] px-2 py-0.5 rounded bg-green-400/10 w-fit">99.9% STABLE</span>
+          </GlassCard>
+
+          {/* Recent Activity */}
+          <GlassCard className="p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 flex items-center gap-2 text-space-starlight">
+              <Zap className="text-space-violet" /> Recent Activity
+            </h2>
+            <div className="space-y-3 font-mono text-xs sm:text-sm max-h-[220px] overflow-y-auto cyber-scrollbar pr-2">
+              {endpointHistory.length === 0 ? (
+                <div className="text-gray-500 italic text-center py-8">No recent activity</div>
+              ) : (
+                endpointHistory.slice(0, 5).map((log, idx) => (
+                  <div key={idx} className="flex flex-col bg-black/30 rounded p-2 border border-white/5">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-space-cyan truncate font-semibold">{log.endpointLabel}</span>
+                      <span className="text-gray-500 text-[10px]">{new Date(log.requestedAt).toLocaleTimeString()}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400 truncate max-w-[200px] text-[10px]">{log.category.toUpperCase()}</span>
+                      <span className={`px-1.5 py-0.5 rounded text-[10px] ${log.ok ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                        {log.ok ? 'SUCCESS' : 'FAILED'}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-2 gap-2">
-              <span className="text-gray-400">Voice Synthesis Module</span>
-              <span className="text-green-400 shadow-[0_0_5px_rgba(74,222,128,0.3)] px-2 py-0.5 rounded bg-green-400/10 w-fit">READY</span>
-            </div>
-          </div>
-        </GlassCard>
+          </GlassCard>
+        </div>
 
       </div>
     </PageTransition>

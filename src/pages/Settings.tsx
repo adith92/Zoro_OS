@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Save, Key, Settings as SettingsIcon, Eye, EyeOff, XCircle, Cpu } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Save, Key, Settings as SettingsIcon, Eye, EyeOff, XCircle, Cpu, User, Activity } from 'lucide-react';
 import { useSettingsStore } from '@/store/useStore';
 import { PageTransition } from '@/components/ui/PageTransition';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { StatusPill } from '@/components/ui/StatusPill';
-import { chatSimSimi } from '@/api/vynaa';
+import { callVynaaEndpoint } from '@/api/universalVynaa';
+import { VYNAA_ENDPOINTS } from '@/data/vynaaRegistry';
 import { chatSumoPod } from '@/api/sumopod';
+import { toast } from 'sonner';
 
 const SUMOPOD_MODELS = [
   "gpt-3.5-turbo",
@@ -18,11 +20,13 @@ const SUMOPOD_MODELS = [
 ];
 
 export function Settings() {
-  const { vynaaApiKey, sumoPodApiKey, setVynaaApiKey, setSumoPodApiKey, selectedModel, setSelectedModel } = useSettingsStore();
-  
+  const { 
+    vynaaApiKey, sumoPodApiKey, setVynaaApiKey, setSumoPodApiKey, selectedModel, setSelectedModel,
+    vynaaUserProfile, setVynaaUserProfile
+  } = useSettingsStore();
+
   const [localVynaa, setLocalVynaa] = useState(vynaaApiKey);
   const [localSumo, setLocalSumo] = useState(sumoPodApiKey);
-  const [saved, setSaved] = useState(false);
   
   const [showVynaa, setShowVynaa] = useState(false);
   const [showSumo, setShowSumo] = useState(false);
@@ -33,29 +37,47 @@ export function Settings() {
   const handleSave = () => {
     setVynaaApiKey(localVynaa);
     setSumoPodApiKey(localSumo);
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+    toast.success("Settings saved successfully.");
   };
 
   const testVynaa = async () => {
     if (!localVynaa) return;
+    setVynaaApiKey(localVynaa); // Must save temporarily for the universal caller
     setVynaaStatus('checking');
     try {
-      // Small test using proxy config implicitly inside chatSimSimi
-      // We pass local key if supported or rely on saving it first then testing
-      // For this demo, let's just save it temporarily to store, test, then if it fails user knows.
-      // Wait, chatSimSimi might just fail if proxy uses wrong backend, but we'll try it
-      setVynaaApiKey(localVynaa);
-      const res = await chatSimSimi("test");
+      const pingEndpoint = VYNAA_ENDPOINTS.find(e => e.id === 'status_ping')!;
+      const res = await callVynaaEndpoint(pingEndpoint, {});
       if (res && res.status) {
         setVynaaStatus('success');
+        toast.success("Vynaa API connected!");
+        fetchProfile();
       } else {
         setVynaaStatus('failed');
+        toast.error("Vynaa API key verification failed.");
       }
     } catch {
       setVynaaStatus('failed');
+      toast.error("Network or API error while connecting to Vynaa.");
     }
   };
+
+  const fetchProfile = async () => {
+     try {
+       const profileEndpoint = VYNAA_ENDPOINTS.find(e => e.id === 'status_profile')!;
+       const res = await callVynaaEndpoint(profileEndpoint, {});
+       if (res && res.status) {
+           setVynaaUserProfile((res.data as any)?.result || res.error || (res.data as any)?.message);
+       }
+     } catch (e) {
+         console.warn("Could not fetch profile");
+     }
+  };
+
+  useEffect(() => {
+      if (vynaaApiKey && !vynaaUserProfile) {
+          fetchProfile();
+      }
+  }, []);
 
   const testSumo = async () => {
     if (!localSumo) return;
@@ -119,6 +141,25 @@ export function Settings() {
                   <GlowButton variant="ghost" size="icon" onClick={() => setShowVynaa(!showVynaa)} className="p-1 hover:text-white text-gray-400 rounded-md">{showVynaa ? <EyeOff size={18} /> : <Eye size={18} />}</GlowButton>
                 </div>
               </div>
+
+              {vynaaUserProfile && (
+                  <div className="mt-4 p-4 rounded-xl bg-space-violet/10 border border-space-violet/20 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                     <div className="flex items-center gap-3">
+                         <div className="w-10 h-10 rounded-full bg-space-dark/80 flex items-center justify-center border border-space-violet/50">
+                             <User className="text-space-violet w-5 h-5" />
+                         </div>
+                         <div>
+                             <p className="text-sm font-mono text-white break-all">{vynaaUserProfile.name || 'User'}</p>
+                             <p className="text-xs font-mono text-gray-400 capitalize">{vynaaUserProfile.status || 'Active'}</p>
+                         </div>
+                     </div>
+                     <div className="text-right flex sm:flex-col gap-4 sm:gap-1 items-center sm:items-end w-full sm:w-auto overflow-hidden">
+                        <div className="flex items-center gap-1 text-xs font-mono text-space-cyan bg-space-cyan/10 px-2 py-1 rounded">
+                           <Activity className="w-3 h-3" /> API Limit: {vynaaUserProfile.limit}
+                        </div>
+                     </div>
+                  </div>
+              )}
             </div>
 
             {/* SumoPod Config */}
@@ -177,7 +218,7 @@ export function Settings() {
               className="w-full mt-4 !font-bold"
             >
               <Save className="w-5 h-5" /> 
-              {saved ? 'CONFIGURATION SAVED!' : 'SAVE CONFIGURATION'}
+              SAVE CONFIGURATION
             </GlowButton>
           </div>
         </GlassCard>

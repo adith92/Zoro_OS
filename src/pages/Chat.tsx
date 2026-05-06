@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Send, Bot, User, Loader2, Mic } from 'lucide-react';
 import { useSettingsStore } from '@/store/useStore';
 import { chatSumoPod } from '@/api/sumopod';
-import { chatSimSimi } from '@/api/vynaa';
+import { callVynaaEndpoint } from '@/api/universalVynaa';
+import { VYNAA_ENDPOINTS } from '@/data/vynaaRegistry';
 import { cn } from '@/lib/utils';
 import Markdown from 'react-markdown';
 import { PageTransition } from '@/components/ui/PageTransition';
@@ -72,24 +73,26 @@ export function Chat() {
         speak(assistMsg.content);
 
       } else if (selectedProvider === 'vynaa') {
-        const response = await chatSimSimi(input);
+        const ep = VYNAA_ENDPOINTS.find(e => e.id === 'ai_simsimi')!;
+        const response = await callVynaaEndpoint(ep, { text: input });
         const assistMsg: Message = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          content: response.result || 'Miau! Vynaa error.',
+          content: (response.data as any)?.result || (response.data as any)?.message || response.error || 'Miau! Vynaa error.',
           provider: 'vynaa'
         };
         setMessages(prev => [...prev, assistMsg]);
         speak(assistMsg.content);
 
       } else if (selectedProvider === 'dual') {
+        const ep = VYNAA_ENDPOINTS.find(e => e.id === 'ai_simsimi')!;
         const [sumoRes, vynaaRes] = await Promise.allSettled([
           chatSumoPod([{ role: 'user', content: input }], selectedModel),
-          chatSimSimi(input)
+          callVynaaEndpoint(ep, { text: input })
         ]);
 
         const sumoText = sumoRes.status === 'fulfilled' ? sumoRes.value : 'SumoPod Error';
-        const vynaaText = vynaaRes.status === 'fulfilled' ? vynaaRes.value.result : 'Vynaa Error';
+        const vynaaText = vynaaRes.status === 'fulfilled' ? ((vynaaRes.value.data as any)?.result || (vynaaRes.value.data as any)?.message || vynaaRes.value.error) : 'Vynaa Error';
 
         const assistMsg: Message = {
           id: (Date.now() + 1).toString(),
