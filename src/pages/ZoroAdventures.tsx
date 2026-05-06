@@ -4,6 +4,9 @@ import { Terminal, Send, ChevronRight, Activity, Cpu } from 'lucide-react';
 import { useSettingsStore } from '@/store/useStore';
 import { chatSumoPod } from '@/api/sumopod';
 import Markdown from 'react-markdown';
+import { PageTransition } from '@/components/ui/PageTransition';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { GlowButton } from '@/components/ui/GlowButton';
 
 interface GameState {
   id: string;
@@ -12,8 +15,8 @@ interface GameState {
   health: number;
 }
 
-const SYSTEM_PROMPT = `You are a Cyberpunk Game Master. The protagonist is Zoro, a high-tech hacker cat.
-Maintain a dark, neon-lit, gritty yet humorous tone.
+const SYSTEM_PROMPT = `You are a Sci-Fi Game Master. The protagonist is Zoro, a brilliant space-cat engineer on the starship Aegis.
+Maintain a futuristic, suspenseful, yet humorous space-opera tone.
 You must ALWAYS respond with ONLY valid JSON containing the following fields:
 {
   "scenario": "string (The current situation, max 3 sentences)",
@@ -21,16 +24,17 @@ You must ALWAYS respond with ONLY valid JSON containing the following fields:
   "health": number (0-100, update based on the previous choice consequence)
 }
 CRITICAL: Do not wrap the response in markdown blocks (like \`\`\`json). Return purely the JSON object.
-`;
+Ensure there are exactly 3 choices unless the game is over.`;
 
-const INITIAL_PROMPT = "Initialize game. Describe Zoro arriving at Neo-Alley. Health starts at 100.";
+const INITIAL_PROMPT = "Initialize game. Describe Zoro waking up in the engineering deck with red alarms flashing. Health starts at 100.";
 
 export function ZoroAdventures() {
-  const { sumoPodApiKey, selectedProvider } = useSettingsStore();
+  const { sumoPodApiKey, selectedModel } = useSettingsStore();
   const [history, setHistory] = useState<GameState[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
+  const [retryPrompt, setRetryPrompt] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -41,7 +45,6 @@ export function ZoroAdventures() {
 
   const parseAIResponse = (text: string): GameState | null => {
     try {
-      // Find JSON bounds in case the AI wraps it anyway
       const start = text.indexOf('{');
       const end = text.lastIndexOf('}') + 1;
       if (start !== -1 && end !== -1) {
@@ -50,7 +53,7 @@ export function ZoroAdventures() {
         return {
           id: Date.now().toString(),
           scenario: parsed.scenario || "An error occurred in the simulation.",
-          choices: parsed.choices || ["Continue"],
+          choices: Array.isArray(parsed.choices) && parsed.choices.length > 0 ? parsed.choices : ["Continue"],
           health: typeof parsed.health === 'number' ? parsed.health : 100
         };
       }
@@ -63,9 +66,9 @@ export function ZoroAdventures() {
   const handleAction = async (actionPrompt: string, isInit = false) => {
     if (!sumoPodApiKey) return;
     setIsLoading(true);
+    setRetryPrompt(null);
 
     try {
-      // Build conversation history
       const prevContext = isInit ? [] : history.map(h => ({
         role: "assistant",
         content: JSON.stringify({ scenario: h.scenario, choices: h.choices, health: h.health })
@@ -81,8 +84,7 @@ export function ZoroAdventures() {
         { role: 'user', content: isInit ? INITIAL_PROMPT : `Next step. Zoro chose: ${actionPrompt}` }
       ];
 
-      // Assuming sumoPod supports standard chat completion
-      const responseText = await chatSumoPod(messages, 'gpt-3.5-turbo');
+      const responseText = await chatSumoPod(messages, selectedModel);
       const newState = parseAIResponse(responseText);
 
       if (newState) {
@@ -91,24 +93,25 @@ export function ZoroAdventures() {
           setGameEnded(true);
         }
       } else {
-        // Fallback if parsing fails
         setHistory(prev => [...prev, {
           id: Date.now().toString(),
-          scenario: "Glitch in the matrix. The simulation fails to load properly.\n\nAI Output:\n" + responseText,
-          choices: ["Restart System Sequence"],
+          scenario: "Glitch in the matrix. The neural simulation failed to sequence properly.\n\nRaw Output:\n" + responseText,
+          choices: ["Retry Previous Action"],
           health: prev.length > 0 ? prev[prev.length - 1].health : 100
         }]);
+        setRetryPrompt(actionPrompt);
       }
     } catch (err: any) {
       setHistory(prev => [...prev, {
         id: Date.now().toString(),
         scenario: `[SYSTEM ERROR]: ${err.message}`,
-        choices: ["Retry"],
-        health: 0
+        choices: ["Retry Neural Link"],
+        health: prev.length > 0 ? prev[prev.length - 1].health : 100
       }]);
+      setRetryPrompt(actionPrompt);
+    } finally {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   const startGame = () => {
@@ -120,41 +123,48 @@ export function ZoroAdventures() {
 
   if (!sumoPodApiKey) {
     return (
-      <div className="flex-1 flex items-center justify-center p-8 z-10 relative">
-        <div className="glass-panel p-8 rounded-3xl text-center max-w-md border-red-500/30">
+      <PageTransition className="flex-1 flex items-center justify-center p-4 sm:p-8 z-10 relative">
+        <GlassCard className="p-8 sm:p-12 text-center max-w-md border-red-500/30">
           <Terminal className="w-16 h-16 mx-auto text-red-500 mb-4" />
           <h2 className="text-xl font-bold text-red-400 font-mono mb-2">SYSTEM LOCKED</h2>
           <p className="text-gray-400 font-mono text-sm mb-6">
             Requires SumoPod API Key for advanced Neural Game Generation. Configure this in Settings.
           </p>
-        </div>
-      </div>
+        </GlassCard>
+      </PageTransition>
     );
   }
 
   const currentHealth = history.length > 0 ? history[history.length - 1].health : 100;
 
   return (
-    <div className="flex flex-col h-full relative z-10 p-2 sm:p-6 pb-0">
+    <PageTransition className="flex flex-col h-full relative z-10 p-2 sm:p-6 pb-0">
       {/* Header */}
-      <div className="glass-panel-cyan p-4 border-b border-cyber-cyan/30 flex justify-between items-center rounded-t-2xl z-20 shrink-0">
+      <div className="glass-panel-cyan p-4 border-b border-space-cyan/30 flex justify-between items-center rounded-t-2xl z-20 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-cyber-dark border border-cyber-cyan shadow-[0_0_10px_rgba(0,243,255,0.5)] flex items-center justify-center">
-            <Terminal className="w-5 h-5 text-cyber-cyan" />
+          <div className="w-10 h-10 rounded-lg bg-space-dark border border-space-cyan shadow-[0_0_10px_rgba(56,189,248,0.5)] flex items-center justify-center">
+            <Terminal className="w-5 h-5 text-space-cyan" />
           </div>
           <div>
             <h2 className="font-bold text-glow-cyan font-mono text-sm sm:text-base">ZORO'S ADVENTURES</h2>
-            <p className="text-xs text-cyber-cyan font-mono flex items-center gap-1">
+            <p className="text-xs text-space-cyan font-mono flex items-center gap-1">
               <Cpu className="w-3 h-3" /> Neural Simulation
             </p>
           </div>
         </div>
         
         {gameStarted && (
-          <div className="flex items-center gap-2 px-3 py-1 bg-black/50 border border-cyber-pink/30 rounded-lg">
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-space-dark/80 border border-space-pink/30 rounded-lg shadow-inner">
             <Activity className={currentHealth > 20 ? 'text-green-400' : 'text-red-500'} size={16} />
-            <span className={currentHealth > 20 ? 'text-green-400 font-mono' : 'text-red-500 font-mono animate-pulse'}>
-              HP: {currentHealth}%
+            <div className="relative w-20 sm:w-32 h-2 bg-black/60 rounded-full overflow-hidden border border-white/5 mx-2 hidden sm:block">
+               <motion.div 
+                 className={`absolute top-0 left-0 h-full ${currentHealth > 20 ? 'bg-green-400' : 'bg-red-500'}`}
+                 initial={{ width: 0 }}
+                 animate={{ width: `${currentHealth}%` }}
+               />
+            </div>
+            <span className={currentHealth > 20 ? 'text-green-400 font-mono font-bold text-sm' : 'text-red-500 font-mono font-bold text-sm animate-pulse'}>
+              {currentHealth}%
             </span>
           </div>
         )}
@@ -166,25 +176,25 @@ export function ZoroAdventures() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <div className="text-6xl mb-6">🐱💻</div>
-            <h1 className="text-3xl font-black font-mono text-white mb-4 tracking-widest text-glow-purple">ENTER THE MATRIX</h1>
+            <div className="text-6xl mb-6 filter drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">🐱🚀</div>
+            <h1 className="text-2xl sm:text-3xl font-black font-mono text-white mb-4 tracking-widest text-glow-purple uppercase">Aegis Protocol</h1>
             <p className="text-gray-400 font-mono max-w-md mx-auto mb-8 text-sm">
-              An infinite, AI-generated cyberpunk text adventure. Your choices dynamically alter the narrative.
+              An infinite, AI-generated space opera text adventure. Your choices dynamically alter the narrative and fate of the starship.
             </p>
-            <button 
+            <GlowButton 
               onClick={startGame}
-              className="px-8 py-4 bg-cyber-cyan/20 border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan/40 hover:text-white hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all rounded-xl font-bold font-mono tracking-widest"
+              className="font-bold font-mono tracking-widest px-8 py-4"
             >
               INITIALIZE LINK
-            </button>
+            </GlowButton>
           </motion.div>
         </div>
       ) : (
-        <div className="flex-1 flex flex-col overflow-hidden glass-panel rounded-b-2xl border-t-0 p-2 sm:p-4 gap-4">
+        <div className="flex-1 flex flex-col overflow-hidden glass-panel rounded-b-2xl border-t-0 p-3 sm:p-4 gap-4">
           {/* Output Window */}
           <div 
             ref={scrollRef}
-            className="flex-1 overflow-y-auto cyber-scrollbar bg-black/80 border border-white/10 rounded-xl p-4 font-mono text-sm leading-relaxed scroll-smooth"
+            className="flex-1 overflow-y-auto cyber-scrollbar bg-space-dark/80 border border-white/10 rounded-xl p-4 font-mono text-sm leading-relaxed scroll-smooth shadow-inner"
           >
             <AnimatePresence>
               {history.map((step, idx) => (
@@ -195,14 +205,14 @@ export function ZoroAdventures() {
                   className="mb-6 last:mb-0"
                 >
                   <div className="flex items-start gap-3">
-                    <ChevronRight className="w-5 h-5 text-cyber-purple shrink-0 mt-0.5" />
+                    <ChevronRight className="w-5 h-5 text-space-violet shrink-0 mt-0.5" />
                     <div className="text-gray-300">
                       <Markdown>{step.scenario}</Markdown>
                     </div>
                   </div>
                   {idx < history.length - 1 && (
-                    <div className="ml-8 mt-2 text-cyber-cyan/50 italic">
-                      &gt; Option selected.
+                    <div className="ml-8 mt-2 text-space-cyan/50 italic">
+                      &gt; Command executed.
                     </div>
                   )}
                 </motion.div>
@@ -210,8 +220,8 @@ export function ZoroAdventures() {
               
               {isLoading && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
-                   <ChevronRight className="w-5 h-5 text-cyber-purple shrink-0 animate-pulse" />
-                   <span className="text-cyber-cyan animate-pulse">Generating neural pathways...</span>
+                   <ChevronRight className="w-5 h-5 text-space-violet shrink-0 animate-pulse" />
+                   <span className="text-space-cyan animate-pulse">Calculating starlight trajectories...</span>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -220,32 +230,40 @@ export function ZoroAdventures() {
           {/* Action Panel */}
           <div className="shrink-0 space-y-2">
             {!gameEnded && !isLoading && history.length > 0 && (history[history.length - 1].choices || []).map((choice, i) => (
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 key={i}
-                onClick={() => handleAction(choice)}
-                className="w-full text-left p-3 sm:p-4 bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple hover:bg-cyber-purple/30 hover:border-cyber-purple rounded-xl font-mono text-xs sm:text-sm transition-all hover:shadow-[0_0_15px_rgba(157,0,255,0.3)] flex items-center gap-2 group"
               >
-                <span className="opacity-50 group-hover:opacity-100">[{i + 1}]</span>
-                {choice}
-              </motion.button>
+                <GlowButton
+                  variant="secondary"
+                  onClick={() => handleAction(retryPrompt && choice.includes('Retry') ? retryPrompt : choice)}
+                  className="w-full justify-start text-left p-3 sm:p-4 text-xs sm:text-sm group !font-normal"
+                >
+                  <span className="opacity-50 group-hover:opacity-100 text-space-violet font-bold">[{i + 1}]</span>
+                  {choice}
+                </GlowButton>
+              </motion.div>
             ))}
 
             {gameEnded && (
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                onClick={startGame}
-                className="w-full p-4 bg-red-500/20 border border-red-500 text-red-500 hover:bg-red-500/40 hover:text-white rounded-xl font-mono text-sm tracking-widest transition-all uppercase"
               >
-                System Failure. Retry?
-              </motion.button>
+                <GlowButton
+                  variant="danger"
+                  onClick={startGame}
+                  className="w-full p-4 text-sm tracking-widest uppercase !font-bold"
+                >
+                  System Failure. Reboot Sequence?
+                </GlowButton>
+              </motion.div>
             )}
           </div>
         </div>
       )}
-    </div>
+    </PageTransition>
   );
 }

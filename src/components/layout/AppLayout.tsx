@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
-import { ZoroUniverseCanvas } from '../canvas/ZoroUniverseCanvas';
+import { SpaceshipUniverseCanvas } from '../canvas/SpaceshipUniverseCanvas';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { PageTransition } from '@/components/ui/PageTransition';
 
 export function AppLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex h-[100dvh] w-screen overflow-hidden bg-cyber-dark relative">
+    <div className="flex h-[100dvh] w-screen overflow-hidden bg-space-dark relative">
       <div className="absolute inset-0 z-0">
-        <ZoroUniverseCanvas />
+        <SpaceshipUniverseCanvas />
       </div>
       
       <div className="crt-overlay" />
@@ -19,11 +20,11 @@ export function AppLayout() {
       {/* Mobile Top Bar */}
       <div className="md:hidden absolute top-0 left-0 w-full p-4 z-50 flex justify-between items-center pointer-events-none">
         <div className="glass-panel-purple px-4 py-2 rounded-full pointer-events-auto">
-          <span className="font-bold font-mono text-glow-purple text-transparent bg-clip-text bg-gradient-to-r from-cyber-purple to-cyber-cyan">ZORO_OS</span>
+          <span className="font-bold font-mono text-glow-purple text-transparent bg-clip-text bg-gradient-to-r from-space-violet to-space-cyan">ZORO_OS</span>
         </div>
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="glass-panel-cyan p-2 rounded-full pointer-events-auto text-cyber-cyan shadow-[0_0_15px_rgba(0,243,255,0.3)]"
+          className="glass-panel-cyan p-2 rounded-full pointer-events-auto text-space-cyan shadow-[0_0_15px_rgba(56,189,248,0.3)] transition-transform hover:scale-105 active:scale-95"
         >
           {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -63,12 +64,12 @@ export function AppLayout() {
         
         <main className="flex-1 h-full overflow-hidden flex flex-col p-2 sm:p-6 pb-4 md:pb-6 relative z-10">
           <div className="flex-1 rounded-2xl glass-panel relative overflow-hidden flex flex-col border-white/5">
-            <Outlet />
+              <Outlet />
           </div>
           
           <footer className="mt-2 sm:mt-4 text-center z-10 hidden sm:block">
-            <p className="text-xs font-mono text-gray-500 tracking-wider">
-              Powered by Vynaa × SumoPod × Zoro the High-Tech Cat 🐱🤖🚀
+            <p className="text-xs font-mono text-space-cyan/50 tracking-wider">
+              Powered by Vynaa × SumoPod × Zoro the Starship Cat 🐱🚀
             </p>
           </footer>
         </main>
