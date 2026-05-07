@@ -21,27 +21,31 @@ import { NewsDeck } from '@/pages/NewsDeck';
 import { SearchUtility } from '@/pages/SearchUtility';
 import { ToolsLab } from '@/pages/ToolsLab';
 
+import { ZoroThemeProvider } from '@/components/theme/ZoroThemeProvider';
+
 export default function App() {
   return (
-    <BrowserRouter>
-      <Toaster theme="dark" position="top-center" />
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />
-          <Route path="chat" element={<Chat />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="hub" element={<AIHub />} />
-          <Route path="image" element={<ImageLab />} />
-          <Route path="downloader" element={<DownloaderGalaxy />} />
-          <Route path="games" element={<ZoroAdventures />} />
-          <Route path="gamesquiz" element={<GamesQuiz />} />
-          <Route path="islamic" element={<IslamicCorner />} />
-          <Route path="news" element={<NewsDeck />} />
-          <Route path="search" element={<SearchUtility />} />
-          <Route path="tools" element={<ToolsLab />} />
-          <Route path="*" element={<PlaceholderPage title="404 - Dimension Not Found" />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ZoroThemeProvider>
+      <BrowserRouter>
+        <Toaster theme="dark" position="top-center" />
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<Home />} />
+            <Route path="chat" element={<Chat />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="hub" element={<AIHub />} />
+            <Route path="image" element={<ImageLab />} />
+            <Route path="downloader" element={<DownloaderGalaxy />} />
+            <Route path="games" element={<ZoroAdventures />} />
+            <Route path="gamesquiz" element={<GamesQuiz />} />
+            <Route path="islamic" element={<IslamicCorner />} />
+            <Route path="news" element={<NewsDeck />} />
+            <Route path="search" element={<SearchUtility />} />
+            <Route path="tools" element={<ToolsLab />} />
+            <Route path="*" element={<PlaceholderPage title="404 - Dimension Not Found" />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ZoroThemeProvider>
   );
 }

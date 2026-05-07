@@ -1,14 +1,16 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Stars, Float, PerspectiveCamera, ContactShadows } from '@react-three/drei';
-import { EffectComposer, Bloom, Noise } from '@react-three/postprocessing';
-import { BlendFunction } from 'postprocessing';
+import { EffectComposer, Bloom, Noise, Glitch } from '@react-three/postprocessing';
+import { GlitchMode } from 'postprocessing';
 import * as THREE from 'three';
+import { useSettingsStore } from '@/store/useStore';
 
 const SoftHologramShader = {
   uniforms: {
     time: { value: 0 },
-    color: { value: new THREE.Color("#818cf8") }, // Soft Violet
+    color: { value: new THREE.Color("#818cf8") },
+    targetColor: { value: new THREE.Color("#38bdf8") },
     hoverState: { value: 0 },
     scrollY: { value: 0 }
   },
@@ -25,10 +27,8 @@ const SoftHologramShader = {
       vNormal = normal;
       
       vec3 pos = position;
-      // Gentle Space float displacement
       pos.y += scrollY * 0.002;
       
-      // Soft breathing
       float noise = sin(pos.x * 5.0 + time) * cos(pos.y * 5.0 + time) * 0.01;
       pos += normal * noise;
       
@@ -38,6 +38,7 @@ const SoftHologramShader = {
   fragmentShader: `
     uniform float time;
     uniform vec3 color;
+    uniform vec3 targetColor;
     uniform float hoverState;
     varying vec2 vUv;
     varying vec3 vPosition;
@@ -51,15 +52,13 @@ const SoftHologramShader = {
       rim = smoothstep(0.4, 1.0, rim);
       
       float pulse = (sin(time * 2.0) + 1.0) * 0.5;
-      vec3 finalColor = mix(color, vec3(0.22, 0.74, 0.97), pulse * 0.5); // violet to cyan
+      vec3 finalColor = mix(color, targetColor, pulse * 0.5);
       
-      // Hover adds starlight white
-      vec3 hoverColor = mix(vec3(0.97, 0.98, 1.0), vec3(0.22, 0.74, 0.97), pulse);
+      vec3 hoverColor = mix(vec3(0.97, 0.98, 1.0), targetColor, pulse);
       finalColor = mix(finalColor, hoverColor, hoverState);
       
       float alpha = 0.5 + scanline + rim * 0.6 + hoverState * 0.2;
       
-      // Soft shine
       float shine = pow(max(dot(reflect(-viewDirection, vNormal), viewDirection), 0.0), 16.0);
       finalColor += vec3(shine) * (0.3 + hoverState * 0.4);
       
@@ -72,12 +71,25 @@ function SpaceshipCoreLogo() {
   const meshRef = useRef<THREE.Mesh>(null);
   const ringRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
+  const ringMatRef = useRef<THREE.MeshBasicMaterial>(null);
   const [hovered, setHovered] = useState(false);
   const { viewport } = useThree();
   const isMobile = viewport.width < 5;
   
   const mouseProxy = useRef(new THREE.Vector2(0, 0));
   const scrollProxy = useRef(0);
+
+  const { themeSettings } = useSettingsStore();
+
+  useEffect(() => {
+    if (materialRef.current) {
+        materialRef.current.uniforms.color.value = new THREE.Color(themeSettings.secondaryColor);
+        materialRef.current.uniforms.targetColor.value = new THREE.Color(themeSettings.primaryColor);
+    }
+    if (ringMatRef.current) {
+        ringMatRef.current.color = new THREE.Color(themeSettings.accentColor);
+    }
+  }, [themeSettings.primaryColor, themeSettings.secondaryColor, themeSettings.accentColor]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -126,23 +138,21 @@ function SpaceshipCoreLogo() {
     }
 
     if (meshRef.current && ringRef.current) {
-      // Soft constant rotation
-      meshRef.current.rotation.y += delta * 0.15;
-      ringRef.current.rotation.x += delta * 0.1;
-      ringRef.current.rotation.y += delta * 0.2;
+      const motionScale = themeSettings.motionIntensity;
       
-      // Global mouse interaction parallax
-      const targetRotX = mouseProxy.current.y * Math.PI * 0.1;
-      const targetRotY = meshRef.current.rotation.y + mouseProxy.current.x * Math.PI * 0.05;
+      meshRef.current.rotation.y += delta * 0.15 * motionScale;
+      ringRef.current.rotation.x += delta * 0.1 * motionScale;
+      ringRef.current.rotation.y += delta * 0.2 * motionScale;
+      
+      const targetRotX = mouseProxy.current.y * Math.PI * 0.1 * motionScale;
+      const targetRotY = meshRef.current.rotation.y + mouseProxy.current.x * Math.PI * 0.05 * motionScale;
       
       meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, targetRotX, 0.05);
       
-      // Gentle scale on hover
       const targetScale = hovered ? 1.05 : 1;
       meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
       
-      // Float variation based on scroll and responsive position
-      const scrollYOffset = scrollProxy.current * -0.002;
+      const scrollYOffset = scrollProxy.current * -0.002 * motionScale;
       const baseX = isMobile ? 0 : 3;
       const baseY = (isMobile ? 3 : 0) + scrollYOffset;
       
@@ -156,7 +166,7 @@ function SpaceshipCoreLogo() {
 
   return (
     <group>
-      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+      <Float speed={1.5 * themeSettings.motionIntensity} rotationIntensity={0.5 * themeSettings.motionIntensity} floatIntensity={1 * themeSettings.motionIntensity}>
         {/* Inner Core */}
         <mesh 
           ref={meshRef}
@@ -178,7 +188,7 @@ function SpaceshipCoreLogo() {
         {/* Orbiting Ring */}
         <mesh ref={ringRef} position={[3, 0, -5]}>
           <torusGeometry args={[1.8, 0.02, 16, 100]} />
-          <meshBasicMaterial color="#38bdf8" transparent opacity={0.4} />
+          <meshBasicMaterial ref={ringMatRef} color={themeSettings.accentColor} transparent opacity={0.4} />
         </mesh>
       </Float>
     </group>
@@ -198,11 +208,12 @@ function SoftParticles() {
   }, [count]);
 
   const pointsRef = useRef<THREE.Points>(null);
+  const { themeSettings } = useSettingsStore();
 
   useFrame((state) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.01;
-      pointsRef.current.rotation.x = state.clock.elapsedTime * 0.005;
+      pointsRef.current.rotation.y = state.clock.elapsedTime * 0.01 * themeSettings.motionIntensity;
+      pointsRef.current.rotation.x = state.clock.elapsedTime * 0.005 * themeSettings.motionIntensity;
     }
   });
 
@@ -218,7 +229,7 @@ function SoftParticles() {
       </bufferGeometry>
       <pointsMaterial
         size={0.03}
-        color="#818cf8"
+        color={themeSettings.secondaryColor}
         transparent={true}
         opacity={0.4}
         sizeAttenuation={true}
@@ -245,6 +256,8 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
 }
 
 export function SpaceshipUniverseCanvas() {
+  const { themeSettings } = useSettingsStore();
+
   return (
     <ErrorBoundary>
       <Canvas 
@@ -257,21 +270,29 @@ export function SpaceshipUniverseCanvas() {
         <color attach="background" args={['#020617']} />
         
         <ambientLight intensity={0.4} />
-        <directionalLight position={[10, 10, 5]} intensity={1} color="#38bdf8" />
-        <directionalLight position={[-10, -10, -5]} intensity={1} color="#818cf8" />
+        <directionalLight position={[10, 10, 5]} intensity={1} color={themeSettings.primaryColor} />
+        <directionalLight position={[-10, -10, -5]} intensity={1} color={themeSettings.secondaryColor} />
         
-        <Stars radius={100} depth={50} count={2500} factor={3} saturation={1} fade speed={0.5} />
+        <Stars radius={100} depth={50} count={Math.floor(2500 * themeSettings.starDensity)} factor={3} saturation={1} fade speed={0.5 * themeSettings.motionIntensity} />
         <SoftParticles />
         <SpaceshipCoreLogo />
 
-        <ContactShadows position={[3, -2.5, -5]} opacity={0.3} scale={15} blur={3} far={5} color="#818cf8" />
+        <ContactShadows position={[3, -2.5, -5]} opacity={0.3} scale={15} blur={3} far={5} color={themeSettings.secondaryColor} />
 
         <EffectComposer>
           <Bloom 
             luminanceThreshold={0.5} 
             luminanceSmoothing={0.9} 
-            intensity={1.2} 
+            intensity={themeSettings.bloomIntensity > 0 ? themeSettings.bloomIntensity * 1.5 : 0} 
             kernelSize={2}
+          />
+          <Glitch 
+            delay={new THREE.Vector2(1.5, 3.5)}
+            duration={new THREE.Vector2(0.1, 0.3)}
+            strength={new THREE.Vector2(0.1 * themeSettings.glitchIntensity, 0.4 * themeSettings.glitchIntensity)}
+            mode={GlitchMode.SPORADIC}
+            active={themeSettings.glitchIntensity > 0}
+            ratio={0.85}
           />
           <Noise opacity={0.02} />
         </EffectComposer>

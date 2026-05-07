@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VynaaEndpoint } from '@/types/vynaa';
 import { callVynaaEndpoint } from '@/api/universalVynaa';
 import { VYNAA_ENDPOINTS } from '@/data/vynaaRegistry';
@@ -21,28 +21,77 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
   const [selectedTool, setSelectedTool] = useState<VynaaEndpoint | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
-  const { addEndpointHistory } = useSettingsStore();
+  const { addEndpointHistory, addZoroAction, setCurrentToolContext, setZoroMascotState } = useSettingsStore();
 
   const tools = VYNAA_ENDPOINTS.filter(e => e.category === category && e.safe && e.enabledByDefault);
+
+  useEffect(() => {
+    // Whenever category changes, clear selection
+    setSelectedTool(null);
+    setResult(null);
+    setCurrentToolContext('', '');
+  }, [category]);
+
+  const handleToolSelect = (tool: VynaaEndpoint) => {
+    setSelectedTool(tool); 
+    setResult(null);
+    setCurrentToolContext(tool.label, tool.category);
+    
+    addZoroAction({
+      type: "tool_open",
+      toolId: tool.id,
+      timestamp: new Date().toISOString()
+    });
+  };
 
   const handleSubmit = async (data: Record<string, any>) => {
     if (!selectedTool) return;
     setIsLoading(true);
     setResult(null);
+    setZoroMascotState("thinking");
+
+    addZoroAction({
+      type: "tool_run",
+      toolId: selectedTool.id,
+      timestamp: new Date().toISOString()
+    });
+
     try {
       const res = await callVynaaEndpoint(selectedTool, data);
       addEndpointHistory(res);
-      if (res && res.ok !== false) {
+      if (res && res.ok !== false && (res as any).status !== false) {
           setResult(res);
           toast.success(`${selectedTool.label} executed successfully`);
+          setZoroMascotState("excited");
+          addZoroAction({
+            type: "tool_success",
+            toolId: selectedTool.id,
+            timestamp: new Date().toISOString()
+          });
       } else {
           toast.error(res.error || (res.data as any)?.message || "Failed to process request");
           setResult(res);
+          setZoroMascotState("error");
+          addZoroAction({
+            type: "tool_error",
+            toolId: selectedTool.id,
+            timestamp: new Date().toISOString()
+          });
       }
     } catch (err: any) {
       toast.error(err.message || 'An error occurred during execution');
+      setZoroMascotState("error");
+      addZoroAction({
+        type: "tool_error",
+        toolId: selectedTool.id,
+        timestamp: new Date().toISOString()
+      });
     } finally {
       setIsLoading(false);
+      // fallback to idle after a few seconds if no speech is triggered? The voice synthesis handles mostly "idle".
+      setTimeout(() => {
+        setZoroMascotState("idle");
+      }, 5000);
     }
   };
 
@@ -65,7 +114,7 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
                 {tools.map(tool => (
                     <button
                         key={tool.id}
-                        onClick={() => { setSelectedTool(tool); setResult(null); }}
+                        onClick={() => handleToolSelect(tool)}
                         className={`w-full text-left p-4 rounded-xl transition-all font-mono shadow-sm group border ${selectedTool?.id === tool.id ? 'bg-space-cyan/20 border-space-cyan text-space-cyan' : 'bg-space-dark/60 border-white/5 text-gray-400 hover:bg-space-cyan/10 hover:border-space-cyan/30'}`}
                     >
                         <div className="flex items-center gap-2 mb-1">

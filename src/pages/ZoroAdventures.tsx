@@ -51,7 +51,7 @@ export function ZoroAdventures() {
         const jsonStr = text.slice(start, end);
         const parsed = JSON.parse(jsonStr);
         return {
-          id: Date.now().toString(),
+          id: Date.now().toString() + Math.random().toString(),
           scenario: parsed.scenario || "An error occurred in the simulation.",
           choices: Array.isArray(parsed.choices) && parsed.choices.length > 0 ? parsed.choices : ["Continue"],
           health: typeof parsed.health === 'number' ? parsed.health : 100
@@ -94,7 +94,7 @@ export function ZoroAdventures() {
         }
       } else {
         setHistory(prev => [...prev, {
-          id: Date.now().toString(),
+          id: Date.now().toString() + Math.random().toString(),
           scenario: "Glitch in the matrix. The neural simulation failed to sequence properly.\n\nRaw Output:\n" + responseText,
           choices: ["Retry Previous Action"],
           health: prev.length > 0 ? prev[prev.length - 1].health : 100
@@ -103,7 +103,7 @@ export function ZoroAdventures() {
       }
     } catch (err: any) {
       setHistory(prev => [...prev, {
-        id: Date.now().toString(),
+        id: Date.now().toString() + Math.random().toString(),
         scenario: `[SYSTEM ERROR]: ${err.message}`,
         choices: ["Retry Neural Link"],
         health: prev.length > 0 ? prev[prev.length - 1].health : 100

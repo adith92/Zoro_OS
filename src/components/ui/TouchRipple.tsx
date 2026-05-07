@@ -24,7 +24,7 @@ export function useTouchRipple() {
 
     const x = clientX - rect.left;
     const y = clientY - rect.top;
-    const newRipple = { x, y, id: Date.now() };
+    const newRipple = { x, y, id: Date.now() + Math.random() };
 
     setRipples((prev) => [...prev, newRipple]);
 

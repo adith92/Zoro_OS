@@ -1,13 +1,48 @@
-import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { SpaceshipUniverseCanvas } from '../canvas/SpaceshipUniverseCanvas';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageTransition } from '@/components/ui/PageTransition';
+import { ZoroAssistantDock } from '../mascot/ZoroAssistantDock';
+import { useSettingsStore } from '@/store/useStore';
+import { generateZoroRemark, shouldZoroSpeakNow, ZoroActionType } from '@/lib/zoroContext';
+import { speakAsZoro } from '@/lib/zoroVoice';
 
 export function AppLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const { 
+    addZoroAction, 
+    setCurrentRouteLabel, 
+    personalitySettings,
+    setZoroLastRemark
+  } = useSettingsStore();
+
+  useEffect(() => {
+    const label = pathname === '/' ? 'Home Dashboard' : pathname.replace('/', '').charAt(0).toUpperCase() + pathname.slice(2);
+    setCurrentRouteLabel(label);
+
+    const action = {
+      type: "route_change" as ZoroActionType,
+      route: pathname,
+      timestamp: new Date().toISOString()
+    };
+    addZoroAction(action);
+
+    const lastRemarkTime = localStorage.getItem('zoro_last_spoke_time');
+    const lastTime = lastRemarkTime ? parseInt(lastRemarkTime, 10) : null;
+    
+    if (shouldZoroSpeakNow(lastTime, action.type)) {
+      const remark = generateZoroRemark(action, { currentRoute: label }, personalitySettings);
+      if (remark) {
+        setZoroLastRemark(remark);
+        speakAsZoro(remark);
+        localStorage.setItem('zoro_last_spoke_time', Date.now().toString());
+      }
+    }
+  }, [pathname]);
 
   return (
     <div className="flex h-[100dvh] w-screen overflow-hidden bg-space-dark relative">
@@ -73,6 +108,8 @@ export function AppLayout() {
             </p>
           </footer>
         </main>
+
+        <ZoroAssistantDock />
       </div>
     </div>
   );

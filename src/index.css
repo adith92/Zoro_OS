@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
+:root {
+  --zoro-primary: #7DF9FF;
+  --zoro-secondary: #A78BFA;
+  --zoro-accent: #F0ABFC;
+  --zoro-primary-rgb: 125 249 255;
+  --zoro-secondary-rgb: 167 139 250;
+  --zoro-accent-rgb: 240 171 252;
+  --zoro-bloom-intensity: 0.75;
+  --zoro-glitch-intensity: 0.12;
+  --zoro-scanline-intensity: 0.15;
+  --zoro-glass-blur: 14px;
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
   --color-space-navy: #0f172a;
   --color-space-dark: #020617;
-  --color-space-cyan: #38bdf8;
-  --color-space-violet: #818cf8;
+  --color-space-cyan: var(--zoro-primary);
+  --color-space-violet: var(--zoro-secondary);
   --color-space-starlight: #f8fafc;
   --color-space-glass: rgba(15, 23, 42, 0.4);
   
@@ -23,24 +36,45 @@
 }
 
 @layer utilities {
+  .spaceship-panel {
+    background: rgba(8, 13, 31, 0.68);
+    border: 1px solid color-mix(in srgb, var(--zoro-primary), transparent 72%);
+    backdrop-filter: blur(var(--zoro-glass-blur));
+    box-shadow:
+      0 0 calc(22px * var(--zoro-bloom-intensity)) color-mix(in srgb, var(--zoro-primary), transparent 78%),
+      inset 0 0 24px rgba(255,255,255,0.04);
+  }
+
+  .zoro-glow {
+    box-shadow:
+      0 0 calc(18px * var(--zoro-bloom-intensity)) color-mix(in srgb, var(--zoro-primary), transparent 55%);
+  }
+
   .glass-panel {
     @apply bg-[rgba(15,23,42,0.4)] backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    backdrop-filter: blur(var(--zoro-glass-blur));
   }
   
   .glass-panel-cyan {
     @apply bg-[#38bdf8]/5 backdrop-blur-xl border border-[#38bdf8]/20 shadow-[0_0_20px_rgba(56,189,248,0.1)];
+    border-color: color-mix(in srgb, var(--zoro-primary), transparent 80%);
+    box-shadow: 0 0 calc(20px * var(--zoro-bloom-intensity)) color-mix(in srgb, var(--zoro-primary), transparent 90%);
   }
   
   .glass-panel-purple {
     @apply bg-[#818cf8]/5 backdrop-blur-xl border border-[#818cf8]/20 shadow-[0_0_20px_rgba(129,140,248,0.1)];
+    border-color: color-mix(in srgb, var(--zoro-secondary), transparent 80%);
+    box-shadow: 0 0 calc(20px * var(--zoro-bloom-intensity)) color-mix(in srgb, var(--zoro-secondary), transparent 90%);
   }
 
   .text-glow-cyan {
-    text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+    text-shadow: 0 0 calc(12px * var(--zoro-bloom-intensity)) var(--zoro-primary);
+    color: var(--zoro-primary);
   }
   
   .text-glow-purple {
-    text-shadow: 0 0 12px rgba(129, 140, 248, 0.6);
+    text-shadow: 0 0 calc(12px * var(--zoro-bloom-intensity)) var(--zoro-secondary);
+    color: var(--zoro-secondary);
   }
 
   .cyber-scrollbar::-webkit-scrollbar {
@@ -51,11 +85,11 @@
     background: transparent;
   }
   .cyber-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(56, 189, 248, 0.2);
+    background: color-mix(in srgb, var(--zoro-primary), transparent 80%);
     border-radius: 10px;
   }
   .cyber-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(56, 189, 248, 0.5);
+    background: color-mix(in srgb, var(--zoro-primary), transparent 50%);
   }
 }
 
@@ -73,7 +107,15 @@
   );
   background-size: 100% 4px;
   z-index: 50;
-  opacity: 0.15;
+  opacity: var(--zoro-scanline-intensity);
+}
+
+.scanlines::after {
+  opacity: var(--zoro-scanline-intensity);
+}
+
+.glitch-layer {
+  opacity: var(--zoro-glitch-intensity);
 }
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
