@@ -4,6 +4,7 @@ export type VynaaOutputType =
   | "image"
   | "audio"
   | "video"
+  | "download"
   | "link"
   | "file"
   | "unknown";
@@ -17,6 +18,9 @@ export type VynaaParamType =
   | "boolean"
   | "color"
   | "image-url";
+
+export type VynaaPlan = "free" | "premium" | "vip";
+export type VynaaMethod = "GET" | "POST";
 
 export interface VynaaEndpointParam {
   name: string;
@@ -35,10 +39,11 @@ export interface VynaaEndpoint {
   category: string;
   group: string;
   endpoint: string;
-  method: "GET" | "POST";
+  method: VynaaMethod;
   params: VynaaEndpointParam[];
   description: string;
   outputType: VynaaOutputType;
+  plan: VynaaPlan;
   safe: boolean;
   enabledByDefault: boolean;
   sensitiveReason?: string;
@@ -57,15 +62,20 @@ export interface VynaaCallResult {
   outputType: VynaaOutputType;
   data?: unknown;
   blobUrl?: string;
+  directUrl?: string;
   error?: string;
+  durationMs?: number;
 }
 
-// For compatibility with some older code if any
+// For compatibility with older code.
 export type EndpointParam = VynaaEndpointParam;
 export interface VynaaResponse {
-  status: boolean;
+  status?: boolean;
+  ok?: boolean;
   message?: string;
   result?: any;
   data?: any;
+  type?: VynaaOutputType;
+  error?: string;
   [key: string]: any;
 }
