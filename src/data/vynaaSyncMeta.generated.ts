@@ -1,4 +1,4 @@
 export const VYNAA_SYNC_META = {
-  "lastSynced": "2026-05-06T21:40:17.278Z",
-  "count": 0
+  "lastSynced": "2026-05-10T06:57:46.331Z",
+  "count": 671
 };

@@ -6,6 +6,7 @@ export type VynaaOutputType =
   | "video"
   | "link"
   | "file"
+  | "download"
   | "unknown";
 
 export type VynaaParamType =
@@ -39,6 +40,7 @@ export interface VynaaEndpoint {
   params: VynaaEndpointParam[];
   description: string;
   outputType: VynaaOutputType;
+  plan?: "free" | "premium" | "vip";
   safe: boolean;
   enabledByDefault: boolean;
   sensitiveReason?: string;

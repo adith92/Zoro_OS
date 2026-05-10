@@ -14,7 +14,7 @@ import { inferVynaaOutputType } from '../src/api/vynaaOutput.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOCS_URL = 'https://vynaa.web.id/documentation';
+const DOCS_URL = 'https://api.vtech.biz.id/api/features';
 
 async function syncVynaaDocs() {
   console.log('Fetching Vynaa documentation from:', DOCS_URL);
@@ -25,104 +25,92 @@ async function syncVynaaDocs() {
       throw new Error(`Failed to fetch docs. Status: ${res.status}`);
     }
     
-    const html = await res.text();
-    const $ = load(html);
+    const json = await res.json();
+    const rawFeatures = json.features || [];
     
     const endpoints: VynaaEndpoint[] = [];
-    let currentCategory = 'Unknown';
     let idCounter = 1;
 
-    // A simple parsing strategy.
-    // Assuming category is in some heading, and urls are in <a> tags or code blocks.
-    // Based on usual bot api docs:
-    $('*').each((i, el: any) => {
-      const tagName = el.tagName?.toLowerCase() || '';
+    rawFeatures.forEach((feat: any) => {
+      // Create endpoint details
+      const label = feat.name || feat.path;
+      const category = feat.category || 'Unknown';
       
-      if (['h1', 'h2', 'h3', 'h4', 'h5'].includes(tagName)) {
-        currentCategory = $(el).text().trim();
-      }
+      const params: VynaaEndpointParam[] = [];
+      const rawParams = feat.params || [];
+      const paramsMeta = feat.paramsMeta || {};
       
-      if (tagName === 'a') {
-        const href = $(el).attr('href');
-        if (href && href.startsWith('https://vynaa.web.id/')) {
-          let endpointPath = href.replace('https://vynaa.web.id', '');
-          
-          if (!endpointPath.startsWith('/')) {
-             endpointPath = '/' + endpointPath;
-          }
-           
-          // Remove query params to extract base url and params
-          const urlObj = new URL(href);
-          const rawParams = Array.from(urlObj.searchParams.keys());
-          
-          // Get label from the list item text or the link text
-          let label = $(el).text().trim() || $(el).parent().text().trim() || endpointPath;
-           // If label contains the URL, try to clean it
-          if (label.includes('https://')) {
-             label = label.replace(href, '').trim();
-             if (label.startsWith('- ')) label = label.substring(2);
-          }
-          if (!label) label = endpointPath;
+      const method = (feat.method || 'GET').toUpperCase() as 'GET' | 'POST';
 
-          const params: VynaaEndpointParam[] = [];
-          
-          rawParams.forEach(p => {
-             if (p.toLowerCase() === 'apikey') return; // handled globally
-             
-             let type: VynaaParamType = 'text';
-             if (p.toLowerCase().includes('url') || p.toLowerCase().includes('profile')) type = 'url';
-             if (p.toLowerCase() === 'color') type = 'color';
-             if (['amount', 'no', 'level', 'exp', 'nomor'].includes(p.toLowerCase())) type = 'number';
-             
-             let paramLabel = p;
-             if (p === 'imageUrl') paramLabel = 'Image URL';
-             if (p === 'q' || p === 'query') paramLabel = 'Query';
-             if (p === 'url') paramLabel = 'URL';
-             if (p === 'no') paramLabel = 'Number';
-             
-             params.push({
-                 name: p,
-                 label: paramLabel,
-                 type,
-                 required: true
-             });
-          });
-
-          // Safety
-          const safety = classifyVynaaEndpointSafety({
-              label,
-              category: currentCategory,
-              endpoint: endpointPath,
-              rawUrl: href
-          });
-          
-          // Construct partial for output inference
-          const partialEndpoint: Partial<VynaaEndpoint> = {
-              label,
-              category: currentCategory,
-              endpoint: endpointPath
-          };
-          
-          const outputType = inferVynaaOutputType(partialEndpoint as VynaaEndpoint);
-          
-          endpoints.push({
-              id: `vynaa_ep_${idCounter++}`,
-              label,
-              category: currentCategory,
-              group: currentCategory,
-              endpoint: endpointPath,
-              method: 'GET',
-              params,
-              description: `Endpoint for ${label}`,
-              outputType,
-              safe: safety.safe,
-              enabledByDefault: safety.enabledByDefault,
-              sensitiveReason: safety.sensitiveReason,
-              tags: safety.tags,
-              rawUrl: href
-          });
+      rawParams.forEach((p: string) => {
+        if (p.toLowerCase() === 'apikey') return;
+        
+        // Infer param type
+        let type: VynaaParamType = 'text';
+        if (p.toLowerCase().includes('url') || p.toLowerCase().includes('image') || p.toLowerCase().includes('avatar') || p.toLowerCase().includes('background')) type = 'url';
+        else if (p.toLowerCase().includes('color')) type = 'color';
+        else if (['amount', 'no', 'level', 'exp', 'nomor', 'tanggal', 'bulan', 'tahun', 'jumlah', 'likes', 'dislikes', 'resolusi'].includes(p.toLowerCase())) type = 'number';
+        
+        let paramLabel = p;
+        if (p === 'imageUrl') paramLabel = 'Image URL';
+        if (p === 'url') paramLabel = 'URL';
+        
+        let isRequired = true;
+        if (paramsMeta[p] && paramsMeta[p].required === false) {
+           isRequired = false;
         }
+
+        params.push({
+          name: p,
+          label: paramLabel,
+          type,
+          required: isRequired
+        });
+      });
+
+      // Safety check
+      const safety = classifyVynaaEndpointSafety({
+        label,
+        category,
+        endpoint: feat.path,
+        rawUrl: 'https://api.vtech.biz.id' + feat.path
+      });
+      
+      // Infer Output Type
+      let outputType: VynaaOutputType = 'json';
+      if (feat.responseType) {
+         const rs = feat.responseType.toLowerCase();
+         if (rs.includes('image')) outputType = 'image';
+         else if (rs.includes('video') || rs.includes('mp4')) outputType = 'video';
+         else if (rs.includes('audio') || rs.includes('mp3')) outputType = 'audio';
+         else if (rs.includes('download')) outputType = 'download';
+         else if (rs.includes('json')) outputType = 'json';
+         else if (rs.includes('text')) outputType = 'text';
+      } else {
+         outputType = inferVynaaOutputType({
+          label,
+          category,
+          endpoint: feat.path
+         } as VynaaEndpoint);
       }
+
+      endpoints.push({
+        id: `vynaa_ep_${idCounter++}`,
+        label,
+        category,
+        group: category,
+        endpoint: feat.path,
+        method,
+        params,
+        description: feat.description || `Endpoint for ${label}`,
+        outputType,
+        plan: feat.plan || 'free',
+        safe: safety.safe,
+        enabledByDefault: safety.enabledByDefault,
+        sensitiveReason: safety.sensitiveReason,
+        tags: safety.tags,
+        rawUrl: 'https://api.vtech.biz.id' + feat.path
+      });
     });
 
     console.log(`Found ${endpoints.length} endpoints`);
