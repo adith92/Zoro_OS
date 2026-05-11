@@ -3,47 +3,38 @@ export type ZoroChatMessage = {
   content: string;
 };
 
+// imports at the top
 import { callVtechEndpoint } from "./universalVtech";
-import { GENERATED_VTECH_ENDPOINTS } from "@/data/vtechEndpoints.generated";
-import { FALLBACK_VTECH_ENDPOINTS } from "@/data/vtechEndpoints.fallback";
-
-const ALL_ENDPOINTS = [...GENERATED_VTECH_ENDPOINTS, ...FALLBACK_VTECH_ENDPOINTS];
+import { getEndpointById, getDefaultVtechChatEndpoint } from "@/data/vtechRegistry";
 
 export async function runLlmRouter(params: {
   messages: ZoroChatMessage[];
   endpointId?: string;
+  isRetry?: boolean;
 }): Promise<string> {
-  const { messages, endpointId } = params;
+  const { messages, endpointId, isRetry } = params;
 
   let epId = endpointId;
-  let ep = epId ? ALL_ENDPOINTS.find(e => e.id === epId) : undefined;
+  let ep = epId ? getEndpointById(epId) : undefined;
   
-  if (!ep) {
-    // fallback to ai_claude if not found, then first safe ai endpoint
-    ep = ALL_ENDPOINTS.find(e => e.id === 'ai_claude') || ALL_ENDPOINTS.find(e => e.category === 'ai' && e.safe && !e.id.toLowerCase().includes('simsimi'));
-    // Last resort fallback
-    if (!ep) {
-       ep = ALL_ENDPOINTS.find(e => e.category === 'ai' && e.safe);
-    }
+  if (!ep || !ep.safe || ep.endpoint === '/ai/ai/claude') {
+    // Override legacy claude or unsafe endpoints with default safe endpoint
+    epId = getDefaultVtechChatEndpoint();
+    ep = getEndpointById(epId);
   }
 
   if (!ep) {
-    throw new Error(`Model VTECH AI tidak ditemukan. Zoro akan mencoba kembali memakai Claude.`);
+    throw new Error(`Model VTECH AI tidak ditemukan. Zoro sudah mencoba mencari fallback model.`);
   }
 
   if (ep.category !== 'ai') {
     throw new Error(`Endpoint ini bukan endpoint AI Chat.`);
   }
 
-  if (!ep.safe) {
-    throw new Error(`Model ini belum diaktifkan untuk Chat.`);
-  }
-
   // construct a prompt from messages since most REST endpoints just take 'text' or 'query'
   const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || "";
   const systemMessage = messages.filter(m => m.role === 'system').pop()?.content || "";
   
-  // If we want to send recent context, we can just prepend it or just send the last message
   const prePrompt = systemMessage ? `(${systemMessage})\n\n${lastUserMessage}` : lastUserMessage;
   
   let fetchParams: Record<string, string> = { text: prePrompt, query: prePrompt, prompt: prePrompt };
@@ -63,7 +54,16 @@ export async function runLlmRouter(params: {
      }
      
      if (response.error.includes("404")) {
-         throw new Error(`Model VTECH API tidak ditemukan ${response.status ? `(${response.status})` : '(404)'}. Path endpoint mungkin berubah: ${ep.endpoint}. Coba pilih model lain dari AI Hub.`);
+         // Auto retry once if 404 and we haven't retried yet
+         if (!isRetry) {
+             console.log(`Endpoint ${ep.id} returned 404. Retrying with fallback model...`);
+             return runLlmRouter({
+                 messages,
+                 endpointId: getDefaultVtechChatEndpoint(),
+                 isRetry: true
+             });
+         }
+         throw new Error(`Model VTECH ini tidak tersedia atau path endpoint berubah ${response.status ? `(${response.status})` : '(404)'}. Zoro memakai model fallback.`);
      } else if (response.error.includes("401") || response.error.includes("403")) {
          throw new Error(`Akses ke model VTECH AI ditolak ${response.status ? `(${response.status})` : ''}. Cek kembali API Key Anda di Settings.`);
      } else if (response.error.includes("Failed to fetch") || response.error.includes("NetworkError")) {
@@ -101,13 +101,12 @@ export async function runLlmRouter(params: {
       || (data?.choices && data.choices[0]?.text) 
       || data?.data;
 
-  // Prioritize non-empty string
   if (typeof textRes === 'string' && textRes.trim() !== '') {
-    return textRes;
+    return isRetry ? `*(Memakai VTECH Fallback Model)*\n\n${textRes}` : textRes;
   }
   
   if (typeof data === 'string' && data.trim() !== '') {
-     return data;
+     return isRetry ? `*(Memakai VTECH Fallback Model)*\n\n${data}` : data;
   }
 
   return JSON.stringify(textRes || data);

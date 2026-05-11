@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Send, Bot, User, Loader2, Mic, MicOff, Copy, FileDown } from 'lucide-react';
 import { useSettingsStore } from '@/store/useStore';
 import { callVtechEndpoint } from '@/api/universalVtech';
-import { VTECH_ENDPOINTS } from '@/data/vtechRegistry';
+import { VTECH_ENDPOINTS, getDefaultVtechChatEndpoint } from '@/data/vtechRegistry';
 import { cn } from '@/lib/utils';
 import Markdown from 'react-markdown';
 import { PageTransition } from '@/components/ui/PageTransition';
@@ -139,8 +139,11 @@ export function Chat() {
     }
   };
 
-  const activeEp = VTECH_ENDPOINTS.find(e => e.id === selectedVtechAiEndpointId) || VTECH_ENDPOINTS.find(e => e.id === 'ai_claude');
-  const availableAiModels = VTECH_ENDPOINTS.filter(e => e.category === 'ai' && e.safe && e.enabledByDefault);
+  let activeEp = VTECH_ENDPOINTS.find(e => e.id === selectedVtechAiEndpointId);
+  if (!activeEp || !activeEp.safe || activeEp.id.includes('claude')) {
+      activeEp = VTECH_ENDPOINTS.find(e => e.id === getDefaultVtechChatEndpoint());
+  }
+  const availableAiModels = VTECH_ENDPOINTS.filter(e => e.category === 'ai' && e.safe && e.enabledByDefault && !e.id.includes('simsimi') && e.id !== 'ai_claude');
 
   return (
     <PageTransition className="flex flex-col h-full relative">
@@ -157,7 +160,7 @@ export function Chat() {
         </div>
         <div className="flex items-center gap-2">
             <select 
-               value={selectedVtechAiEndpointId || 'ai_claude'}
+               value={activeEp?.id || getDefaultVtechChatEndpoint()}
                onChange={(e) => {
                   setSelectedVtechAiEndpointId(e.target.value);
                   const ep = VTECH_ENDPOINTS.find(ep => ep.id === e.target.value);

@@ -35,10 +35,10 @@ export const FALLBACK_VTECH_ENDPOINTS: VtechEndpoint[] = ([
     endpoint: "/ai/ai/claude",
     method: "GET",
     params: [{ name: "text", label: "Message", type: "text", required: true }],
-    description: "Chat with Claude AI",
+    description: "Legacy Claude endpoint, currently disabled because path may have changed.",
     outputType: "json",
-    safe: true,
-    enabledByDefault: true
+    safe: false,
+    enabledByDefault: false
   },
   {
     id: "ai_simsimi",

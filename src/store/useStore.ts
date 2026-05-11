@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { getDefaultVtechChatEndpoint } from '@/data/vtechRegistry';
 
 export type ThemePaletteId =
   | "zoro-classic"
@@ -110,7 +111,7 @@ export const useSettingsStore = create<SettingsState>()(
       endpointHistory: [],
       developerUnsafeMode: false,
       useVtechProxy: false,
-      selectedVtechAiEndpointId: 'ai_claude',
+      selectedVtechAiEndpointId: getDefaultVtechChatEndpoint(),
       
       themeSettings: {
         paletteId: "zoro-classic",
@@ -265,7 +266,7 @@ export const useSettingsStore = create<SettingsState>()(
             currentToolLabel: "",
             currentToolCategory: "",
             favoriteEndpointIds: [],
-            selectedVtechAiEndpointId: 'ai_claude',
+            selectedVtechAiEndpointId: getDefaultVtechChatEndpoint(),
           } as SettingsState;
         }
         return persistedState;
