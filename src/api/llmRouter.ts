@@ -35,15 +35,42 @@ export async function runLlmRouter(params: {
   const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || "";
   const systemMessage = messages.filter(m => m.role === 'system').pop()?.content || "";
   
-  const prePrompt = systemMessage ? `(${systemMessage})\n\n${lastUserMessage}` : lastUserMessage;
-  
-  let fetchParams: Record<string, string> = { text: prePrompt, query: prePrompt, prompt: prePrompt };
-  
-  if (ep.params && ep.params.length > 0) {
-     const firstParam = ep.params.find(p => p.required) || ep.params[0];
-     if (firstParam) {
-        fetchParams[firstParam.name] = prePrompt;
-     }
+  let fetchParams: Record<string, string> = {};
+
+  const epParams = ep.params || [];
+  const paramNames = epParams.map(p => p.name);
+
+  // Print debug log safely if we want later, but for now just construct accurate parameters
+  const isGroqCompound = ep.endpoint === '/api/ai/groq-compound';
+
+  if (isGroqCompound) {
+    fetchParams['text'] = lastUserMessage;
+    if (paramNames.includes('systemPrompt')) fetchParams['systemPrompt'] = systemMessage;
+    if (paramNames.includes('sessionId')) fetchParams['sessionId'] = 'zoro-universe-session';
+  } else if (paramNames.includes('prompt')) {
+    fetchParams['prompt'] = lastUserMessage;
+    if (paramNames.includes('system')) fetchParams['system'] = systemMessage;
+    if (paramNames.includes('temperature')) fetchParams['temperature'] = '0.7';
+  } else if (paramNames.includes('text')) {
+    // Some endpoints simply concatenate system and user prompts if no explicit system param exists
+    const prePrompt = (systemMessage && paramNames.length === 1 && paramNames[0] === 'text') 
+      ? `(${systemMessage})\n\n${lastUserMessage}` 
+      : lastUserMessage;
+      
+    fetchParams['text'] = prePrompt;
+    if (paramNames.includes('systemPrompt')) fetchParams['systemPrompt'] = systemMessage;
+    if (paramNames.includes('logic')) fetchParams['logic'] = systemMessage;
+  } else if (paramNames.includes('q')) {
+    fetchParams['q'] = lastUserMessage;
+  } else if (paramNames.includes('question')) {
+    fetchParams['question'] = lastUserMessage;
+  } else if (epParams.length > 0) {
+    const firstParam = epParams.find(p => p.required) || epParams[0];
+    if (firstParam) {
+       fetchParams[firstParam.name] = lastUserMessage;
+    }
+  } else {
+     fetchParams['text'] = lastUserMessage;
   }
 
   const response = await callVtechEndpoint(ep, fetchParams);
@@ -53,17 +80,30 @@ export async function runLlmRouter(params: {
         throw new Error(response.error);
      }
      
+     if (response.error.includes("500") || response.status === 500) {
+         if (!isRetry) {
+             console.log(`Endpoint ${ep.id} returned 500. Retrying with fallback model...`);
+             return runLlmRouter({
+                 messages,
+                 // fallback to ai4chat specifically if we failed
+                 endpointId: ep.id.includes('groq') ? 'ZORO_ep_1' : getDefaultVtechChatEndpoint(), 
+                 isRetry: true
+             });
+         }
+         throw new Error(`VTECH API masih mengembalikan 500. Coba pilih model AI lain dari Chat atau AI Hub.`);
+     }
+
      if (response.error.includes("404")) {
          // Auto retry once if 404 and we haven't retried yet
          if (!isRetry) {
              console.log(`Endpoint ${ep.id} returned 404. Retrying with fallback model...`);
              return runLlmRouter({
                  messages,
-                 endpointId: getDefaultVtechChatEndpoint(),
+                 endpointId: ep.id.includes('groq') ? 'ZORO_ep_1' : getDefaultVtechChatEndpoint(),
                  isRetry: true
              });
          }
-         throw new Error(`Model VTECH ini tidak tersedia atau path endpoint berubah ${response.status ? `(${response.status})` : '(404)'}. Zoro memakai model fallback.`);
+         throw new Error(`Model VTECH ini tidak tersedia atau path endpoint berubah ${response.status ? `(${response.status})` : '(404)'}. Zoro mencoba model fallback.`);
      } else if (response.error.includes("401") || response.error.includes("403")) {
          throw new Error(`Akses ke model VTECH AI ditolak ${response.status ? `(${response.status})` : ''}. Cek kembali API Key Anda di Settings.`);
      } else if (response.error.includes("Failed to fetch") || response.error.includes("NetworkError")) {

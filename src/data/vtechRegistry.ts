@@ -32,15 +32,21 @@ allEndpoints.forEach(ep => {
 
    // Auto-enable safe VTECH AI endpoints
    if (safeEp.endpoint.startsWith('/api/ai/')) {
-       safeEp.category = 'ai';
-       if (safeEp.sensitiveReason === 'Unrecognized category: AI') {
-           safeEp.safe = true;
-           safeEp.enabledByDefault = true;
-           safeEp.sensitiveReason = undefined;
-           safeEp.tags = safeEp.tags.filter(t => t !== 'unsafe' && t !== 'sensitive');
-       } else if (!safeEp.sensitiveReason) {
-           safeEp.safe = true;
-           safeEp.enabledByDefault = true;
+       // Only process if it's free and GET and outputType json, but all generated ones that we want are
+       // We should ensure it's not NSFW
+       const isNsfw = safeEp.tags.includes('nsfw') || safeEp.label.toLowerCase().includes('nsfw');
+       
+       if (!isNsfw) {
+           safeEp.category = 'ai';
+           if (safeEp.sensitiveReason === 'Unrecognized category: AI') {
+               safeEp.safe = true;
+               safeEp.enabledByDefault = true;
+               safeEp.sensitiveReason = undefined;
+               safeEp.tags = safeEp.tags.filter(t => t !== 'unsafe' && t !== 'sensitive');
+           } else if (!safeEp.sensitiveReason) {
+               safeEp.safe = true;
+               safeEp.enabledByDefault = true;
+           }
        }
    }
    
