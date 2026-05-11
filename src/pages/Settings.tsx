@@ -35,8 +35,35 @@ const {
   const [localZoroRest, setLocalZoroRest] = useState(vtechApiKey);
   const [zoroRestStatus, setZoroRestStatus] = useState<'idle'|'checking'|'success'|'failed'>('idle');
 
-  // ... (Test logic kept simple for brevity)
-  const testZoroRest = async () => { /* test logic here */ setVtechApiKey(localZoroRest); setZoroRestStatus('success'); toast.success("VTECH API berhasil terhubung"); settingsStore.addZoroAction({type: "api_key_test", timestamp: new Date().toISOString()}); };
+  const testZoroRest = async () => {
+    if (!localZoroRest.trim()) {
+       toast.error("VTECH API key belum diisi. Buka Settings lalu simpan API key dulu.");
+       return;
+    }
+    setZoroRestStatus('checking');
+    setVtechApiKey(localZoroRest);
+    settingsStore.addZoroAction({type: "api_test", timestamp: new Date().toISOString()} as any);
+    try {
+      const { testVtechPing } = await import('@/api/universalVtech');
+      const res = await testVtechPing();
+      if (res.ok) {
+         setZoroRestStatus('success');
+         settingsStore.setVtechApiStatus('success');
+         toast.success("VTECH API berhasil terhubung");
+         settingsStore.addZoroAction({type: "api_test_success", timestamp: new Date().toISOString()} as any);
+      } else {
+         setZoroRestStatus('failed');
+         settingsStore.setVtechApiStatus('failed');
+         toast.error(res.error || "Gagal menghubungi VTECH API");
+         settingsStore.addZoroAction({type: "api_test_failed", timestamp: new Date().toISOString()} as any);
+      }
+    } catch (err: any) {
+       setZoroRestStatus('failed');
+       settingsStore.setVtechApiStatus('failed');
+       toast.error(err.message || "Gagal menghubungi VTECH API");
+       settingsStore.addZoroAction({type: "api_test_failed", timestamp: new Date().toISOString()} as any);
+    }
+  };
 
   const handleSave = () => {
     setVtechApiKey(localZoroRest);

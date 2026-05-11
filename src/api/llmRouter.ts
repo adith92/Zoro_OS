@@ -61,6 +61,15 @@ export async function runLlmRouter(params: {
      if (response.error.includes("API key belum diisi")) {
         throw new Error(response.error);
      }
+     
+     if (response.error.includes("404")) {
+         throw new Error(`Model VTECH API tidak ditemukan ${response.status ? `(${response.status})` : '(404)'}. Path endpoint mungkin berubah: ${ep.endpoint}. Coba pilih model lain dari AI Hub.`);
+     } else if (response.error.includes("401") || response.error.includes("403")) {
+         throw new Error(`Akses ke model VTECH AI ditolak ${response.status ? `(${response.status})` : ''}. Cek kembali API Key Anda di Settings.`);
+     } else if (response.error.includes("Failed to fetch") || response.error.includes("NetworkError")) {
+         throw new Error(`Koneksi ke VTECH API gagal. Cek internet, CORS, atau aktifkan proxy mode di Settings.`);
+     }
+     
      throw new Error(`Koneksi ke VTECH API gagal. Cek internet, API key, atau proxy mode di Settings. (${response.error})`);
   }
 

@@ -185,9 +185,40 @@ export async function callVtechEndpoint(
 }
 
 export async function testVtechPing() {
-  return await callVtechEndpoint({
-    id: "ping", label: "Ping (BMKG)", category: "status", group: "status", endpoint: "/api/info/bmkg", method: "GET", params: [], description: "Ping test via BMKG endpoint", outputType: "json", safe: true, enabledByDefault: true, tags: []
+  const useKey = useSettingsStore.getState().vtechApiKey;
+  if (!useKey || useKey.trim() === '') {
+    return {
+      endpointId: "ping",
+      endpointLabel: "Ping API",
+      category: "status",
+      requestedAt: new Date().toISOString(),
+      ok: false,
+      outputType: "json" as const,
+      error: "VTECH API key belum diisi. Buka Settings lalu simpan API key dulu."
+    };
+  }
+
+  let res = await callVtechEndpoint({
+    id: "ping", label: "Ping Server", category: "status", group: "status", endpoint: "/status/serverstatus/ping", method: "GET", params: [], description: "Ping API", outputType: "json", safe: true, enabledByDefault: true, tags: []
   });
+
+  if (!res.ok && res.status === 404) {
+    res = await callVtechEndpoint({
+      id: "cekk", label: "Check Server", category: "status", group: "status", endpoint: "/status/serverstatus/cekk", method: "GET", params: [], description: "Check Server API", outputType: "json", safe: true, enabledByDefault: true, tags: []
+    });
+  }
+
+  if (!res.ok) {
+     if (res.status === 404) {
+        res.error = "Endpoint VTECH tidak ditemukan atau path API berubah. Coba endpoint status lain atau cek registry endpoint.";
+     } else if (res.status === 401 || res.status === 403) {
+        res.error = "VTECH API key ditolak. Cek kembali API key di Settings.";
+     } else if (!res.status) {
+        res.error = "Koneksi ke VTECH API gagal. Cek internet, CORS, atau aktifkan proxy jika tersedia.";
+     }
+  }
+
+  return res;
 }
 
 // These endpoints might not exist natively on the new API as user profile routes, 
