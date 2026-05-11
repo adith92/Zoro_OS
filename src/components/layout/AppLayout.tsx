@@ -55,7 +55,7 @@ export function AppLayout() {
       {/* Mobile Top Bar */}
       <div className="md:hidden absolute top-0 left-0 w-full p-4 z-50 flex justify-between items-center pointer-events-none">
         <div className="glass-panel-purple px-4 py-2 rounded-full pointer-events-auto">
-          <span className="font-bold font-mono text-glow-purple text-transparent bg-clip-text bg-gradient-to-r from-space-violet to-space-cyan">ZORO_OS</span>
+          <span className="font-bold font-mono text-glow-purple text-transparent bg-clip-text bg-gradient-to-r from-space-violet to-space-cyan">ZORO UNIVERSE</span>
         </div>
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,7 +104,7 @@ export function AppLayout() {
           
           <footer className="mt-2 sm:mt-4 text-center z-10 hidden sm:block">
             <p className="text-xs font-mono text-space-cyan/50 tracking-wider">
-              Powered by Vynaa × SumoPod × Zoro the Starship Cat 🐱🚀
+              Powered by VTECH × Zoro LLM Router × Zoro the Starship Cat 🐱🚀
             </p>
           </footer>
         </main>

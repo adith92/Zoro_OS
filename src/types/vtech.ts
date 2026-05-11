@@ -1,4 +1,4 @@
-export type VynaaOutputType =
+export type VtechOutputType =
   | "json"
   | "text"
   | "image"
@@ -9,7 +9,7 @@ export type VynaaOutputType =
   | "download"
   | "unknown";
 
-export type VynaaParamType =
+export type VtechParamType =
   | "text"
   | "textarea"
   | "url"
@@ -19,10 +19,10 @@ export type VynaaParamType =
   | "color"
   | "image-url";
 
-export interface VynaaEndpointParam {
+export interface VtechEndpointParam {
   name: string;
   label: string;
-  type: VynaaParamType;
+  type: VtechParamType;
   required: boolean;
   placeholder?: string;
   defaultValue?: string;
@@ -30,16 +30,16 @@ export interface VynaaEndpointParam {
   helperText?: string;
 }
 
-export interface VynaaEndpoint {
+export interface VtechEndpoint {
   id: string;
   label: string;
   category: string;
   group: string;
   endpoint: string;
   method: "GET" | "POST";
-  params: VynaaEndpointParam[];
+  params: VtechEndpointParam[];
   description: string;
-  outputType: VynaaOutputType;
+  outputType: VtechOutputType;
   plan?: "free" | "premium" | "vip";
   safe: boolean;
   enabledByDefault: boolean;
@@ -48,7 +48,7 @@ export interface VynaaEndpoint {
   rawUrl?: string;
 }
 
-export interface VynaaCallResult {
+export interface VtechCallResult {
   endpointId: string;
   endpointLabel: string;
   category: string;
@@ -56,15 +56,15 @@ export interface VynaaCallResult {
   ok: boolean;
   status?: number;
   contentType?: string;
-  outputType: VynaaOutputType;
+  outputType: VtechOutputType;
   data?: unknown;
   blobUrl?: string;
   error?: string;
 }
 
 // For compatibility with some older code if any
-export type EndpointParam = VynaaEndpointParam;
-export interface VynaaResponse {
+export type EndpointParam = VtechEndpointParam;
+export interface ApiResponse {
   status: boolean;
   message?: string;
   result?: any;

@@ -2,11 +2,11 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
-    // 1. Hanya boleh call host https://vynaa.web.id
-    const targetHost = 'https://vynaa.web.id';
+    // 1. Hanya boleh call host backend Zoro
+    const targetHost = process.env.VITE_ZORO_API_BASE_URL || 'https://api.vtech.biz.id';
     
     // 2. Endpoint harus dimulai dengan "/"
-    const endpointPath = req.url?.replace('/api/vynaa-proxy', '') || '/';
+    const endpointPath = req.url?.replace('/api/zoroApi-proxy', '') || '/';
     
     // 3. Endpoint tidak boleh mengandung "http://", "https://", "..", atau encoded path traversal
     if (
@@ -19,7 +19,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // 4. Ambil apikey dari request body/query
-    // 5. Forward params ke VYNAA
+    // 5. Forward params ke ZORO
     const searchParams = new URLSearchParams();
     
     if (req.query) {

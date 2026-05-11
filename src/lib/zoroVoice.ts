@@ -1,5 +1,5 @@
 import { useSettingsStore } from "@/store/useStore";
-import { callVynaaEndpoint } from "@/api/universalVynaa";
+import { callVtechEndpoint } from "@/api/universalVtech";
 
 function cleanTextForSpeech(text: string): string {
   // Remove markdown, links, emojis, etc.
@@ -28,11 +28,12 @@ export async function speakAsZoro(text: string, options?: { reaction?: boolean }
 
   setMascot("speaking");
 
-  if (voiceState.voiceProvider === "vynaa") {
+  if (voiceState.voiceProvider === "ZORO") {
       // Find pollinations endpoint or use fallback for speaking
       // For now fallback to browser to ensure it works smoothly since some APIs might be slow.
       // Or actually do as requested:
-      const vyRes = await fetch(`https://vynaa.web.id/pollinations/pollinations/audio?text=${encodeURIComponent(cleaned)}`, {
+      const baseUrl = import.meta.env.VITE_VTECH_BASE_URL || "https://api.vtech.biz.id";
+      const vyRes = await fetch(`${baseUrl}/pollinations/pollinations/audio?text=${encodeURIComponent(cleaned)}`, {
           method: "GET"
       }).catch(() => null);
       

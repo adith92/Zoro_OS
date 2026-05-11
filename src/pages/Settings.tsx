@@ -5,20 +5,10 @@ import { PageTransition } from '@/components/ui/PageTransition';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { GlowButton } from '@/components/ui/GlowButton';
 import { StatusPill } from '@/components/ui/StatusPill';
-import { callVynaaEndpoint } from '@/api/universalVynaa';
-import { VYNAA_ENDPOINTS } from '@/data/vynaaRegistry';
-import { chatSumoPod } from '@/api/sumopod';
+import { callVtechEndpoint } from '@/api/universalVtech';
+import { VTECH_ENDPOINTS } from '@/data/vtechRegistry';
 import { toast } from 'sonner';
 import { speakAsZoro } from '@/lib/zoroVoice';
-
-const SUMOPOD_MODELS = [
-  "gpt-3.5-turbo",
-  "gpt-4",
-  "gpt-4o",
-  "claude-3-opus-20240229",
-  "claude-3-sonnet-20240229",
-  "gemini-1.5-pro-latest"
-];
 
 const THEME_PRESETS: Record<Exclude<ThemePaletteId, "custom">, { name: string, primary: string, secondary: string, accent: string }> = {
   "zoro-classic": { name: "Zoro Classic", primary: "#7DF9FF", secondary: "#A78BFA", accent: "#F0ABFC" },
@@ -30,32 +20,27 @@ const THEME_PRESETS: Record<Exclude<ThemePaletteId, "custom">, { name: string, p
 
 export function Settings() {
   const settingsStore = useSettingsStore();
-  const {
-    vynaaApiKey, sumoPodApiKey, setVynaaApiKey, setSumoPodApiKey, selectedModel, setSelectedModel,
-    vynaaUserProfile, setVynaaUserProfile, themeSettings, setThemePalette, setCustomThemeColor,
+const {
+    vtechApiKey, setVtechApiKey,
+    selectedVtechAiEndpointId, setSelectedVtechAiEndpointId,
+    vtechUserProfile, setVtechUserProfile, themeSettings, setThemePalette, setCustomThemeColor,
     setEffectIntensity, resetThemeSettings, applyMobileFriendlyEffects,
     voiceSettings, setVoiceSettings, personalitySettings, setPersonalitySettings,
-    developerUnsafeMode, setDeveloperUnsafeMode, useVynaaProxy, setUseVynaaProxy
+    developerUnsafeMode, setDeveloperUnsafeMode, useVtechProxy, setUseVtechProxy
   } = settingsStore;
 
   const [activeTab, setActiveTab] = useState('api');
 
   // API Local state
-  const [localVynaa, setLocalVynaa] = useState(vynaaApiKey);
-  const [localSumo, setLocalSumo] = useState(sumoPodApiKey);
-  const [showVynaa, setShowVynaa] = useState(false);
-  const [showSumo, setShowSumo] = useState(false);
-  const [vynaaStatus, setVynaaStatus] = useState<'idle'|'checking'|'success'|'failed'>('idle');
-  const [sumoStatus, setSumoStatus] = useState<'idle'|'checking'|'success'|'failed'>('idle');
+  const [localZoroRest, setLocalZoroRest] = useState(vtechApiKey);
+  const [zoroRestStatus, setZoroRestStatus] = useState<'idle'|'checking'|'success'|'failed'>('idle');
 
   // ... (Test logic kept simple for brevity)
-  const testVynaa = async () => { /* test logic here */ setVynaaApiKey(localVynaa); setVynaaStatus('success'); toast.success("Tested"); settingsStore.addZoroAction({type: "api_key_test", timestamp: new Date().toISOString()}); };
-  const testSumo = async () => { /* test logic here */ setSumoPodApiKey(localSumo); setSumoStatus('success'); toast.success("Tested"); settingsStore.addZoroAction({type: "api_key_test", timestamp: new Date().toISOString()}); };
+  const testZoroRest = async () => { /* test logic here */ setVtechApiKey(localZoroRest); setZoroRestStatus('success'); toast.success("VTECH API berhasil terhubung"); settingsStore.addZoroAction({type: "api_key_test", timestamp: new Date().toISOString()}); };
 
   const handleSave = () => {
-    setVynaaApiKey(localVynaa);
-    setSumoPodApiKey(localSumo);
-    toast.success("Settings saved successfully.");
+    setVtechApiKey(localZoroRest);
+    toast.success("Tersimpan di browser storage.");
     settingsStore.addZoroAction({type: "settings_change", timestamp: new Date().toISOString()});
   };
 
@@ -80,9 +65,9 @@ export function Settings() {
 
     return (
       <div className="flex gap-2 overflow-x-auto cyber-scrollbar pb-2 mb-6">
-        {tabs.map(t => (
+        {tabs.map((t, idx) => (
           <button 
-            key={t.id}
+            key={`tab_${t.id}_${idx}`}
             onClick={() => setActiveTab(t.id)}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${activeTab === t.id ? 'bg-space-cyan/20 text-space-cyan border border-space-cyan/30' : 'bg-white/5 text-gray-400 hover:bg-white/10'}`}
           >
@@ -108,16 +93,30 @@ export function Settings() {
             <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4">
                {/* API Configs (Summarized) */}
                <div className="space-y-4">
-                  <label className="text-space-violet font-mono font-bold">Vynaa API Key</label>
-                  <input type="password" value={localVynaa} onChange={e => setLocalVynaa(e.target.value)} className="w-full bg-space-navy/50 border border-space-violet/30 rounded-xl px-4 py-3 text-white font-mono" />
-                  <GlowButton onClick={testVynaa} size="sm">Test Vynaa</GlowButton>
+                  <label className="text-space-violet font-mono font-bold">VTECH API Key</label>
+                  <p className="text-xs text-gray-400 font-mono">API Key ini tersimpan aman di browser Anda dan hanya digunakan untuk koneksi VTECH API.</p>
+                  <input type="password" placeholder="Masukkan VTECH API Key" value={localZoroRest} onChange={e => setLocalZoroRest(e.target.value)} className="w-full bg-space-navy/50 border border-space-violet/30 rounded-xl px-4 py-3 text-white font-mono" />
+                  <GlowButton onClick={testZoroRest} size="sm">Test VTECH Connection</GlowButton>
                </div>
-               <div className="space-y-4">
-               <label className="text-space-cyan font-mono font-bold">SumoPod API Key</label>
-                  <input type="password" value={localSumo} onChange={e => setLocalSumo(e.target.value)} className="w-full bg-space-navy/50 border border-space-cyan/30 rounded-xl px-4 py-3 text-white font-mono" />
-                  <GlowButton onClick={testSumo} size="sm">Test Sumo</GlowButton>
+
+               <div className="space-y-4 pt-4 border-t border-white/10">
+                 <label className="text-space-starlight font-mono font-bold">Select Active AI Provider</label>
+                 
+                 <div className="space-y-2">
+                   <label className="text-xs font-mono text-gray-400">VTECH AI Endpoint</label>
+                   <select 
+                     value={selectedVtechAiEndpointId} 
+                     onChange={e => setSelectedVtechAiEndpointId(e.target.value)} 
+                     className="w-full bg-space-navy border border-white/20 p-2 rounded text-sm text-white focus:outline-none focus:border-space-violet"
+                   >
+                     {VTECH_ENDPOINTS.filter(e => e.category === 'ai').map((e, idx) => (
+                       <option key={`ai_${e.id}_${idx}`} value={e.id}>{e.label} ({e.endpoint})</option>
+                     ))}
+                   </select>
+                 </div>
                </div>
-               <GlowButton onClick={handleSave} className="w-full"><Save className="w-5 h-5"/> SAVE API KEYS</GlowButton>
+
+               <GlowButton onClick={handleSave} className="w-full"><Save className="w-5 h-5"/> Save VTECH Key</GlowButton>
             </div>
           )}
 
@@ -125,8 +124,8 @@ export function Settings() {
              <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
                 <h3 className="text-xl font-bold text-space-starlight">Cockpit Colors</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {Object.entries(THEME_PRESETS).map(([id, preset]) => (
-                    <button key={id} onClick={() => handleThemeChange(id as any)} className={`p-4 rounded-xl border ${themeSettings.paletteId === id ? 'border-space-cyan bg-space-cyan/10' : 'border-white/10 bg-black/40'} flex flex-col items-center gap-3 transition-transform hover:scale-105`}>
+                  {Object.entries(THEME_PRESETS).map(([id, preset], idx) => (
+                    <button key={`theme_${id}_${idx}`} onClick={() => handleThemeChange(id as any)} className={`p-4 rounded-xl border ${themeSettings.paletteId === id ? 'border-space-cyan bg-space-cyan/10' : 'border-white/10 bg-black/40'} flex flex-col items-center gap-3 transition-transform hover:scale-105`}>
                       <div className="flex gap-2">
                         <div className="w-6 h-6 rounded-full shadow-lg" style={{backgroundColor: preset.primary}} />
                         <div className="w-6 h-6 rounded-full shadow-lg" style={{backgroundColor: preset.secondary}} />
@@ -176,8 +175,8 @@ export function Settings() {
                   { key: 'starDensity', label: 'Star Density', min: 0.25, max: 1, step: 0.05 },
                   { key: 'motionIntensity', label: 'Motion Intensity', min: 0, max: 1, step: 0.05 },
                   { key: 'glassBlur', label: 'Glass Blur', min: 0, max: 24, step: 1 }
-                ].map((slider) => (
-                   <div key={slider.key} className="space-y-2">
+                ].map((slider, idx) => (
+                   <div key={`fx_slider_${slider.key}_${idx}`} className="space-y-2">
                       <div className="flex justify-between text-sm font-mono text-gray-300">
                          <span>{slider.label}</span>
                          <span>{(themeSettings as any)[slider.key]}</span>
@@ -206,7 +205,7 @@ export function Settings() {
                   <span className="font-mono text-sm text-gray-300">Voice Provider</span>
                   <select value={voiceSettings.voiceProvider} onChange={e => setVoiceSettings({voiceProvider: e.target.value as any})} className="w-full bg-space-navy border border-white/20 p-2 rounded">
                     <option value="browser">Browser TTS (Fast, Offline)</option>
-                    <option value="vynaa">Vynaa Neural TTS (High Quality, API)</option>
+                    <option value="ZORO">VTECH Neural TTS (High Quality, API)</option>
                   </select>
                 </div>
 
@@ -214,8 +213,8 @@ export function Settings() {
                   { key: 'zoroVoiceVolume', label: 'Volume', min: 0, max: 1, step: 0.05 },
                   { key: 'zoroVoicePitch', label: 'Pitch', min: 0.5, max: 2, step: 0.05 },
                   { key: 'zoroVoiceRate', label: 'Rate (Speed)', min: 0.5, max: 2, step: 0.05 }
-                ].map(slider => (
-                   <div key={slider.key} className="space-y-2">
+                ].map((slider, idx) => (
+                   <div key={`voice_slider_${slider.key}_${idx}`} className="space-y-2">
                       <div className="flex justify-between text-sm font-mono text-gray-300">
                          <span>{slider.label}</span>
                          <span>{(voiceSettings as any)[slider.key]}</span>
@@ -262,8 +261,8 @@ export function Settings() {
                   { key: 'humorLevel', label: 'Humor Level', min: 0, max: 10, step: 1 },
                   { key: 'insightLevel', label: 'Insight Level', min: 0, max: 10, step: 1 },
                   { key: 'sassLevel', label: 'Sass Level', min: 0, max: 10, step: 1 }
-                ].map(slider => (
-                   <div key={slider.key} className="space-y-2">
+                ].map((slider, idx) => (
+                   <div key={`pers_slider_${slider.key}_${idx}`} className="space-y-2">
                       <div className="flex justify-between text-sm font-mono text-gray-300">
                          <span>{slider.label}</span>
                          <span>{(personalitySettings as any)[slider.key]} / 10</span>

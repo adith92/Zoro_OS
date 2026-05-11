@@ -3,21 +3,21 @@ import path from 'path';
 import { load } from 'cheerio';
 import { fileURLToPath } from 'url';
 import { 
-  VynaaEndpoint, 
-  VynaaEndpointParam, 
-  VynaaParamType,
-  VynaaOutputType 
-} from '../src/types/vynaa.js';
-import { classifyVynaaEndpointSafety } from '../src/api/vynaaSafety.js';
-import { inferVynaaOutputType } from '../src/api/vynaaOutput.js';
+  VtechEndpoint, 
+  VtechEndpointParam, 
+  VtechParamType,
+  VtechOutputType 
+} from '../src/types/vtech.js';
+import { classifyVtechEndpointSafety } from '../src/api/apiSafety.js';
+import { inferApiOutputType } from '../src/api/apiOutput.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DOCS_URL = 'https://api.vtech.biz.id/api/features';
 
-async function syncVynaaDocs() {
-  console.log('Fetching Vynaa documentation from:', DOCS_URL);
+async function syncZORODocs() {
+  console.log('Fetching VTECH documentation from:', DOCS_URL);
   
   try {
     const res = await fetch(DOCS_URL);
@@ -28,7 +28,7 @@ async function syncVynaaDocs() {
     const json = await res.json();
     const rawFeatures = json.features || [];
     
-    const endpoints: VynaaEndpoint[] = [];
+    const endpoints: VtechEndpoint[] = [];
     let idCounter = 1;
 
     rawFeatures.forEach((feat: any) => {
@@ -36,7 +36,7 @@ async function syncVynaaDocs() {
       const label = feat.name || feat.path;
       const category = feat.category || 'Unknown';
       
-      const params: VynaaEndpointParam[] = [];
+      const params: VtechEndpointParam[] = [];
       const rawParams = feat.params || [];
       const paramsMeta = feat.paramsMeta || {};
       
@@ -46,7 +46,7 @@ async function syncVynaaDocs() {
         if (p.toLowerCase() === 'apikey') return;
         
         // Infer param type
-        let type: VynaaParamType = 'text';
+        let type: VtechParamType = 'text';
         if (p.toLowerCase().includes('url') || p.toLowerCase().includes('image') || p.toLowerCase().includes('avatar') || p.toLowerCase().includes('background')) type = 'url';
         else if (p.toLowerCase().includes('color')) type = 'color';
         else if (['amount', 'no', 'level', 'exp', 'nomor', 'tanggal', 'bulan', 'tahun', 'jumlah', 'likes', 'dislikes', 'resolusi'].includes(p.toLowerCase())) type = 'number';
@@ -69,7 +69,7 @@ async function syncVynaaDocs() {
       });
 
       // Safety check
-      const safety = classifyVynaaEndpointSafety({
+      const safety = classifyVtechEndpointSafety({
         label,
         category,
         endpoint: feat.path,
@@ -77,7 +77,7 @@ async function syncVynaaDocs() {
       });
       
       // Infer Output Type
-      let outputType: VynaaOutputType = 'json';
+      let outputType: VtechOutputType = 'json';
       if (feat.responseType) {
          const rs = feat.responseType.toLowerCase();
          if (rs.includes('image')) outputType = 'image';
@@ -87,15 +87,15 @@ async function syncVynaaDocs() {
          else if (rs.includes('json')) outputType = 'json';
          else if (rs.includes('text')) outputType = 'text';
       } else {
-         outputType = inferVynaaOutputType({
+         outputType = inferApiOutputType({
           label,
           category,
           endpoint: feat.path
-         } as VynaaEndpoint);
+         } as VtechEndpoint);
       }
 
       endpoints.push({
-        id: `vynaa_ep_${idCounter++}`,
+        id: `ep_${idCounter++}`,
         label,
         category,
         group: category,
@@ -122,22 +122,22 @@ async function syncVynaaDocs() {
     }
     
     fs.writeFileSync(
-      path.join(targetDir, 'vynaaEndpoints.generated.ts'),
-      `import { VynaaEndpoint } from '../types/vynaa';\n\nexport const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = ${JSON.stringify(endpoints, null, 2)};`
+      path.join(targetDir, 'vtechEndpoints.generated.ts'),
+      `import { VtechEndpoint } from '../types/vtech';\n\nexport const GENERATED_VTECH_ENDPOINTS: VtechEndpoint[] = ${JSON.stringify(endpoints, null, 2)};`
     );
     
     const meta = { lastSynced: new Date().toISOString(), count: endpoints.length };
     fs.writeFileSync(
-      path.join(targetDir, 'vynaaSyncMeta.generated.ts'),
-      `export const VYNAA_SYNC_META = ${JSON.stringify(meta, null, 2)};`
+      path.join(targetDir, 'vtechSyncMeta.generated.ts'),
+      `export const VTECH_SYNC_META = ${JSON.stringify(meta, null, 2)};`
     );
     
     console.log('Successfully generated endpoints.');
     
   } catch (err: any) {
-    console.error('Failed to sync Vynaa docs:', err);
+    console.error('Failed to sync VTECH docs:', err);
     process.exit(1);
   }
 }
 
-syncVynaaDocs();
+syncZORODocs();

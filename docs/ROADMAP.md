@@ -1,9 +1,9 @@
-# Zoro OS Roadmap
+# Zoro Endpoint Engine Roadmap
 
 ## Phase 1: Core Systems & API Integration (Completed)
 - Setup Vite + React + TS architecture.
 - Integrate Zoro Mascot interface.
-- Sync Vtech/VYNAA API (670+ endpoints).
+- Sync Vtech/Zoro API (670+ endpoints).
 - Implement universal endpoint runner, universal parser, and universal form generator.
 - Basic security gating (Safety logic).
 

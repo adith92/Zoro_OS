@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Terminal, Send, ChevronRight, Activity, Cpu } from 'lucide-react';
 import { useSettingsStore } from '@/store/useStore';
-import { chatSumoPod } from '@/api/sumopod';
+import { runLlmRouter } from '@/api/llmRouter';
 import Markdown from 'react-markdown';
 import { PageTransition } from '@/components/ui/PageTransition';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -29,7 +29,7 @@ Ensure there are exactly 3 choices unless the game is over.`;
 const INITIAL_PROMPT = "Initialize game. Describe Zoro waking up in the engineering deck with red alarms flashing. Health starts at 100.";
 
 export function ZoroAdventures() {
-  const { sumoPodApiKey, selectedModel } = useSettingsStore();
+  const { vtechApiKey, selectedVtechAiEndpointId } = useSettingsStore();
   const [history, setHistory] = useState<GameState[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
@@ -64,7 +64,7 @@ export function ZoroAdventures() {
   };
 
   const handleAction = async (actionPrompt: string, isInit = false) => {
-    if (!sumoPodApiKey) return;
+    if (!vtechApiKey) return;
     setIsLoading(true);
     setRetryPrompt(null);
 
@@ -84,8 +84,11 @@ export function ZoroAdventures() {
         { role: 'user', content: isInit ? INITIAL_PROMPT : `Next step. Zoro chose: ${actionPrompt}` }
       ];
 
-      const responseText = await chatSumoPod(messages, selectedModel);
-      const newState = parseAIResponse(responseText);
+      const responseText = await runLlmRouter({
+        messages: messages as any,
+        endpointId: selectedVtechAiEndpointId,
+      });
+      const newState = parseAIResponse(responseText || "");
 
       if (newState) {
         setHistory(prev => [...prev, newState]);
@@ -121,14 +124,14 @@ export function ZoroAdventures() {
     handleAction(INITIAL_PROMPT, true);
   };
 
-  if (!sumoPodApiKey) {
+  if (!vtechApiKey) {
     return (
       <PageTransition className="flex-1 flex items-center justify-center p-4 sm:p-8 z-10 relative">
         <GlassCard className="p-8 sm:p-12 text-center max-w-md border-red-500/30">
           <Terminal className="w-16 h-16 mx-auto text-red-500 mb-4" />
           <h2 className="text-xl font-bold text-red-400 font-mono mb-2">SYSTEM LOCKED</h2>
           <p className="text-gray-400 font-mono text-sm mb-6">
-            Requires SumoPod API Key for advanced Neural Game Generation. Configure this in Settings.
+            Requires VTECH API Key for advanced Neural Game Generation. Configure this in Settings.
           </p>
         </GlassCard>
       </PageTransition>
@@ -199,7 +202,7 @@ export function ZoroAdventures() {
             <AnimatePresence>
               {history.map((step, idx) => (
                 <motion.div 
-                  key={step.id} 
+                  key={`${step.id}_${idx}`} 
                   initial={{ opacity: 0, x: -10 }} 
                   animate={{ opacity: 1, x: 0 }}
                   className="mb-6 last:mb-0"
@@ -219,7 +222,7 @@ export function ZoroAdventures() {
               ))}
               
               {isLoading && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
+                <motion.div key="loading-state" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3">
                    <ChevronRight className="w-5 h-5 text-space-violet shrink-0 animate-pulse" />
                    <span className="text-space-cyan animate-pulse">Calculating starlight trajectories...</span>
                 </motion.div>
@@ -234,7 +237,7 @@ export function ZoroAdventures() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                key={i}
+                key={`choice_${i}`}
               >
                 <GlowButton
                   variant="secondary"

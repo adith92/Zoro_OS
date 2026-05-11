@@ -1,8 +1,8 @@
 {
-  "name": "zoro-os",
+  "name": "zoro-universe",
   "private": true,
   "version": "0.1.0",
-  "description": "Soft spaceship AI cockpit powered by VYNAA, SumoPod, and Zoro the cosmic cat assistant.",
+  "description": "Soft spaceship AI cockpit powered by ZORO, Zoro AI, and Zoro the cosmic cat assistant.",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "sync:vynaa": "tsx scripts/sync-vynaa-docs.ts"
+    "sync:vtech": "tsx scripts/sync-vtech-docs.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

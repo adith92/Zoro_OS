@@ -1,6 +1,6 @@
-import { VynaaEndpoint, VynaaOutputType } from '../types/vynaa';
+import { VtechEndpoint, VtechOutputType } from '../types/vtech';
 
-export function inferVynaaOutputType(endpoint: VynaaEndpoint): VynaaOutputType {
+export function inferApiOutputType(endpoint: VtechEndpoint): VtechOutputType {
   const fullText = `${endpoint.label} ${endpoint.endpoint} ${endpoint.category}`.toLowerCase();
 
   const imageKeywords = ['image', 'img', 'canvas', 'meme', 'qc', 'brat', 'photooxy', 'sticker', 'emoji', 'wallpaper', 'pinterest', 'logo', 'anime convert', 'text2img'];

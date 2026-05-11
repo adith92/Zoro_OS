@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { VynaaEndpoint, EndpointParam } from '@/types/vynaa';
+import { VtechEndpoint, EndpointParam } from '@/types/vtech';
 import { GlowButton } from './GlowButton';
 import { Loader2, Play } from 'lucide-react';
 
 interface EndpointFormProps {
-  endpoint: VynaaEndpoint;
+  endpoint: VtechEndpoint;
   onSubmit: (data: Record<string, any>) => void;
   isLoading: boolean;
 }

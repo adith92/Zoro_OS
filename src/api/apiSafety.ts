@@ -1,4 +1,4 @@
-export function classifyVynaaEndpointSafety(input: {
+export function classifyVtechEndpointSafety(input: {
   label: string;
   category: string;
   endpoint: string;

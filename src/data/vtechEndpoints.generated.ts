@@ -1,8 +1,8 @@
-import { VynaaEndpoint } from '../types/vynaa';
+import { VtechEndpoint } from '../types/vtech';
 
-export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
+export const GENERATED_VTECH_ENDPOINTS: VtechEndpoint[] = [
   {
-    "id": "vynaa_ep_1",
+    "id": "ZORO_ep_1",
     "label": "AI - AI4Chat",
     "category": "AI",
     "group": "AI",
@@ -29,7 +29,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/ai4chat"
   },
   {
-    "id": "vynaa_ep_2",
+    "id": "ZORO_ep_2",
     "label": "AI - Bible AI",
     "category": "AI",
     "group": "AI",
@@ -62,7 +62,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/bibleai"
   },
   {
-    "id": "vynaa_ep_3",
+    "id": "ZORO_ep_3",
     "label": "AI - DeepSeek R1 (CF)",
     "category": "AI",
     "group": "AI",
@@ -89,7 +89,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/deepseek-r1"
   },
   {
-    "id": "vynaa_ep_4",
+    "id": "ZORO_ep_4",
     "label": "AI - Gemma 3 12B (CF)",
     "category": "AI",
     "group": "AI",
@@ -116,7 +116,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/gemma-3-12b"
   },
   {
-    "id": "vynaa_ep_5",
+    "id": "ZORO_ep_5",
     "label": "AI - Gemma 7B LoRA (CF)",
     "category": "AI",
     "group": "AI",
@@ -143,7 +143,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/gemma-7b-lora"
   },
   {
-    "id": "vynaa_ep_6",
+    "id": "ZORO_ep_6",
     "label": "AI - DeepSeek R1",
     "category": "AI",
     "group": "AI",
@@ -182,7 +182,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/deepseekr1"
   },
   {
-    "id": "vynaa_ep_7",
+    "id": "ZORO_ep_7",
     "label": "AI - Gita",
     "category": "AI",
     "group": "AI",
@@ -209,7 +209,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/gita"
   },
   {
-    "id": "vynaa_ep_8",
+    "id": "ZORO_ep_8",
     "label": "AI - GLM 4.7 Flash",
     "category": "AI",
     "group": "AI",
@@ -248,7 +248,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/glm47flash"
   },
   {
-    "id": "vynaa_ep_9",
+    "id": "ZORO_ep_9",
     "label": "AI - GPT-OSS 120B",
     "category": "AI",
     "group": "AI",
@@ -287,7 +287,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/gptoss120b"
   },
   {
-    "id": "vynaa_ep_10",
+    "id": "ZORO_ep_10",
     "label": "AI - Groq Compound",
     "category": "AI",
     "group": "AI",
@@ -326,7 +326,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/groq-compound"
   },
   {
-    "id": "vynaa_ep_11",
+    "id": "ZORO_ep_11",
     "label": "AI - Phi-2",
     "category": "AI",
     "group": "AI",
@@ -365,7 +365,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/phi2"
   },
   {
-    "id": "vynaa_ep_12",
+    "id": "ZORO_ep_12",
     "label": "AI - QwQ 32B",
     "category": "AI",
     "group": "AI",
@@ -404,7 +404,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/qwq32b"
   },
   {
-    "id": "vynaa_ep_13",
+    "id": "ZORO_ep_13",
     "label": "AI - Writecream",
     "category": "AI",
     "group": "AI",
@@ -437,7 +437,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ai/writecream"
   },
   {
-    "id": "vynaa_ep_14",
+    "id": "ZORO_ep_14",
     "label": "Anime - Akira",
     "category": "Anime",
     "group": "Anime",
@@ -453,7 +453,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/akira"
   },
   {
-    "id": "vynaa_ep_15",
+    "id": "ZORO_ep_15",
     "label": "Anime - Akiyama",
     "category": "Anime",
     "group": "Anime",
@@ -469,7 +469,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/akiyama"
   },
   {
-    "id": "vynaa_ep_16",
+    "id": "ZORO_ep_16",
     "label": "Anime - Ana",
     "category": "Anime",
     "group": "Anime",
@@ -485,7 +485,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/ana"
   },
   {
-    "id": "vynaa_ep_17",
+    "id": "ZORO_ep_17",
     "label": "Anime - Asuna",
     "category": "Anime",
     "group": "Anime",
@@ -501,7 +501,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/asuna"
   },
   {
-    "id": "vynaa_ep_18",
+    "id": "ZORO_ep_18",
     "label": "Anime - Auratail Search",
     "category": "Anime",
     "group": "Anime",
@@ -524,7 +524,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/auratail-search"
   },
   {
-    "id": "vynaa_ep_19",
+    "id": "ZORO_ep_19",
     "label": "Anime - Ayuzawa",
     "category": "Anime",
     "group": "Anime",
@@ -540,7 +540,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/ayuzawa"
   },
   {
-    "id": "vynaa_ep_20",
+    "id": "ZORO_ep_20",
     "label": "Anime - Boruto",
     "category": "Anime",
     "group": "Anime",
@@ -556,7 +556,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/boruto"
   },
   {
-    "id": "vynaa_ep_21",
+    "id": "ZORO_ep_21",
     "label": "Anime - Chiho",
     "category": "Anime",
     "group": "Anime",
@@ -572,7 +572,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/chiho"
   },
   {
-    "id": "vynaa_ep_22",
+    "id": "ZORO_ep_22",
     "label": "Anime - Chitoge",
     "category": "Anime",
     "group": "Anime",
@@ -588,7 +588,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/chitoge"
   },
   {
-    "id": "vynaa_ep_23",
+    "id": "ZORO_ep_23",
     "label": "Anime - Deidara",
     "category": "Anime",
     "group": "Anime",
@@ -604,7 +604,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/deidara"
   },
   {
-    "id": "vynaa_ep_24",
+    "id": "ZORO_ep_24",
     "label": "Anime - Doraemon",
     "category": "Anime",
     "group": "Anime",
@@ -620,7 +620,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/doraemon"
   },
   {
-    "id": "vynaa_ep_25",
+    "id": "ZORO_ep_25",
     "label": "Anime - Eba",
     "category": "Anime",
     "group": "Anime",
@@ -636,7 +636,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/eba"
   },
   {
-    "id": "vynaa_ep_26",
+    "id": "ZORO_ep_26",
     "label": "Anime - Elaina",
     "category": "Anime",
     "group": "Anime",
@@ -652,7 +652,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/elaina"
   },
   {
-    "id": "vynaa_ep_27",
+    "id": "ZORO_ep_27",
     "label": "Anime - Emilia",
     "category": "Anime",
     "group": "Anime",
@@ -668,7 +668,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/emilia"
   },
   {
-    "id": "vynaa_ep_28",
+    "id": "ZORO_ep_28",
     "label": "Anime - Erza",
     "category": "Anime",
     "group": "Anime",
@@ -684,7 +684,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/erza"
   },
   {
-    "id": "vynaa_ep_29",
+    "id": "ZORO_ep_29",
     "label": "Anime - Gremory",
     "category": "Anime",
     "group": "Anime",
@@ -700,7 +700,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/gremory"
   },
   {
-    "id": "vynaa_ep_30",
+    "id": "ZORO_ep_30",
     "label": "Anime - Hestia",
     "category": "Anime",
     "group": "Anime",
@@ -716,7 +716,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/hestia"
   },
   {
-    "id": "vynaa_ep_31",
+    "id": "ZORO_ep_31",
     "label": "Anime - Hinata",
     "category": "Anime",
     "group": "Anime",
@@ -732,7 +732,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/hinata"
   },
   {
-    "id": "vynaa_ep_32",
+    "id": "ZORO_ep_32",
     "label": "Anime - Husbu",
     "category": "Anime",
     "group": "Anime",
@@ -748,7 +748,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/husbu"
   },
   {
-    "id": "vynaa_ep_33",
+    "id": "ZORO_ep_33",
     "label": "Anime - Inori",
     "category": "Anime",
     "group": "Anime",
@@ -764,7 +764,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/inori"
   },
   {
-    "id": "vynaa_ep_34",
+    "id": "ZORO_ep_34",
     "label": "Anime - Isuzu",
     "category": "Anime",
     "group": "Anime",
@@ -780,7 +780,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/isuzu"
   },
   {
-    "id": "vynaa_ep_35",
+    "id": "ZORO_ep_35",
     "label": "Anime - Itachi",
     "category": "Anime",
     "group": "Anime",
@@ -796,7 +796,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/itachi"
   },
   {
-    "id": "vynaa_ep_36",
+    "id": "ZORO_ep_36",
     "label": "Anime - Itori",
     "category": "Anime",
     "group": "Anime",
@@ -812,7 +812,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/itori"
   },
   {
-    "id": "vynaa_ep_37",
+    "id": "ZORO_ep_37",
     "label": "Anime - Kaga",
     "category": "Anime",
     "group": "Anime",
@@ -828,7 +828,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kaga"
   },
   {
-    "id": "vynaa_ep_38",
+    "id": "ZORO_ep_38",
     "label": "Anime - Kagura",
     "category": "Anime",
     "group": "Anime",
@@ -844,7 +844,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kagura"
   },
   {
-    "id": "vynaa_ep_39",
+    "id": "ZORO_ep_39",
     "label": "Anime - Kakasih",
     "category": "Anime",
     "group": "Anime",
@@ -860,7 +860,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kakasih"
   },
   {
-    "id": "vynaa_ep_40",
+    "id": "ZORO_ep_40",
     "label": "Anime - Kaori",
     "category": "Anime",
     "group": "Anime",
@@ -876,7 +876,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kaori"
   },
   {
-    "id": "vynaa_ep_41",
+    "id": "ZORO_ep_41",
     "label": "Anime - Keneki",
     "category": "Anime",
     "group": "Anime",
@@ -892,7 +892,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/keneki"
   },
   {
-    "id": "vynaa_ep_42",
+    "id": "ZORO_ep_42",
     "label": "Anime - Kotori",
     "category": "Anime",
     "group": "Anime",
@@ -908,7 +908,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kotori"
   },
   {
-    "id": "vynaa_ep_43",
+    "id": "ZORO_ep_43",
     "label": "Anime - Kurumi",
     "category": "Anime",
     "group": "Anime",
@@ -924,7 +924,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/kurumi"
   },
   {
-    "id": "vynaa_ep_44",
+    "id": "ZORO_ep_44",
     "label": "Anime - Madara",
     "category": "Anime",
     "group": "Anime",
@@ -940,7 +940,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/madara"
   },
   {
-    "id": "vynaa_ep_45",
+    "id": "ZORO_ep_45",
     "label": "Anime - Megumin",
     "category": "Anime",
     "group": "Anime",
@@ -956,7 +956,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/megumin"
   },
   {
-    "id": "vynaa_ep_46",
+    "id": "ZORO_ep_46",
     "label": "Anime - Mikasa",
     "category": "Anime",
     "group": "Anime",
@@ -972,7 +972,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/mikasa"
   },
   {
-    "id": "vynaa_ep_47",
+    "id": "ZORO_ep_47",
     "label": "Anime - Miku",
     "category": "Anime",
     "group": "Anime",
@@ -988,7 +988,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/miku"
   },
   {
-    "id": "vynaa_ep_48",
+    "id": "ZORO_ep_48",
     "label": "Anime - Minato",
     "category": "Anime",
     "group": "Anime",
@@ -1004,7 +1004,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/minato"
   },
   {
-    "id": "vynaa_ep_49",
+    "id": "ZORO_ep_49",
     "label": "Anime - Naruto",
     "category": "Anime",
     "group": "Anime",
@@ -1020,7 +1020,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/naruto"
   },
   {
-    "id": "vynaa_ep_50",
+    "id": "ZORO_ep_50",
     "label": "Anime - Nezuko",
     "category": "Anime",
     "group": "Anime",
@@ -1036,7 +1036,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/nezuko"
   },
   {
-    "id": "vynaa_ep_51",
+    "id": "ZORO_ep_51",
     "label": "Anime - Nsfwloli",
     "category": "Anime",
     "group": "Anime",
@@ -1052,7 +1052,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/nsfwloli"
   },
   {
-    "id": "vynaa_ep_52",
+    "id": "ZORO_ep_52",
     "label": "Anime - Onepiece",
     "category": "Anime",
     "group": "Anime",
@@ -1068,7 +1068,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/onepiece"
   },
   {
-    "id": "vynaa_ep_53",
+    "id": "ZORO_ep_53",
     "label": "Anime - Pokemon",
     "category": "Anime",
     "group": "Anime",
@@ -1084,7 +1084,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/pokemon"
   },
   {
-    "id": "vynaa_ep_54",
+    "id": "ZORO_ep_54",
     "label": "Anime - Rize",
     "category": "Anime",
     "group": "Anime",
@@ -1100,7 +1100,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/rize"
   },
   {
-    "id": "vynaa_ep_55",
+    "id": "ZORO_ep_55",
     "label": "Anime - Sagiri",
     "category": "Anime",
     "group": "Anime",
@@ -1116,7 +1116,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/sagiri"
   },
   {
-    "id": "vynaa_ep_56",
+    "id": "ZORO_ep_56",
     "label": "Anime - Sakura",
     "category": "Anime",
     "group": "Anime",
@@ -1132,7 +1132,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/sakura"
   },
   {
-    "id": "vynaa_ep_57",
+    "id": "ZORO_ep_57",
     "label": "Anime - Sasuke",
     "category": "Anime",
     "group": "Anime",
@@ -1148,7 +1148,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/sasuke"
   },
   {
-    "id": "vynaa_ep_58",
+    "id": "ZORO_ep_58",
     "label": "Anime - Shina",
     "category": "Anime",
     "group": "Anime",
@@ -1164,7 +1164,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/shina"
   },
   {
-    "id": "vynaa_ep_59",
+    "id": "ZORO_ep_59",
     "label": "Anime - Shinka",
     "category": "Anime",
     "group": "Anime",
@@ -1180,7 +1180,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/shinka"
   },
   {
-    "id": "vynaa_ep_60",
+    "id": "ZORO_ep_60",
     "label": "Anime - Shinomiya",
     "category": "Anime",
     "group": "Anime",
@@ -1196,7 +1196,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/shinomiya"
   },
   {
-    "id": "vynaa_ep_61",
+    "id": "ZORO_ep_61",
     "label": "Anime - Shizuka",
     "category": "Anime",
     "group": "Anime",
@@ -1212,7 +1212,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/shizuka"
   },
   {
-    "id": "vynaa_ep_62",
+    "id": "ZORO_ep_62",
     "label": "Anime - Shota",
     "category": "Anime",
     "group": "Anime",
@@ -1228,7 +1228,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/shota"
   },
   {
-    "id": "vynaa_ep_63",
+    "id": "ZORO_ep_63",
     "label": "Anime - Tejina",
     "category": "Anime",
     "group": "Anime",
@@ -1244,7 +1244,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/tejina"
   },
   {
-    "id": "vynaa_ep_64",
+    "id": "ZORO_ep_64",
     "label": "Anime - Toukachan",
     "category": "Anime",
     "group": "Anime",
@@ -1260,7 +1260,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/toukachan"
   },
   {
-    "id": "vynaa_ep_65",
+    "id": "ZORO_ep_65",
     "label": "Anime - Tsunade",
     "category": "Anime",
     "group": "Anime",
@@ -1276,7 +1276,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/tsunade"
   },
   {
-    "id": "vynaa_ep_66",
+    "id": "ZORO_ep_66",
     "label": "Anime - Umaru",
     "category": "Anime",
     "group": "Anime",
@@ -1292,7 +1292,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/umaru"
   },
   {
-    "id": "vynaa_ep_67",
+    "id": "ZORO_ep_67",
     "label": "Anime - Waifu",
     "category": "Anime",
     "group": "Anime",
@@ -1308,7 +1308,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/waifu"
   },
   {
-    "id": "vynaa_ep_68",
+    "id": "ZORO_ep_68",
     "label": "Anime - Waifu2",
     "category": "Anime",
     "group": "Anime",
@@ -1324,7 +1324,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/waifu2"
   },
   {
-    "id": "vynaa_ep_69",
+    "id": "ZORO_ep_69",
     "label": "Anime - Yotsuba",
     "category": "Anime",
     "group": "Anime",
@@ -1340,7 +1340,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/yotsuba"
   },
   {
-    "id": "vynaa_ep_70",
+    "id": "ZORO_ep_70",
     "label": "Anime - Yumeko",
     "category": "Anime",
     "group": "Anime",
@@ -1356,7 +1356,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/yumeko"
   },
   {
-    "id": "vynaa_ep_71",
+    "id": "ZORO_ep_71",
     "label": "Anime - Yuri",
     "category": "Anime",
     "group": "Anime",
@@ -1372,7 +1372,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/anime/yuri"
   },
   {
-    "id": "vynaa_ep_72",
+    "id": "ZORO_ep_72",
     "label": "Asupan - Anony",
     "category": "Asupan",
     "group": "Asupan",
@@ -1392,7 +1392,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/anony"
   },
   {
-    "id": "vynaa_ep_73",
+    "id": "ZORO_ep_73",
     "label": "Asupan - Asupan",
     "category": "Asupan",
     "group": "Asupan",
@@ -1412,7 +1412,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/asupan"
   },
   {
-    "id": "vynaa_ep_74",
+    "id": "ZORO_ep_74",
     "label": "Asupan - Bocil",
     "category": "Asupan",
     "group": "Asupan",
@@ -1432,7 +1432,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/bocil"
   },
   {
-    "id": "vynaa_ep_75",
+    "id": "ZORO_ep_75",
     "label": "Asupan - Cecan",
     "category": "Asupan",
     "group": "Asupan",
@@ -1452,7 +1452,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/cecan"
   },
   {
-    "id": "vynaa_ep_76",
+    "id": "ZORO_ep_76",
     "label": "Asupan - Douyin",
     "category": "Asupan",
     "group": "Asupan",
@@ -1472,7 +1472,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/douyin"
   },
   {
-    "id": "vynaa_ep_77",
+    "id": "ZORO_ep_77",
     "label": "Asupan - Euni",
     "category": "Asupan",
     "group": "Asupan",
@@ -1492,7 +1492,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/euni"
   },
   {
-    "id": "vynaa_ep_78",
+    "id": "ZORO_ep_78",
     "label": "Asupan - Gheayubi",
     "category": "Asupan",
     "group": "Asupan",
@@ -1512,7 +1512,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/gheayubi"
   },
   {
-    "id": "vynaa_ep_79",
+    "id": "ZORO_ep_79",
     "label": "Asupan - Hijaber",
     "category": "Asupan",
     "group": "Asupan",
@@ -1532,7 +1532,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/hijaber"
   },
   {
-    "id": "vynaa_ep_80",
+    "id": "ZORO_ep_80",
     "label": "Asupan - Natajadeh",
     "category": "Asupan",
     "group": "Asupan",
@@ -1552,7 +1552,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/natajadeh"
   },
   {
-    "id": "vynaa_ep_81",
+    "id": "ZORO_ep_81",
     "label": "Asupan - Rikagusriani",
     "category": "Asupan",
     "group": "Asupan",
@@ -1572,7 +1572,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/rikagusriani"
   },
   {
-    "id": "vynaa_ep_82",
+    "id": "ZORO_ep_82",
     "label": "Asupan - Santuy",
     "category": "Asupan",
     "group": "Asupan",
@@ -1592,7 +1592,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/santuy"
   },
   {
-    "id": "vynaa_ep_83",
+    "id": "ZORO_ep_83",
     "label": "Asupan - TikTok Search",
     "category": "Asupan",
     "group": "Asupan",
@@ -1619,7 +1619,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/tiktok"
   },
   {
-    "id": "vynaa_ep_84",
+    "id": "ZORO_ep_84",
     "label": "Asupan - Ukhty",
     "category": "Asupan",
     "group": "Asupan",
@@ -1639,7 +1639,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/asupan/ukhty"
   },
   {
-    "id": "vynaa_ep_85",
+    "id": "ZORO_ep_85",
     "label": "Berita - CNBC Indonesia",
     "category": "Berita",
     "group": "Berita",
@@ -1659,7 +1659,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/cnbcindonesia"
   },
   {
-    "id": "vynaa_ep_86",
+    "id": "ZORO_ep_86",
     "label": "Berita - Kumparan Latest",
     "category": "Berita",
     "group": "Berita",
@@ -1679,7 +1679,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/kumparan"
   },
   {
-    "id": "vynaa_ep_87",
+    "id": "ZORO_ep_87",
     "label": "Berita - Merdeka Kategori",
     "category": "Berita",
     "group": "Berita",
@@ -1706,7 +1706,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/merdeka/category"
   },
   {
-    "id": "vynaa_ep_88",
+    "id": "ZORO_ep_88",
     "label": "Berita - Merdeka Latest",
     "category": "Berita",
     "group": "Berita",
@@ -1726,7 +1726,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/merdeka"
   },
   {
-    "id": "vynaa_ep_89",
+    "id": "ZORO_ep_89",
     "label": "Berita - Okezone Latest",
     "category": "Berita",
     "group": "Berita",
@@ -1746,7 +1746,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/okezone"
   },
   {
-    "id": "vynaa_ep_90",
+    "id": "ZORO_ep_90",
     "label": "Berita - Sindonews Latest",
     "category": "Berita",
     "group": "Berita",
@@ -1766,7 +1766,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/berita/sindonews"
   },
   {
-    "id": "vynaa_ep_91",
+    "id": "ZORO_ep_91",
     "label": "Canvas - Affect",
     "category": "Canvas",
     "group": "Canvas",
@@ -1793,7 +1793,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/affect"
   },
   {
-    "id": "vynaa_ep_92",
+    "id": "ZORO_ep_92",
     "label": "Canvas - Batslap",
     "category": "Canvas",
     "group": "Canvas",
@@ -1826,7 +1826,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/batslap"
   },
   {
-    "id": "vynaa_ep_93",
+    "id": "ZORO_ep_93",
     "label": "Canvas - Beautiful",
     "category": "Canvas",
     "group": "Canvas",
@@ -1853,7 +1853,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/beautiful"
   },
   {
-    "id": "vynaa_ep_94",
+    "id": "ZORO_ep_94",
     "label": "Canvas - Blur",
     "category": "Canvas",
     "group": "Canvas",
@@ -1880,7 +1880,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/blur"
   },
   {
-    "id": "vynaa_ep_95",
+    "id": "ZORO_ep_95",
     "label": "Canvas - Captcha",
     "category": "Canvas",
     "group": "Canvas",
@@ -1925,7 +1925,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/captcha"
   },
   {
-    "id": "vynaa_ep_96",
+    "id": "ZORO_ep_96",
     "label": "Canvas - Circle",
     "category": "Canvas",
     "group": "Canvas",
@@ -1952,7 +1952,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/circle"
   },
   {
-    "id": "vynaa_ep_97",
+    "id": "ZORO_ep_97",
     "label": "Canvas - Darkness",
     "category": "Canvas",
     "group": "Canvas",
@@ -1985,7 +1985,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/darkness"
   },
   {
-    "id": "vynaa_ep_98",
+    "id": "ZORO_ep_98",
     "label": "Canvas - Delete",
     "category": "Canvas",
     "group": "Canvas",
@@ -2012,7 +2012,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/delete"
   },
   {
-    "id": "vynaa_ep_99",
+    "id": "ZORO_ep_99",
     "label": "Canvas - E-KTP",
     "category": "Canvas",
     "group": "Canvas",
@@ -2141,7 +2141,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/ektp"
   },
   {
-    "id": "vynaa_ep_100",
+    "id": "ZORO_ep_100",
     "label": "Canvas - Facepalm",
     "category": "Canvas",
     "group": "Canvas",
@@ -2168,7 +2168,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/facepalm"
   },
   {
-    "id": "vynaa_ep_101",
+    "id": "ZORO_ep_101",
     "label": "Canvas - Fake XNXX",
     "category": "Canvas",
     "group": "Canvas",
@@ -2213,7 +2213,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/fake-xnxx"
   },
   {
-    "id": "vynaa_ep_102",
+    "id": "ZORO_ep_102",
     "label": "Canvas - Gay",
     "category": "Canvas",
     "group": "Canvas",
@@ -2252,7 +2252,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/gay"
   },
   {
-    "id": "vynaa_ep_103",
+    "id": "ZORO_ep_103",
     "label": "Canvas - Goodbye v1",
     "category": "Canvas",
     "group": "Canvas",
@@ -2315,7 +2315,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/goodbyev1"
   },
   {
-    "id": "vynaa_ep_104",
+    "id": "ZORO_ep_104",
     "label": "Canvas - Goodbye v2",
     "category": "Canvas",
     "group": "Canvas",
@@ -2366,7 +2366,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/goodbyev2"
   },
   {
-    "id": "vynaa_ep_105",
+    "id": "ZORO_ep_105",
     "label": "Canvas - Goodbye v3",
     "category": "Canvas",
     "group": "Canvas",
@@ -2399,7 +2399,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/goodbyev3"
   },
   {
-    "id": "vynaa_ep_106",
+    "id": "ZORO_ep_106",
     "label": "Canvas - Goodbye v4",
     "category": "Canvas",
     "group": "Canvas",
@@ -2462,7 +2462,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/goodbyev4"
   },
   {
-    "id": "vynaa_ep_107",
+    "id": "ZORO_ep_107",
     "label": "Canvas - Goodbye v5",
     "category": "Canvas",
     "group": "Canvas",
@@ -2519,7 +2519,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/goodbyev5"
   },
   {
-    "id": "vynaa_ep_108",
+    "id": "ZORO_ep_108",
     "label": "Canvas - Greyscale",
     "category": "Canvas",
     "group": "Canvas",
@@ -2546,7 +2546,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/greyscale"
   },
   {
-    "id": "vynaa_ep_109",
+    "id": "ZORO_ep_109",
     "label": "Canvas - Invert",
     "category": "Canvas",
     "group": "Canvas",
@@ -2573,7 +2573,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/invert"
   },
   {
-    "id": "vynaa_ep_110",
+    "id": "ZORO_ep_110",
     "label": "Canvas - Kiss",
     "category": "Canvas",
     "group": "Canvas",
@@ -2606,7 +2606,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/kiss"
   },
   {
-    "id": "vynaa_ep_111",
+    "id": "ZORO_ep_111",
     "label": "Canvas - Level Up",
     "category": "Canvas",
     "group": "Canvas",
@@ -2657,7 +2657,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/level-up"
   },
   {
-    "id": "vynaa_ep_112",
+    "id": "ZORO_ep_112",
     "label": "Canvas - Meme Maker",
     "category": "Canvas",
     "group": "Canvas",
@@ -2696,7 +2696,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/meme"
   },
   {
-    "id": "vynaa_ep_113",
+    "id": "ZORO_ep_113",
     "label": "Canvas - Profile",
     "category": "Canvas",
     "group": "Canvas",
@@ -2765,7 +2765,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/profile"
   },
   {
-    "id": "vynaa_ep_114",
+    "id": "ZORO_ep_114",
     "label": "Canvas - Security",
     "category": "Canvas",
     "group": "Canvas",
@@ -2816,7 +2816,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/security"
   },
   {
-    "id": "vynaa_ep_115",
+    "id": "ZORO_ep_115",
     "label": "Canvas - Sertifikat Tolol",
     "category": "Canvas",
     "group": "Canvas",
@@ -2843,7 +2843,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/sertifikat-tolol"
   },
   {
-    "id": "vynaa_ep_116",
+    "id": "ZORO_ep_116",
     "label": "Canvas - Ship",
     "category": "Canvas",
     "group": "Canvas",
@@ -2888,7 +2888,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/ship"
   },
   {
-    "id": "vynaa_ep_117",
+    "id": "ZORO_ep_117",
     "label": "Canvas - Spotify",
     "category": "Canvas",
     "group": "Canvas",
@@ -2945,7 +2945,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/spotify"
   },
   {
-    "id": "vynaa_ep_118",
+    "id": "ZORO_ep_118",
     "label": "Canvas - Tweet",
     "category": "Canvas",
     "group": "Canvas",
@@ -3002,7 +3002,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/tweet"
   },
   {
-    "id": "vynaa_ep_119",
+    "id": "ZORO_ep_119",
     "label": "Canvas - Welcome v1",
     "category": "Canvas",
     "group": "Canvas",
@@ -3065,7 +3065,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/welcomev1"
   },
   {
-    "id": "vynaa_ep_120",
+    "id": "ZORO_ep_120",
     "label": "Canvas - Welcome v2",
     "category": "Canvas",
     "group": "Canvas",
@@ -3116,7 +3116,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/welcomev2"
   },
   {
-    "id": "vynaa_ep_121",
+    "id": "ZORO_ep_121",
     "label": "Canvas - Welcome v3",
     "category": "Canvas",
     "group": "Canvas",
@@ -3149,7 +3149,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/welcomev3"
   },
   {
-    "id": "vynaa_ep_122",
+    "id": "ZORO_ep_122",
     "label": "Canvas - Welcome v4",
     "category": "Canvas",
     "group": "Canvas",
@@ -3188,7 +3188,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/welcomev4"
   },
   {
-    "id": "vynaa_ep_123",
+    "id": "ZORO_ep_123",
     "label": "Canvas - XNXX",
     "category": "Canvas",
     "group": "Canvas",
@@ -3221,7 +3221,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/canvas/xnxx"
   },
   {
-    "id": "vynaa_ep_124",
+    "id": "ZORO_ep_124",
     "label": "Cecan - China",
     "category": "Cecan",
     "group": "Cecan",
@@ -3241,7 +3241,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/china"
   },
   {
-    "id": "vynaa_ep_125",
+    "id": "ZORO_ep_125",
     "label": "Cecan - Hijaber",
     "category": "Cecan",
     "group": "Cecan",
@@ -3261,7 +3261,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/hijaber"
   },
   {
-    "id": "vynaa_ep_126",
+    "id": "ZORO_ep_126",
     "label": "Cecan - Indonesia",
     "category": "Cecan",
     "group": "Cecan",
@@ -3281,7 +3281,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/indonesia"
   },
   {
-    "id": "vynaa_ep_127",
+    "id": "ZORO_ep_127",
     "label": "Cecan - Japan",
     "category": "Cecan",
     "group": "Cecan",
@@ -3301,7 +3301,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/japan"
   },
   {
-    "id": "vynaa_ep_128",
+    "id": "ZORO_ep_128",
     "label": "Cecan - Jeni",
     "category": "Cecan",
     "group": "Cecan",
@@ -3321,7 +3321,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/jeni"
   },
   {
-    "id": "vynaa_ep_129",
+    "id": "ZORO_ep_129",
     "label": "Cecan - Jiso",
     "category": "Cecan",
     "group": "Cecan",
@@ -3341,7 +3341,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/jiso"
   },
   {
-    "id": "vynaa_ep_130",
+    "id": "ZORO_ep_130",
     "label": "Cecan - Justinaxie",
     "category": "Cecan",
     "group": "Cecan",
@@ -3361,7 +3361,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/justinaxie"
   },
   {
-    "id": "vynaa_ep_131",
+    "id": "ZORO_ep_131",
     "label": "Cecan - Korea",
     "category": "Cecan",
     "group": "Cecan",
@@ -3381,7 +3381,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/korea"
   },
   {
-    "id": "vynaa_ep_132",
+    "id": "ZORO_ep_132",
     "label": "Cecan - Malaysia",
     "category": "Cecan",
     "group": "Cecan",
@@ -3401,7 +3401,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/malaysia"
   },
   {
-    "id": "vynaa_ep_133",
+    "id": "ZORO_ep_133",
     "label": "Cecan - Rose",
     "category": "Cecan",
     "group": "Cecan",
@@ -3421,7 +3421,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/rose"
   },
   {
-    "id": "vynaa_ep_134",
+    "id": "ZORO_ep_134",
     "label": "Cecan - Ryujin",
     "category": "Cecan",
     "group": "Cecan",
@@ -3441,7 +3441,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/ryujin"
   },
   {
-    "id": "vynaa_ep_135",
+    "id": "ZORO_ep_135",
     "label": "Cecan - Thailand",
     "category": "Cecan",
     "group": "Cecan",
@@ -3461,7 +3461,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/thailand"
   },
   {
-    "id": "vynaa_ep_136",
+    "id": "ZORO_ep_136",
     "label": "Cecan - Vietnam",
     "category": "Cecan",
     "group": "Cecan",
@@ -3481,7 +3481,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/cecan/vietnam"
   },
   {
-    "id": "vynaa_ep_137",
+    "id": "ZORO_ep_137",
     "label": "Download - Allin",
     "category": "Download",
     "group": "Download",
@@ -3508,7 +3508,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/allin"
   },
   {
-    "id": "vynaa_ep_138",
+    "id": "ZORO_ep_138",
     "label": "Download - Capcut",
     "category": "Download",
     "group": "Download",
@@ -3535,7 +3535,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/capcut"
   },
   {
-    "id": "vynaa_ep_139",
+    "id": "ZORO_ep_139",
     "label": "Download - Cocofun",
     "category": "Download",
     "group": "Download",
@@ -3562,7 +3562,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/cocofun"
   },
   {
-    "id": "vynaa_ep_140",
+    "id": "ZORO_ep_140",
     "label": "Download - Donghua",
     "category": "Download",
     "group": "Download",
@@ -3589,7 +3589,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/donghua"
   },
   {
-    "id": "vynaa_ep_141",
+    "id": "ZORO_ep_141",
     "label": "Download - Douyin",
     "category": "Download",
     "group": "Download",
@@ -3616,7 +3616,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/douyin"
   },
   {
-    "id": "vynaa_ep_142",
+    "id": "ZORO_ep_142",
     "label": "Download - Douyinslide",
     "category": "Download",
     "group": "Download",
@@ -3643,7 +3643,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/douyinslide"
   },
   {
-    "id": "vynaa_ep_143",
+    "id": "ZORO_ep_143",
     "label": "Download - Fbdown",
     "category": "Download",
     "group": "Download",
@@ -3670,7 +3670,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/fbdown"
   },
   {
-    "id": "vynaa_ep_144",
+    "id": "ZORO_ep_144",
     "label": "Download - Fbdown2",
     "category": "Download",
     "group": "Download",
@@ -3697,7 +3697,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/fbdown2"
   },
   {
-    "id": "vynaa_ep_145",
+    "id": "ZORO_ep_145",
     "label": "Download - Fbdown3",
     "category": "Download",
     "group": "Download",
@@ -3724,7 +3724,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/fbdown3"
   },
   {
-    "id": "vynaa_ep_146",
+    "id": "ZORO_ep_146",
     "label": "Download - Fbdown4",
     "category": "Download",
     "group": "Download",
@@ -3751,7 +3751,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/fbdown4"
   },
   {
-    "id": "vynaa_ep_147",
+    "id": "ZORO_ep_147",
     "label": "Download - Gdrive",
     "category": "Download",
     "group": "Download",
@@ -3778,7 +3778,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/gdrive"
   },
   {
-    "id": "vynaa_ep_148",
+    "id": "ZORO_ep_148",
     "label": "Download - Igdowloader",
     "category": "Download",
     "group": "Download",
@@ -3805,7 +3805,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/igdowloader"
   },
   {
-    "id": "vynaa_ep_149",
+    "id": "ZORO_ep_149",
     "label": "Download - Likee",
     "category": "Download",
     "group": "Download",
@@ -3832,7 +3832,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/likee"
   },
   {
-    "id": "vynaa_ep_150",
+    "id": "ZORO_ep_150",
     "label": "Download - Pastebin",
     "category": "Download",
     "group": "Download",
@@ -3859,7 +3859,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/pastebin"
   },
   {
-    "id": "vynaa_ep_151",
+    "id": "ZORO_ep_151",
     "label": "Download - Pinterest",
     "category": "Download",
     "group": "Download",
@@ -3886,7 +3886,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/pinterest"
   },
   {
-    "id": "vynaa_ep_152",
+    "id": "ZORO_ep_152",
     "label": "Download - Rednote",
     "category": "Download",
     "group": "Download",
@@ -3913,7 +3913,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/rednote"
   },
   {
-    "id": "vynaa_ep_153",
+    "id": "ZORO_ep_153",
     "label": "Download - Scribd",
     "category": "Download",
     "group": "Download",
@@ -3940,7 +3940,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/scribd"
   },
   {
-    "id": "vynaa_ep_154",
+    "id": "ZORO_ep_154",
     "label": "Download - Sfilemobi",
     "category": "Download",
     "group": "Download",
@@ -3967,7 +3967,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/sfilemobi"
   },
   {
-    "id": "vynaa_ep_155",
+    "id": "ZORO_ep_155",
     "label": "Download - Slideshare",
     "category": "Download",
     "group": "Download",
@@ -3994,7 +3994,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/slideshare"
   },
   {
-    "id": "vynaa_ep_156",
+    "id": "ZORO_ep_156",
     "label": "Download - Snackvideo",
     "category": "Download",
     "group": "Download",
@@ -4021,7 +4021,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/snackvideo"
   },
   {
-    "id": "vynaa_ep_157",
+    "id": "ZORO_ep_157",
     "label": "Download - Soundcloud",
     "category": "Download",
     "group": "Download",
@@ -4048,7 +4048,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/soundcloud"
   },
   {
-    "id": "vynaa_ep_158",
+    "id": "ZORO_ep_158",
     "label": "Download - Spotify",
     "category": "Download",
     "group": "Download",
@@ -4075,7 +4075,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/spotify"
   },
   {
-    "id": "vynaa_ep_159",
+    "id": "ZORO_ep_159",
     "label": "Download - Spotify2",
     "category": "Download",
     "group": "Download",
@@ -4102,7 +4102,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/spotify2"
   },
   {
-    "id": "vynaa_ep_160",
+    "id": "ZORO_ep_160",
     "label": "Download - Storyanime",
     "category": "Download",
     "group": "Download",
@@ -4122,7 +4122,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/storyanime"
   },
   {
-    "id": "vynaa_ep_161",
+    "id": "ZORO_ep_161",
     "label": "Download - Telesticker",
     "category": "Download",
     "group": "Download",
@@ -4149,7 +4149,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/telesticker"
   },
   {
-    "id": "vynaa_ep_162",
+    "id": "ZORO_ep_162",
     "label": "Download - Threads",
     "category": "Download",
     "group": "Download",
@@ -4176,7 +4176,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/threads"
   },
   {
-    "id": "vynaa_ep_163",
+    "id": "ZORO_ep_163",
     "label": "Download - Tiktok",
     "category": "Download",
     "group": "Download",
@@ -4203,7 +4203,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/tiktok"
   },
   {
-    "id": "vynaa_ep_164",
+    "id": "ZORO_ep_164",
     "label": "Download - Tiktokslide",
     "category": "Download",
     "group": "Download",
@@ -4230,7 +4230,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/tiktokslide"
   },
   {
-    "id": "vynaa_ep_165",
+    "id": "ZORO_ep_165",
     "label": "Download - Twitter",
     "category": "Download",
     "group": "Download",
@@ -4257,7 +4257,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/twitter"
   },
   {
-    "id": "vynaa_ep_166",
+    "id": "ZORO_ep_166",
     "label": "Download - Twitter2",
     "category": "Download",
     "group": "Download",
@@ -4284,7 +4284,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/twitter2"
   },
   {
-    "id": "vynaa_ep_167",
+    "id": "ZORO_ep_167",
     "label": "Download - Videy",
     "category": "Download",
     "group": "Download",
@@ -4311,7 +4311,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/videy"
   },
   {
-    "id": "vynaa_ep_168",
+    "id": "ZORO_ep_168",
     "label": "Download - Xnxxdl",
     "category": "Download",
     "group": "Download",
@@ -4338,7 +4338,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/xnxxdl"
   },
   {
-    "id": "vynaa_ep_169",
+    "id": "ZORO_ep_169",
     "label": "Download - Xvideosdl",
     "category": "Download",
     "group": "Download",
@@ -4365,7 +4365,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/xvideosdl"
   },
   {
-    "id": "vynaa_ep_170",
+    "id": "ZORO_ep_170",
     "label": "Download - Yt",
     "category": "Download",
     "group": "Download",
@@ -4392,7 +4392,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/yt"
   },
   {
-    "id": "vynaa_ep_171",
+    "id": "ZORO_ep_171",
     "label": "Download - YouTube Downloader v2",
     "category": "Download",
     "group": "Download",
@@ -4419,7 +4419,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/ytdlv2"
   },
   {
-    "id": "vynaa_ep_172",
+    "id": "ZORO_ep_172",
     "label": "Download - YouTube Downloader v5",
     "category": "Download",
     "group": "Download",
@@ -4446,7 +4446,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/ytdlv5"
   },
   {
-    "id": "vynaa_ep_173",
+    "id": "ZORO_ep_173",
     "label": "Download - YT Play (Search & MP3)",
     "category": "Download",
     "group": "Download",
@@ -4473,7 +4473,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/download/ytplay"
   },
   {
-    "id": "vynaa_ep_174",
+    "id": "ZORO_ep_174",
     "label": "Emoji - Apple",
     "category": "Emoji",
     "group": "Emoji",
@@ -4496,7 +4496,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/apple"
   },
   {
-    "id": "vynaa_ep_175",
+    "id": "ZORO_ep_175",
     "label": "Emoji - Docomo",
     "category": "Emoji",
     "group": "Emoji",
@@ -4519,7 +4519,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/docomo"
   },
   {
-    "id": "vynaa_ep_176",
+    "id": "ZORO_ep_176",
     "label": "Emoji - Emojimix",
     "category": "Emoji",
     "group": "Emoji",
@@ -4548,7 +4548,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/emojimix"
   },
   {
-    "id": "vynaa_ep_177",
+    "id": "ZORO_ep_177",
     "label": "Emoji - Emojipedia",
     "category": "Emoji",
     "group": "Emoji",
@@ -4571,7 +4571,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/emojipedia"
   },
   {
-    "id": "vynaa_ep_178",
+    "id": "ZORO_ep_178",
     "label": "Emoji - Facebook",
     "category": "Emoji",
     "group": "Emoji",
@@ -4594,7 +4594,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/facebook"
   },
   {
-    "id": "vynaa_ep_179",
+    "id": "ZORO_ep_179",
     "label": "Emoji - Google",
     "category": "Emoji",
     "group": "Emoji",
@@ -4617,7 +4617,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/google"
   },
   {
-    "id": "vynaa_ep_180",
+    "id": "ZORO_ep_180",
     "label": "Emoji - Htc",
     "category": "Emoji",
     "group": "Emoji",
@@ -4640,7 +4640,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/htc"
   },
   {
-    "id": "vynaa_ep_181",
+    "id": "ZORO_ep_181",
     "label": "Emoji - Joypixels",
     "category": "Emoji",
     "group": "Emoji",
@@ -4663,7 +4663,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/joypixels"
   },
   {
-    "id": "vynaa_ep_182",
+    "id": "ZORO_ep_182",
     "label": "Emoji - Kddi",
     "category": "Emoji",
     "group": "Emoji",
@@ -4686,7 +4686,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/kddi"
   },
   {
-    "id": "vynaa_ep_183",
+    "id": "ZORO_ep_183",
     "label": "Emoji - Lg",
     "category": "Emoji",
     "group": "Emoji",
@@ -4709,7 +4709,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/lg"
   },
   {
-    "id": "vynaa_ep_184",
+    "id": "ZORO_ep_184",
     "label": "Emoji - Microsoft",
     "category": "Emoji",
     "group": "Emoji",
@@ -4732,7 +4732,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/microsoft"
   },
   {
-    "id": "vynaa_ep_185",
+    "id": "ZORO_ep_185",
     "label": "Emoji - Mozilla",
     "category": "Emoji",
     "group": "Emoji",
@@ -4755,7 +4755,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/mozilla"
   },
   {
-    "id": "vynaa_ep_186",
+    "id": "ZORO_ep_186",
     "label": "Emoji - Openmoji",
     "category": "Emoji",
     "group": "Emoji",
@@ -4778,7 +4778,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/openmoji"
   },
   {
-    "id": "vynaa_ep_187",
+    "id": "ZORO_ep_187",
     "label": "Emoji - Samsung",
     "category": "Emoji",
     "group": "Emoji",
@@ -4801,7 +4801,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/samsung"
   },
   {
-    "id": "vynaa_ep_188",
+    "id": "ZORO_ep_188",
     "label": "Emoji - Skype",
     "category": "Emoji",
     "group": "Emoji",
@@ -4824,7 +4824,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/skype"
   },
   {
-    "id": "vynaa_ep_189",
+    "id": "ZORO_ep_189",
     "label": "Emoji - Softbank",
     "category": "Emoji",
     "group": "Emoji",
@@ -4847,7 +4847,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/softbank"
   },
   {
-    "id": "vynaa_ep_190",
+    "id": "ZORO_ep_190",
     "label": "Emoji - Twitter",
     "category": "Emoji",
     "group": "Emoji",
@@ -4870,7 +4870,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/twitter"
   },
   {
-    "id": "vynaa_ep_191",
+    "id": "ZORO_ep_191",
     "label": "Emoji - Whatsapp",
     "category": "Emoji",
     "group": "Emoji",
@@ -4893,7 +4893,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/emoji/whatsapp"
   },
   {
-    "id": "vynaa_ep_192",
+    "id": "ZORO_ep_192",
     "label": "Ephoto - Blackpink",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -4920,7 +4920,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/blackpink"
   },
   {
-    "id": "vynaa_ep_193",
+    "id": "ZORO_ep_193",
     "label": "Ephoto - Blackpink2",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -4947,7 +4947,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/blackpink2"
   },
   {
-    "id": "vynaa_ep_194",
+    "id": "ZORO_ep_194",
     "label": "Ephoto - Blueneon",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -4974,7 +4974,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/blueneon"
   },
   {
-    "id": "vynaa_ep_195",
+    "id": "ZORO_ep_195",
     "label": "Ephoto - Cloth",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5001,7 +5001,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/cloth"
   },
   {
-    "id": "vynaa_ep_196",
+    "id": "ZORO_ep_196",
     "label": "Ephoto - Cloud",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5028,7 +5028,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/cloud"
   },
   {
-    "id": "vynaa_ep_197",
+    "id": "ZORO_ep_197",
     "label": "Ephoto - Coverpubg",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5055,7 +5055,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/coverpubg"
   },
   {
-    "id": "vynaa_ep_198",
+    "id": "ZORO_ep_198",
     "label": "Ephoto - Dragonfire",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5082,7 +5082,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/dragonfire"
   },
   {
-    "id": "vynaa_ep_199",
+    "id": "ZORO_ep_199",
     "label": "Ephoto - Eraser",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5109,7 +5109,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/eraser"
   },
   {
-    "id": "vynaa_ep_200",
+    "id": "ZORO_ep_200",
     "label": "Ephoto - Fbgoldbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5136,7 +5136,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/fbgoldbutton"
   },
   {
-    "id": "vynaa_ep_201",
+    "id": "ZORO_ep_201",
     "label": "Ephoto - Fbsilverbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5163,7 +5163,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/fbsilverbutton"
   },
   {
-    "id": "vynaa_ep_202",
+    "id": "ZORO_ep_202",
     "label": "Ephoto - Galaxy",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5190,7 +5190,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/galaxy"
   },
   {
-    "id": "vynaa_ep_203",
+    "id": "ZORO_ep_203",
     "label": "Ephoto - Glasses",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5217,7 +5217,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/glasses"
   },
   {
-    "id": "vynaa_ep_204",
+    "id": "ZORO_ep_204",
     "label": "Ephoto - Grafitti",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5244,7 +5244,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/grafitti"
   },
   {
-    "id": "vynaa_ep_205",
+    "id": "ZORO_ep_205",
     "label": "Ephoto - Greenbrush",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5271,7 +5271,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/greenbrush"
   },
   {
-    "id": "vynaa_ep_206",
+    "id": "ZORO_ep_206",
     "label": "Ephoto - Horor",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5298,7 +5298,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/horor"
   },
   {
-    "id": "vynaa_ep_207",
+    "id": "ZORO_ep_207",
     "label": "Ephoto - Iggoldbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5325,7 +5325,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/iggoldbutton"
   },
   {
-    "id": "vynaa_ep_208",
+    "id": "ZORO_ep_208",
     "label": "Ephoto - Igsilverbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5352,7 +5352,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/igsilverbutton"
   },
   {
-    "id": "vynaa_ep_209",
+    "id": "ZORO_ep_209",
     "label": "Ephoto - Incandescent",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5379,7 +5379,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/incandescent"
   },
   {
-    "id": "vynaa_ep_210",
+    "id": "ZORO_ep_210",
     "label": "Ephoto - Letters",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5406,7 +5406,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/letters"
   },
   {
-    "id": "vynaa_ep_211",
+    "id": "ZORO_ep_211",
     "label": "Ephoto - Nightstars",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5433,7 +5433,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/nightstars"
   },
   {
-    "id": "vynaa_ep_212",
+    "id": "ZORO_ep_212",
     "label": "Ephoto - Papercut",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5460,7 +5460,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/papercut"
   },
   {
-    "id": "vynaa_ep_213",
+    "id": "ZORO_ep_213",
     "label": "Ephoto - Pig",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5487,7 +5487,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/pig"
   },
   {
-    "id": "vynaa_ep_214",
+    "id": "ZORO_ep_214",
     "label": "Ephoto - Sunlight",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5514,7 +5514,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/sunlight"
   },
   {
-    "id": "vynaa_ep_215",
+    "id": "ZORO_ep_215",
     "label": "Ephoto - Televisi",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5541,7 +5541,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/televisi"
   },
   {
-    "id": "vynaa_ep_216",
+    "id": "ZORO_ep_216",
     "label": "Ephoto - Twtgoldbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5568,7 +5568,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/twtgoldbutton"
   },
   {
-    "id": "vynaa_ep_217",
+    "id": "ZORO_ep_217",
     "label": "Ephoto - Twtsilverbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5595,7 +5595,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/twtsilverbutton"
   },
   {
-    "id": "vynaa_ep_218",
+    "id": "ZORO_ep_218",
     "label": "Ephoto - Typography",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5622,7 +5622,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/typography"
   },
   {
-    "id": "vynaa_ep_219",
+    "id": "ZORO_ep_219",
     "label": "Ephoto - Typography2",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5649,7 +5649,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/typography2"
   },
   {
-    "id": "vynaa_ep_220",
+    "id": "ZORO_ep_220",
     "label": "Ephoto - Ytgoldbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5676,7 +5676,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/ytgoldbutton"
   },
   {
-    "id": "vynaa_ep_221",
+    "id": "ZORO_ep_221",
     "label": "Ephoto - Ytsilverbutton",
     "category": "Ephoto",
     "group": "Ephoto",
@@ -5703,7 +5703,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/ephoto/ytsilverbutton"
   },
   {
-    "id": "vynaa_ep_222",
+    "id": "ZORO_ep_222",
     "label": "Game - Asahotak",
     "category": "Game",
     "group": "Game",
@@ -5723,7 +5723,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/asahotak"
   },
   {
-    "id": "vynaa_ep_223",
+    "id": "ZORO_ep_223",
     "label": "Game - Family100",
     "category": "Game",
     "group": "Game",
@@ -5743,7 +5743,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/family100"
   },
   {
-    "id": "vynaa_ep_224",
+    "id": "ZORO_ep_224",
     "label": "Game - Family100 2",
     "category": "Game",
     "group": "Game",
@@ -5763,7 +5763,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/family100-2"
   },
   {
-    "id": "vynaa_ep_225",
+    "id": "ZORO_ep_225",
     "label": "Game - Kuisislami",
     "category": "Game",
     "group": "Game",
@@ -5783,7 +5783,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/kuisislami"
   },
   {
-    "id": "vynaa_ep_226",
+    "id": "ZORO_ep_226",
     "label": "Game - Kuismerdeka",
     "category": "Game",
     "group": "Game",
@@ -5803,7 +5803,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/kuismerdeka"
   },
   {
-    "id": "vynaa_ep_227",
+    "id": "ZORO_ep_227",
     "label": "Game - Math",
     "category": "Game",
     "group": "Game",
@@ -5823,7 +5823,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/math"
   },
   {
-    "id": "vynaa_ep_228",
+    "id": "ZORO_ep_228",
     "label": "Game - Siapakahaku",
     "category": "Game",
     "group": "Game",
@@ -5843,7 +5843,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/siapakahaku"
   },
   {
-    "id": "vynaa_ep_229",
+    "id": "ZORO_ep_229",
     "label": "Game - Susunkata",
     "category": "Game",
     "group": "Game",
@@ -5863,7 +5863,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/susunkata"
   },
   {
-    "id": "vynaa_ep_230",
+    "id": "ZORO_ep_230",
     "label": "Game - Tebakdrakor",
     "category": "Game",
     "group": "Game",
@@ -5883,7 +5883,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakdrakor"
   },
   {
-    "id": "vynaa_ep_231",
+    "id": "ZORO_ep_231",
     "label": "Game - Tebakemoji",
     "category": "Game",
     "group": "Game",
@@ -5903,7 +5903,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakemoji"
   },
   {
-    "id": "vynaa_ep_232",
+    "id": "ZORO_ep_232",
     "label": "Game - Tebakepep",
     "category": "Game",
     "group": "Game",
@@ -5923,7 +5923,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakepep"
   },
   {
-    "id": "vynaa_ep_233",
+    "id": "ZORO_ep_233",
     "label": "Game - Tebakgambar",
     "category": "Game",
     "group": "Game",
@@ -5943,7 +5943,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakgambar"
   },
   {
-    "id": "vynaa_ep_234",
+    "id": "ZORO_ep_234",
     "label": "Game - Tebakheroml",
     "category": "Game",
     "group": "Game",
@@ -5963,7 +5963,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakheroml"
   },
   {
-    "id": "vynaa_ep_235",
+    "id": "ZORO_ep_235",
     "label": "Game - Tebakjkt48",
     "category": "Game",
     "group": "Game",
@@ -5983,7 +5983,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakjkt48"
   },
   {
-    "id": "vynaa_ep_236",
+    "id": "ZORO_ep_236",
     "label": "Game - Tebakkabupaten",
     "category": "Game",
     "group": "Game",
@@ -6003,7 +6003,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakkabupaten"
   },
   {
-    "id": "vynaa_ep_237",
+    "id": "ZORO_ep_237",
     "label": "Game - Tebakkata",
     "category": "Game",
     "group": "Game",
@@ -6023,7 +6023,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakkata"
   },
   {
-    "id": "vynaa_ep_238",
+    "id": "ZORO_ep_238",
     "label": "Game - Tebakkode",
     "category": "Game",
     "group": "Game",
@@ -6043,7 +6043,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakkode"
   },
   {
-    "id": "vynaa_ep_239",
+    "id": "ZORO_ep_239",
     "label": "Game - Tebaklagu",
     "category": "Game",
     "group": "Game",
@@ -6063,7 +6063,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebaklagu"
   },
   {
-    "id": "vynaa_ep_240",
+    "id": "ZORO_ep_240",
     "label": "Game - Tebakmakanan",
     "category": "Game",
     "group": "Game",
@@ -6083,7 +6083,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakmakanan"
   },
   {
-    "id": "vynaa_ep_241",
+    "id": "ZORO_ep_241",
     "label": "Game - Tebaknamatokoh",
     "category": "Game",
     "group": "Game",
@@ -6103,7 +6103,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebaknamatokoh"
   },
   {
-    "id": "vynaa_ep_242",
+    "id": "ZORO_ep_242",
     "label": "Game - Tebakpemainbola",
     "category": "Game",
     "group": "Game",
@@ -6123,7 +6123,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakpemainbola"
   },
   {
-    "id": "vynaa_ep_243",
+    "id": "ZORO_ep_243",
     "label": "Game - Tebakpokemon",
     "category": "Game",
     "group": "Game",
@@ -6143,7 +6143,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakpokemon"
   },
   {
-    "id": "vynaa_ep_244",
+    "id": "ZORO_ep_244",
     "label": "Game - Tebakpop",
     "category": "Game",
     "group": "Game",
@@ -6163,7 +6163,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakpop"
   },
   {
-    "id": "vynaa_ep_245",
+    "id": "ZORO_ep_245",
     "label": "Game - Tebakpresiden",
     "category": "Game",
     "group": "Game",
@@ -6183,7 +6183,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakpresiden"
   },
   {
-    "id": "vynaa_ep_246",
+    "id": "ZORO_ep_246",
     "label": "Game - Tebakwallet",
     "category": "Game",
     "group": "Game",
@@ -6203,7 +6203,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tebakwallet"
   },
   {
-    "id": "vynaa_ep_247",
+    "id": "ZORO_ep_247",
     "label": "Game - Tekateki",
     "category": "Game",
     "group": "Game",
@@ -6223,7 +6223,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/game/tekateki"
   },
   {
-    "id": "vynaa_ep_248",
+    "id": "ZORO_ep_248",
     "label": "Information - BMKG",
     "category": "Information",
     "group": "Information",
@@ -6243,7 +6243,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/info/bmkg"
   },
   {
-    "id": "vynaa_ep_249",
+    "id": "ZORO_ep_249",
     "label": "Islamic - Asmaul Husna",
     "category": "Islamic",
     "group": "Islamic",
@@ -6259,7 +6259,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/asmaulhusna"
   },
   {
-    "id": "vynaa_ep_250",
+    "id": "ZORO_ep_250",
     "label": "Islamic - Bacaan Shalat",
     "category": "Islamic",
     "group": "Islamic",
@@ -6275,7 +6275,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/bacaanshalat"
   },
   {
-    "id": "vynaa_ep_251",
+    "id": "ZORO_ep_251",
     "label": "Islamic - Doa Harian",
     "category": "Islamic",
     "group": "Islamic",
@@ -6291,7 +6291,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/doaharian"
   },
   {
-    "id": "vynaa_ep_252",
+    "id": "ZORO_ep_252",
     "label": "Islamic - Kisah Nabi",
     "category": "Islamic",
     "group": "Islamic",
@@ -6314,7 +6314,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/kisahnabi"
   },
   {
-    "id": "vynaa_ep_253",
+    "id": "ZORO_ep_253",
     "label": "Islamic - Kisah Nabi (List)",
     "category": "Islamic",
     "group": "Islamic",
@@ -6330,7 +6330,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/kisahnabi2"
   },
   {
-    "id": "vynaa_ep_254",
+    "id": "ZORO_ep_254",
     "label": "Islamic - Niat Ashar",
     "category": "Islamic",
     "group": "Islamic",
@@ -6346,7 +6346,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/niatashar"
   },
   {
-    "id": "vynaa_ep_255",
+    "id": "ZORO_ep_255",
     "label": "Islamic - Niat Dzuhur",
     "category": "Islamic",
     "group": "Islamic",
@@ -6362,7 +6362,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/niatdzuhur"
   },
   {
-    "id": "vynaa_ep_256",
+    "id": "ZORO_ep_256",
     "label": "Islamic - Niat Isya",
     "category": "Islamic",
     "group": "Islamic",
@@ -6378,7 +6378,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/niatisya"
   },
   {
-    "id": "vynaa_ep_257",
+    "id": "ZORO_ep_257",
     "label": "Islamic - Niat Maghrib",
     "category": "Islamic",
     "group": "Islamic",
@@ -6394,7 +6394,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/niatmaghrib"
   },
   {
-    "id": "vynaa_ep_258",
+    "id": "ZORO_ep_258",
     "label": "Islamic - Niat Shubuh",
     "category": "Islamic",
     "group": "Islamic",
@@ -6410,7 +6410,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/niatshubuh"
   },
   {
-    "id": "vynaa_ep_259",
+    "id": "ZORO_ep_259",
     "label": "Islamic - Surah",
     "category": "Islamic",
     "group": "Islamic",
@@ -6433,7 +6433,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/surah"
   },
   {
-    "id": "vynaa_ep_260",
+    "id": "ZORO_ep_260",
     "label": "Islamic - Tafsir Surah",
     "category": "Islamic",
     "group": "Islamic",
@@ -6456,7 +6456,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/tafsirsurah"
   },
   {
-    "id": "vynaa_ep_261",
+    "id": "ZORO_ep_261",
     "label": "Islamic - Tahlil",
     "category": "Islamic",
     "group": "Islamic",
@@ -6472,7 +6472,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/tahlil"
   },
   {
-    "id": "vynaa_ep_262",
+    "id": "ZORO_ep_262",
     "label": "Islamic - Wirid",
     "category": "Islamic",
     "group": "Islamic",
@@ -6488,7 +6488,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/islamic/wirid"
   },
   {
-    "id": "vynaa_ep_263",
+    "id": "ZORO_ep_263",
     "label": "Maker - ATTP",
     "category": "Maker",
     "group": "Maker",
@@ -6515,7 +6515,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/attp"
   },
   {
-    "id": "vynaa_ep_264",
+    "id": "ZORO_ep_264",
     "label": "Maker - Brat Video",
     "category": "Maker",
     "group": "Maker",
@@ -6542,7 +6542,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/brat-video"
   },
   {
-    "id": "vynaa_ep_265",
+    "id": "ZORO_ep_265",
     "label": "Maker - Brat",
     "category": "Maker",
     "group": "Maker",
@@ -6569,7 +6569,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/brat"
   },
   {
-    "id": "vynaa_ep_266",
+    "id": "ZORO_ep_266",
     "label": "Maker - Carbon",
     "category": "Maker",
     "group": "Maker",
@@ -6596,7 +6596,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/carbon"
   },
   {
-    "id": "vynaa_ep_267",
+    "id": "ZORO_ep_267",
     "label": "Maker - Generate Lirik",
     "category": "Maker",
     "group": "Maker",
@@ -6623,7 +6623,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/generateLirik"
   },
   {
-    "id": "vynaa_ep_268",
+    "id": "ZORO_ep_268",
     "label": "Maker - IQC",
     "category": "Maker",
     "group": "Maker",
@@ -6650,7 +6650,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/iqc"
   },
   {
-    "id": "vynaa_ep_269",
+    "id": "ZORO_ep_269",
     "label": "Maker - Jadi Anime",
     "category": "Maker",
     "group": "Maker",
@@ -6677,7 +6677,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadianime"
   },
   {
-    "id": "vynaa_ep_270",
+    "id": "ZORO_ep_270",
     "label": "Maker - Jadi Anime 3D",
     "category": "Maker",
     "group": "Maker",
@@ -6704,7 +6704,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadianime3d"
   },
   {
-    "id": "vynaa_ep_271",
+    "id": "ZORO_ep_271",
     "label": "Maker - Jadi Cartoon",
     "category": "Maker",
     "group": "Maker",
@@ -6731,7 +6731,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadicartoon"
   },
   {
-    "id": "vynaa_ep_272",
+    "id": "ZORO_ep_272",
     "label": "Maker - Jadi Comic Book",
     "category": "Maker",
     "group": "Maker",
@@ -6758,7 +6758,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadicomicbook"
   },
   {
-    "id": "vynaa_ep_273",
+    "id": "ZORO_ep_273",
     "label": "Maker - Jadi Cyberpunk",
     "category": "Maker",
     "group": "Maker",
@@ -6785,7 +6785,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadicyberpunk"
   },
   {
-    "id": "vynaa_ep_274",
+    "id": "ZORO_ep_274",
     "label": "Maker - Jadi Disney",
     "category": "Maker",
     "group": "Maker",
@@ -6812,7 +6812,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadidisney"
   },
   {
-    "id": "vynaa_ep_275",
+    "id": "ZORO_ep_275",
     "label": "Maker - Jadi Ghibli",
     "category": "Maker",
     "group": "Maker",
@@ -6839,7 +6839,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadighibili"
   },
   {
-    "id": "vynaa_ep_276",
+    "id": "ZORO_ep_276",
     "label": "Maker - Jadi GTA",
     "category": "Maker",
     "group": "Maker",
@@ -6866,7 +6866,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadigta"
   },
   {
-    "id": "vynaa_ep_277",
+    "id": "ZORO_ep_277",
     "label": "Maker - Jadi Hijab",
     "category": "Maker",
     "group": "Maker",
@@ -6893,7 +6893,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadihijab"
   },
   {
-    "id": "vynaa_ep_278",
+    "id": "ZORO_ep_278",
     "label": "Maker - Jadi Hitam",
     "category": "Maker",
     "group": "Maker",
@@ -6920,7 +6920,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadihitam"
   },
   {
-    "id": "vynaa_ep_279",
+    "id": "ZORO_ep_279",
     "label": "Maker - Jadi Pixar",
     "category": "Maker",
     "group": "Maker",
@@ -6947,7 +6947,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadipixar"
   },
   {
-    "id": "vynaa_ep_280",
+    "id": "ZORO_ep_280",
     "label": "Maker - Jadi Pixel Art",
     "category": "Maker",
     "group": "Maker",
@@ -6974,7 +6974,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadipixelart"
   },
   {
-    "id": "vynaa_ep_281",
+    "id": "ZORO_ep_281",
     "label": "Maker - Jadi Putih",
     "category": "Maker",
     "group": "Maker",
@@ -7001,7 +7001,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadiputih"
   },
   {
-    "id": "vynaa_ep_282",
+    "id": "ZORO_ep_282",
     "label": "Maker - Jadi SDM Tinggi",
     "category": "Maker",
     "group": "Maker",
@@ -7028,7 +7028,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadisdmtinggi"
   },
   {
-    "id": "vynaa_ep_283",
+    "id": "ZORO_ep_283",
     "label": "Maker - Jadi Van Gogh",
     "category": "Maker",
     "group": "Maker",
@@ -7055,7 +7055,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadivangogh"
   },
   {
-    "id": "vynaa_ep_284",
+    "id": "ZORO_ep_284",
     "label": "Maker - Jadi Zombie",
     "category": "Maker",
     "group": "Maker",
@@ -7082,7 +7082,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/jadizombie"
   },
   {
-    "id": "vynaa_ep_285",
+    "id": "ZORO_ep_285",
     "label": "Maker - Quotes Video",
     "category": "Maker",
     "group": "Maker",
@@ -7115,7 +7115,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/quotesvideo"
   },
   {
-    "id": "vynaa_ep_286",
+    "id": "ZORO_ep_286",
     "label": "Maker - Text to Image",
     "category": "Maker",
     "group": "Maker",
@@ -7142,7 +7142,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/text2img"
   },
   {
-    "id": "vynaa_ep_287",
+    "id": "ZORO_ep_287",
     "label": "Maker - Textpro",
     "category": "Maker",
     "group": "Maker",
@@ -7181,7 +7181,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/textpro"
   },
   {
-    "id": "vynaa_ep_288",
+    "id": "ZORO_ep_288",
     "label": "Maker - To Figure",
     "category": "Maker",
     "group": "Maker",
@@ -7208,7 +7208,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/tofigure"
   },
   {
-    "id": "vynaa_ep_289",
+    "id": "ZORO_ep_289",
     "label": "Maker - To Figure v2",
     "category": "Maker",
     "group": "Maker",
@@ -7235,7 +7235,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/tofigurev2"
   },
   {
-    "id": "vynaa_ep_290",
+    "id": "ZORO_ep_290",
     "label": "Maker - To Figure v3",
     "category": "Maker",
     "group": "Maker",
@@ -7262,7 +7262,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/tofigurev3"
   },
   {
-    "id": "vynaa_ep_291",
+    "id": "ZORO_ep_291",
     "label": "Maker - TTP",
     "category": "Maker",
     "group": "Maker",
@@ -7289,7 +7289,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/maker/ttp"
   },
   {
-    "id": "vynaa_ep_292",
+    "id": "ZORO_ep_292",
     "label": "News - CNBC",
     "category": "News",
     "group": "News",
@@ -7309,7 +7309,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/cnbc"
   },
   {
-    "id": "vynaa_ep_293",
+    "id": "ZORO_ep_293",
     "label": "News - CNN",
     "category": "News",
     "group": "News",
@@ -7329,7 +7329,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/cnn"
   },
   {
-    "id": "vynaa_ep_294",
+    "id": "ZORO_ep_294",
     "label": "News - Daily",
     "category": "News",
     "group": "News",
@@ -7349,7 +7349,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/daily"
   },
   {
-    "id": "vynaa_ep_295",
+    "id": "ZORO_ep_295",
     "label": "News - Detik",
     "category": "News",
     "group": "News",
@@ -7369,7 +7369,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/detik"
   },
   {
-    "id": "vynaa_ep_296",
+    "id": "ZORO_ep_296",
     "label": "News - Indozone",
     "category": "News",
     "group": "News",
@@ -7389,7 +7389,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/indozone"
   },
   {
-    "id": "vynaa_ep_297",
+    "id": "ZORO_ep_297",
     "label": "News - iNews",
     "category": "News",
     "group": "News",
@@ -7409,7 +7409,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/inews"
   },
   {
-    "id": "vynaa_ep_298",
+    "id": "ZORO_ep_298",
     "label": "News - Kompas",
     "category": "News",
     "group": "News",
@@ -7429,7 +7429,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/kompas"
   },
   {
-    "id": "vynaa_ep_299",
+    "id": "ZORO_ep_299",
     "label": "News - Kontan",
     "category": "News",
     "group": "News",
@@ -7449,7 +7449,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/kontan"
   },
   {
-    "id": "vynaa_ep_300",
+    "id": "ZORO_ep_300",
     "label": "News - Koran Fajar",
     "category": "News",
     "group": "News",
@@ -7469,7 +7469,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/koranfajar"
   },
   {
-    "id": "vynaa_ep_301",
+    "id": "ZORO_ep_301",
     "label": "News - Tribun",
     "category": "News",
     "group": "News",
@@ -7489,7 +7489,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/news/tribun"
   },
   {
-    "id": "vynaa_ep_302",
+    "id": "ZORO_ep_302",
     "label": "NSFW - Ahegao",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7509,7 +7509,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/ahegao"
   },
   {
-    "id": "vynaa_ep_303",
+    "id": "ZORO_ep_303",
     "label": "NSFW - Ass",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7529,7 +7529,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/ass"
   },
   {
-    "id": "vynaa_ep_304",
+    "id": "ZORO_ep_304",
     "label": "NSFW - Bdsm",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7549,7 +7549,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/bdsm"
   },
   {
-    "id": "vynaa_ep_305",
+    "id": "ZORO_ep_305",
     "label": "NSFW - Blowjob",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7569,7 +7569,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/blowjob"
   },
   {
-    "id": "vynaa_ep_306",
+    "id": "ZORO_ep_306",
     "label": "NSFW - Cuckold",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7589,7 +7589,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/cuckold"
   },
   {
-    "id": "vynaa_ep_307",
+    "id": "ZORO_ep_307",
     "label": "NSFW - Cum",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7609,7 +7609,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/cum"
   },
   {
-    "id": "vynaa_ep_308",
+    "id": "ZORO_ep_308",
     "label": "NSFW - Ero",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7629,7 +7629,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/ero"
   },
   {
-    "id": "vynaa_ep_309",
+    "id": "ZORO_ep_309",
     "label": "NSFW - Femdom",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7649,7 +7649,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/femdom"
   },
   {
-    "id": "vynaa_ep_310",
+    "id": "ZORO_ep_310",
     "label": "NSFW - Foot",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7669,7 +7669,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/foot"
   },
   {
-    "id": "vynaa_ep_311",
+    "id": "ZORO_ep_311",
     "label": "NSFW - Gangbang",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7689,7 +7689,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/gangbang"
   },
   {
-    "id": "vynaa_ep_312",
+    "id": "ZORO_ep_312",
     "label": "NSFW - Gay",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7709,7 +7709,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/gay"
   },
   {
-    "id": "vynaa_ep_313",
+    "id": "ZORO_ep_313",
     "label": "NSFW - Gifs",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7729,7 +7729,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/gifs"
   },
   {
-    "id": "vynaa_ep_314",
+    "id": "ZORO_ep_314",
     "label": "NSFW - Glasses",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7749,7 +7749,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/glasses"
   },
   {
-    "id": "vynaa_ep_315",
+    "id": "ZORO_ep_315",
     "label": "NSFW - Hentai",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7769,7 +7769,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/hentai"
   },
   {
-    "id": "vynaa_ep_316",
+    "id": "ZORO_ep_316",
     "label": "NSFW - Jahy",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7789,7 +7789,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/jahy"
   },
   {
-    "id": "vynaa_ep_317",
+    "id": "ZORO_ep_317",
     "label": "NSFW - Manga",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7809,7 +7809,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/manga"
   },
   {
-    "id": "vynaa_ep_318",
+    "id": "ZORO_ep_318",
     "label": "NSFW - Masturbation",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7829,7 +7829,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/masturbation"
   },
   {
-    "id": "vynaa_ep_319",
+    "id": "ZORO_ep_319",
     "label": "NSFW - Neko",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7849,7 +7849,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/neko"
   },
   {
-    "id": "vynaa_ep_320",
+    "id": "ZORO_ep_320",
     "label": "NSFW - Neko2",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7869,7 +7869,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/neko2"
   },
   {
-    "id": "vynaa_ep_321",
+    "id": "ZORO_ep_321",
     "label": "NSFW - Orgy",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7889,7 +7889,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/orgy"
   },
   {
-    "id": "vynaa_ep_322",
+    "id": "ZORO_ep_322",
     "label": "NSFW - Panties",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7909,7 +7909,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/panties"
   },
   {
-    "id": "vynaa_ep_323",
+    "id": "ZORO_ep_323",
     "label": "NSFW - Pussy",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7929,7 +7929,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/pussy"
   },
   {
-    "id": "vynaa_ep_324",
+    "id": "ZORO_ep_324",
     "label": "NSFW - Tentacles",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7949,7 +7949,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/tentacles"
   },
   {
-    "id": "vynaa_ep_325",
+    "id": "ZORO_ep_325",
     "label": "NSFW - Thighs",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7969,7 +7969,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/thighs"
   },
   {
-    "id": "vynaa_ep_326",
+    "id": "ZORO_ep_326",
     "label": "NSFW - Yuri",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -7989,7 +7989,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/yuri"
   },
   {
-    "id": "vynaa_ep_327",
+    "id": "ZORO_ep_327",
     "label": "NSFW - Zettai",
     "category": "Nsfw",
     "group": "Nsfw",
@@ -8009,7 +8009,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/nsfw/zettai"
   },
   {
-    "id": "vynaa_ep_328",
+    "id": "ZORO_ep_328",
     "label": "Photooxy - 3d Summer",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8036,7 +8036,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/3d-summer"
   },
   {
-    "id": "vynaa_ep_329",
+    "id": "ZORO_ep_329",
     "label": "Photooxy - Bevel Text",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8063,7 +8063,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/bevel-text"
   },
   {
-    "id": "vynaa_ep_330",
+    "id": "ZORO_ep_330",
     "label": "Photooxy - Burn Paper",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8090,7 +8090,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/burn-paper"
   },
   {
-    "id": "vynaa_ep_331",
+    "id": "ZORO_ep_331",
     "label": "Photooxy - Butterfly",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8123,7 +8123,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/butterfly"
   },
   {
-    "id": "vynaa_ep_332",
+    "id": "ZORO_ep_332",
     "label": "Photooxy - Carved Wood",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8150,7 +8150,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/carved-wood"
   },
   {
-    "id": "vynaa_ep_333",
+    "id": "ZORO_ep_333",
     "label": "Photooxy - Coffe Cup",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8177,7 +8177,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/coffe-cup"
   },
   {
-    "id": "vynaa_ep_334",
+    "id": "ZORO_ep_334",
     "label": "Photooxy - Flaming",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8204,7 +8204,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/flaming"
   },
   {
-    "id": "vynaa_ep_335",
+    "id": "ZORO_ep_335",
     "label": "Photooxy - Flower Typography",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8231,7 +8231,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/flower-typography"
   },
   {
-    "id": "vynaa_ep_336",
+    "id": "ZORO_ep_336",
     "label": "Photooxy - Harry Potter",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8258,7 +8258,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/harry-potter"
   },
   {
-    "id": "vynaa_ep_337",
+    "id": "ZORO_ep_337",
     "label": "Photooxy - Hello Kitty",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8285,7 +8285,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/hello-kitty"
   },
   {
-    "id": "vynaa_ep_338",
+    "id": "ZORO_ep_338",
     "label": "Photooxy - Luxury",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8312,7 +8312,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/luxury"
   },
   {
-    "id": "vynaa_ep_339",
+    "id": "ZORO_ep_339",
     "label": "Photooxy - Metallic",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8339,7 +8339,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/metallic"
   },
   {
-    "id": "vynaa_ep_340",
+    "id": "ZORO_ep_340",
     "label": "Photooxy - Metallic2",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8366,7 +8366,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/metallic2"
   },
   {
-    "id": "vynaa_ep_341",
+    "id": "ZORO_ep_341",
     "label": "Photooxy - Naruto",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8393,7 +8393,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/naruto"
   },
   {
-    "id": "vynaa_ep_342",
+    "id": "ZORO_ep_342",
     "label": "Photooxy - Night Sky",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8420,7 +8420,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/night-sky"
   },
   {
-    "id": "vynaa_ep_343",
+    "id": "ZORO_ep_343",
     "label": "Photooxy - Picture Of Love",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8447,7 +8447,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/picture-of-love"
   },
   {
-    "id": "vynaa_ep_344",
+    "id": "ZORO_ep_344",
     "label": "Photooxy - Pubg",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8480,7 +8480,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/pubg"
   },
   {
-    "id": "vynaa_ep_345",
+    "id": "ZORO_ep_345",
     "label": "Photooxy - Shadow Sky",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8507,7 +8507,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/shadow-sky"
   },
   {
-    "id": "vynaa_ep_346",
+    "id": "ZORO_ep_346",
     "label": "Photooxy - Smoke",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8534,7 +8534,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/smoke"
   },
   {
-    "id": "vynaa_ep_347",
+    "id": "ZORO_ep_347",
     "label": "Photooxy - Sweet Candy",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8561,7 +8561,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/sweet-candy"
   },
   {
-    "id": "vynaa_ep_348",
+    "id": "ZORO_ep_348",
     "label": "Photooxy - Typography",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8588,7 +8588,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/typography"
   },
   {
-    "id": "vynaa_ep_349",
+    "id": "ZORO_ep_349",
     "label": "Photooxy - Under Grass",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8615,7 +8615,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/under-grass"
   },
   {
-    "id": "vynaa_ep_350",
+    "id": "ZORO_ep_350",
     "label": "Photooxy - Underwater",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8642,7 +8642,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/underwater"
   },
   {
-    "id": "vynaa_ep_351",
+    "id": "ZORO_ep_351",
     "label": "Photooxy - Wolf Metal",
     "category": "Photooxy",
     "group": "Photooxy",
@@ -8669,7 +8669,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/photooxy/wolf-metal"
   },
   {
-    "id": "vynaa_ep_352",
+    "id": "ZORO_ep_352",
     "label": "Primbon - Arah Rejeki",
     "category": "Primbon",
     "group": "Primbon",
@@ -8708,7 +8708,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/arahrejeki"
   },
   {
-    "id": "vynaa_ep_353",
+    "id": "ZORO_ep_353",
     "label": "Primbon - Arti Mimpi",
     "category": "Primbon",
     "group": "Primbon",
@@ -8735,7 +8735,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/artimimpi"
   },
   {
-    "id": "vynaa_ep_354",
+    "id": "ZORO_ep_354",
     "label": "Primbon - Arti Nama",
     "category": "Primbon",
     "group": "Primbon",
@@ -8762,7 +8762,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/artinama"
   },
   {
-    "id": "vynaa_ep_355",
+    "id": "ZORO_ep_355",
     "label": "Primbon - Arti Tarot",
     "category": "Primbon",
     "group": "Primbon",
@@ -8801,7 +8801,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/artitarot"
   },
   {
-    "id": "vynaa_ep_356",
+    "id": "ZORO_ep_356",
     "label": "Primbon - Cek Penyakit",
     "category": "Primbon",
     "group": "Primbon",
@@ -8840,7 +8840,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/cekpenyakit"
   },
   {
-    "id": "vynaa_ep_357",
+    "id": "ZORO_ep_357",
     "label": "Primbon - Hari Baik",
     "category": "Primbon",
     "group": "Primbon",
@@ -8879,7 +8879,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/haribaik"
   },
   {
-    "id": "vynaa_ep_358",
+    "id": "ZORO_ep_358",
     "label": "Primbon - Hari Naas",
     "category": "Primbon",
     "group": "Primbon",
@@ -8918,7 +8918,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/harinaas"
   },
   {
-    "id": "vynaa_ep_359",
+    "id": "ZORO_ep_359",
     "label": "Primbon - Hari Sangar",
     "category": "Primbon",
     "group": "Primbon",
@@ -8957,7 +8957,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/harisangar"
   },
   {
-    "id": "vynaa_ep_360",
+    "id": "ZORO_ep_360",
     "label": "Primbon - Kecocokan Nama",
     "category": "Primbon",
     "group": "Primbon",
@@ -9002,7 +9002,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/kecocokannama"
   },
   {
-    "id": "vynaa_ep_361",
+    "id": "ZORO_ep_361",
     "label": "Primbon - Kecocokan Pasangan",
     "category": "Primbon",
     "group": "Primbon",
@@ -9035,7 +9035,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/kecocokanpasangan"
   },
   {
-    "id": "vynaa_ep_362",
+    "id": "ZORO_ep_362",
     "label": "Primbon - Memancing Ikan",
     "category": "Primbon",
     "group": "Primbon",
@@ -9074,7 +9074,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/memancingikan"
   },
   {
-    "id": "vynaa_ep_363",
+    "id": "ZORO_ep_363",
     "label": "Primbon - Naga Hari",
     "category": "Primbon",
     "group": "Primbon",
@@ -9113,7 +9113,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/nagahari"
   },
   {
-    "id": "vynaa_ep_364",
+    "id": "ZORO_ep_364",
     "label": "Primbon - Nomor Hoki",
     "category": "Primbon",
     "group": "Primbon",
@@ -9140,7 +9140,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/nomerhoki"
   },
   {
-    "id": "vynaa_ep_365",
+    "id": "ZORO_ep_365",
     "label": "Primbon - Pekerjaan Weton Lahir",
     "category": "Primbon",
     "group": "Primbon",
@@ -9179,7 +9179,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/pekerjaanwetonlahir"
   },
   {
-    "id": "vynaa_ep_366",
+    "id": "ZORO_ep_366",
     "label": "Primbon - Potensi Keberuntungan",
     "category": "Primbon",
     "group": "Primbon",
@@ -9224,7 +9224,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/potensikeberuntungan"
   },
   {
-    "id": "vynaa_ep_367",
+    "id": "ZORO_ep_367",
     "label": "Primbon - Ramalan Cinta",
     "category": "Primbon",
     "group": "Primbon",
@@ -9293,7 +9293,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/ramalancinta"
   },
   {
-    "id": "vynaa_ep_368",
+    "id": "ZORO_ep_368",
     "label": "Primbon - Ramalan Jodoh",
     "category": "Primbon",
     "group": "Primbon",
@@ -9362,7 +9362,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/ramalanjodoh"
   },
   {
-    "id": "vynaa_ep_369",
+    "id": "ZORO_ep_369",
     "label": "Primbon - Ramalan Keberuntungan",
     "category": "Primbon",
     "group": "Primbon",
@@ -9401,7 +9401,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/ramalankeberuntungan"
   },
   {
-    "id": "vynaa_ep_370",
+    "id": "ZORO_ep_370",
     "label": "Primbon - Ramalan Nasib",
     "category": "Primbon",
     "group": "Primbon",
@@ -9440,7 +9440,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/ramalannasib"
   },
   {
-    "id": "vynaa_ep_371",
+    "id": "ZORO_ep_371",
     "label": "Primbon - Rejeki Weton",
     "category": "Primbon",
     "group": "Primbon",
@@ -9479,7 +9479,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/rejekiweton"
   },
   {
-    "id": "vynaa_ep_372",
+    "id": "ZORO_ep_372",
     "label": "Primbon - Shio",
     "category": "Primbon",
     "group": "Primbon",
@@ -9524,7 +9524,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/shio"
   },
   {
-    "id": "vynaa_ep_373",
+    "id": "ZORO_ep_373",
     "label": "Primbon - Sifat & Karakter",
     "category": "Primbon",
     "group": "Primbon",
@@ -9569,7 +9569,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/sifatkarakter"
   },
   {
-    "id": "vynaa_ep_374",
+    "id": "ZORO_ep_374",
     "label": "Primbon - Ramalan Suami Istri",
     "category": "Primbon",
     "group": "Primbon",
@@ -9638,7 +9638,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/suamiistri"
   },
   {
-    "id": "vynaa_ep_375",
+    "id": "ZORO_ep_375",
     "label": "Primbon - Tanggal Jadian / Pernikahan",
     "category": "Primbon",
     "group": "Primbon",
@@ -9677,7 +9677,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/tanggaljadianpernikahan"
   },
   {
-    "id": "vynaa_ep_376",
+    "id": "ZORO_ep_376",
     "label": "Primbon - Weton Jawa",
     "category": "Primbon",
     "group": "Primbon",
@@ -9716,7 +9716,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/primbon/wetonjawa"
   },
   {
-    "id": "vynaa_ep_377",
+    "id": "ZORO_ep_377",
     "label": "Random - Pepatah Aceh",
     "category": "Random",
     "group": "Random",
@@ -9736,7 +9736,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/aceh"
   },
   {
-    "id": "vynaa_ep_378",
+    "id": "ZORO_ep_378",
     "label": "Random - Kata Bacot",
     "category": "Random",
     "group": "Random",
@@ -9756,7 +9756,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/bacot"
   },
   {
-    "id": "vynaa_ep_379",
+    "id": "ZORO_ep_379",
     "label": "Random - Pepatah Batak",
     "category": "Random",
     "group": "Random",
@@ -9776,7 +9776,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/batak"
   },
   {
-    "id": "vynaa_ep_380",
+    "id": "ZORO_ep_380",
     "label": "Random - Kata Bijak",
     "category": "Random",
     "group": "Random",
@@ -9796,7 +9796,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/bijak"
   },
   {
-    "id": "vynaa_ep_381",
+    "id": "ZORO_ep_381",
     "label": "Random - Pepatah Bugis",
     "category": "Random",
     "group": "Random",
@@ -9816,7 +9816,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/bugis"
   },
   {
-    "id": "vynaa_ep_382",
+    "id": "ZORO_ep_382",
     "label": "Random - Tebakan Cak Lontong",
     "category": "Random",
     "group": "Random",
@@ -9836,7 +9836,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/caklontong"
   },
   {
-    "id": "vynaa_ep_383",
+    "id": "ZORO_ep_383",
     "label": "Random - Kata Bijak China",
     "category": "Random",
     "group": "Random",
@@ -9856,7 +9856,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/china"
   },
   {
-    "id": "vynaa_ep_384",
+    "id": "ZORO_ep_384",
     "label": "Random - Dare",
     "category": "Random",
     "group": "Random",
@@ -9876,7 +9876,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/dare"
   },
   {
-    "id": "vynaa_ep_385",
+    "id": "ZORO_ep_385",
     "label": "Random - Fakta Unik",
     "category": "Random",
     "group": "Random",
@@ -9896,7 +9896,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/fakta"
   },
   {
-    "id": "vynaa_ep_386",
+    "id": "ZORO_ep_386",
     "label": "Random - Kata Fiersa Besari",
     "category": "Random",
     "group": "Random",
@@ -9916,7 +9916,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/fiersa"
   },
   {
-    "id": "vynaa_ep_387",
+    "id": "ZORO_ep_387",
     "label": "Random - Kata Bucin",
     "category": "Random",
     "group": "Random",
@@ -9936,7 +9936,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/katabucin"
   },
   {
-    "id": "vynaa_ep_388",
+    "id": "ZORO_ep_388",
     "label": "Random - Kata Dilan",
     "category": "Random",
     "group": "Random",
@@ -9956,7 +9956,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/katadilan"
   },
   {
-    "id": "vynaa_ep_389",
+    "id": "ZORO_ep_389",
     "label": "Random - Kata Ilham",
     "category": "Random",
     "group": "Random",
@@ -9976,7 +9976,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/katailham"
   },
   {
-    "id": "vynaa_ep_390",
+    "id": "ZORO_ep_390",
     "label": "Random - Kata Senja",
     "category": "Random",
     "group": "Random",
@@ -9996,7 +9996,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/katasenja"
   },
   {
-    "id": "vynaa_ep_391",
+    "id": "ZORO_ep_391",
     "label": "Random - Pepatah Madura",
     "category": "Random",
     "group": "Random",
@@ -10016,7 +10016,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/madura"
   },
   {
-    "id": "vynaa_ep_392",
+    "id": "ZORO_ep_392",
     "label": "Random - Pepatah Melayu",
     "category": "Random",
     "group": "Random",
@@ -10036,7 +10036,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/melayu"
   },
   {
-    "id": "vynaa_ep_393",
+    "id": "ZORO_ep_393",
     "label": "Random - Pepatah Minangkabau",
     "category": "Random",
     "group": "Random",
@@ -10056,7 +10056,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/minangkabau"
   },
   {
-    "id": "vynaa_ep_394",
+    "id": "ZORO_ep_394",
     "label": "Random - Kata Motivasi",
     "category": "Random",
     "group": "Random",
@@ -10076,7 +10076,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/motivasi"
   },
   {
-    "id": "vynaa_ep_395",
+    "id": "ZORO_ep_395",
     "label": "Random - Kata Ngawur",
     "category": "Random",
     "group": "Random",
@@ -10096,7 +10096,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/ngawur"
   },
   {
-    "id": "vynaa_ep_396",
+    "id": "ZORO_ep_396",
     "label": "Random - Kata Nyindir",
     "category": "Random",
     "group": "Random",
@@ -10116,7 +10116,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/nyindir"
   },
   {
-    "id": "vynaa_ep_397",
+    "id": "ZORO_ep_397",
     "label": "Random - Quotes",
     "category": "Random",
     "group": "Random",
@@ -10136,7 +10136,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/quotes"
   },
   {
-    "id": "vynaa_ep_398",
+    "id": "ZORO_ep_398",
     "label": "Random - Quotes Anime",
     "category": "Random",
     "group": "Random",
@@ -10156,7 +10156,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/quotesanime"
   },
   {
-    "id": "vynaa_ep_399",
+    "id": "ZORO_ep_399",
     "label": "Random - Quotes Jawa",
     "category": "Random",
     "group": "Random",
@@ -10176,7 +10176,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/quotesjawa"
   },
   {
-    "id": "vynaa_ep_400",
+    "id": "ZORO_ep_400",
     "label": "Random - Pepatah Sunda",
     "category": "Random",
     "group": "Random",
@@ -10196,7 +10196,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/sunda"
   },
   {
-    "id": "vynaa_ep_401",
+    "id": "ZORO_ep_401",
     "label": "Random - Tau Gasih",
     "category": "Random",
     "group": "Random",
@@ -10216,7 +10216,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/taugasih"
   },
   {
-    "id": "vynaa_ep_402",
+    "id": "ZORO_ep_402",
     "label": "Random - Truth",
     "category": "Random",
     "group": "Random",
@@ -10236,7 +10236,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/truth"
   },
   {
-    "id": "vynaa_ep_403",
+    "id": "ZORO_ep_403",
     "label": "Search - Age Detect",
     "category": "Search",
     "group": "Search",
@@ -10263,7 +10263,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/agedetect"
   },
   {
-    "id": "vynaa_ep_404",
+    "id": "ZORO_ep_404",
     "label": "Search - Bard AI",
     "category": "Search",
     "group": "Search",
@@ -10290,7 +10290,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bard-ai"
   },
   {
-    "id": "vynaa_ep_405",
+    "id": "ZORO_ep_405",
     "label": "Search - Bard (Audio Q&A)",
     "category": "Search",
     "group": "Search",
@@ -10323,7 +10323,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bard-audio"
   },
   {
-    "id": "vynaa_ep_406",
+    "id": "ZORO_ep_406",
     "label": "Search - Bard (Image Q&A)",
     "category": "Search",
     "group": "Search",
@@ -10356,7 +10356,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bard-img"
   },
   {
-    "id": "vynaa_ep_407",
+    "id": "ZORO_ep_407",
     "label": "Search - Bard (Video Q&A)",
     "category": "Search",
     "group": "Search",
@@ -10389,7 +10389,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bard-video"
   },
   {
-    "id": "vynaa_ep_408",
+    "id": "ZORO_ep_408",
     "label": "Search - Bing Chat",
     "category": "Search",
     "group": "Search",
@@ -10416,7 +10416,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bing-chat"
   },
   {
-    "id": "vynaa_ep_409",
+    "id": "ZORO_ep_409",
     "label": "Search - Bing Image",
     "category": "Search",
     "group": "Search",
@@ -10443,7 +10443,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/bing-img"
   },
   {
-    "id": "vynaa_ep_410",
+    "id": "ZORO_ep_410",
     "label": "Search - Blackbox Chat",
     "category": "Search",
     "group": "Search",
@@ -10470,7 +10470,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/blackbox-chat"
   },
   {
-    "id": "vynaa_ep_411",
+    "id": "ZORO_ep_411",
     "label": "Search - Character AI",
     "category": "Search",
     "group": "Search",
@@ -10503,7 +10503,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/c-ai"
   },
   {
-    "id": "vynaa_ep_412",
+    "id": "ZORO_ep_412",
     "label": "Search - Chord Lagu",
     "category": "Search",
     "group": "Search",
@@ -10530,7 +10530,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/chord"
   },
   {
-    "id": "vynaa_ep_413",
+    "id": "ZORO_ep_413",
     "label": "Search - Gempa Terkini",
     "category": "Search",
     "group": "Search",
@@ -10550,7 +10550,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/gempa"
   },
   {
-    "id": "vynaa_ep_414",
+    "id": "ZORO_ep_414",
     "label": "Search - Google Web",
     "category": "Search",
     "group": "Search",
@@ -10577,7 +10577,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/google"
   },
   {
-    "id": "vynaa_ep_415",
+    "id": "ZORO_ep_415",
     "label": "Search - Google Image",
     "category": "Search",
     "group": "Search",
@@ -10604,7 +10604,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/googleimage"
   },
   {
-    "id": "vynaa_ep_416",
+    "id": "ZORO_ep_416",
     "label": "Search - GPT",
     "category": "Search",
     "group": "Search",
@@ -10631,7 +10631,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/gpt"
   },
   {
-    "id": "vynaa_ep_417",
+    "id": "ZORO_ep_417",
     "label": "Search - HappyMod",
     "category": "Search",
     "group": "Search",
@@ -10658,7 +10658,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/happymod"
   },
   {
-    "id": "vynaa_ep_418",
+    "id": "ZORO_ep_418",
     "label": "Search - Hero Mobile Legends",
     "category": "Search",
     "group": "Search",
@@ -10685,7 +10685,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/heroml"
   },
   {
-    "id": "vynaa_ep_419",
+    "id": "ZORO_ep_419",
     "label": "Search - Jarak Kota",
     "category": "Search",
     "group": "Search",
@@ -10718,7 +10718,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/jarak"
   },
   {
-    "id": "vynaa_ep_420",
+    "id": "ZORO_ep_420",
     "label": "Search - KBBI",
     "category": "Search",
     "group": "Search",
@@ -10745,7 +10745,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/kbbi"
   },
   {
-    "id": "vynaa_ep_421",
+    "id": "ZORO_ep_421",
     "label": "Search - Kode Pos",
     "category": "Search",
     "group": "Search",
@@ -10772,7 +10772,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/kodepos"
   },
   {
-    "id": "vynaa_ep_422",
+    "id": "ZORO_ep_422",
     "label": "Search - Lepton AI",
     "category": "Search",
     "group": "Search",
@@ -10799,7 +10799,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/lepton-ai"
   },
   {
-    "id": "vynaa_ep_423",
+    "id": "ZORO_ep_423",
     "label": "Search - Link Group WA",
     "category": "Search",
     "group": "Search",
@@ -10826,7 +10826,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/linkgroupwa"
   },
   {
-    "id": "vynaa_ep_424",
+    "id": "ZORO_ep_424",
     "label": "Search - Lirik Lagu",
     "category": "Search",
     "group": "Search",
@@ -10853,7 +10853,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/lirik"
   },
   {
-    "id": "vynaa_ep_425",
+    "id": "ZORO_ep_425",
     "label": "Search - OpenAI Chat",
     "category": "Search",
     "group": "Search",
@@ -10880,7 +10880,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/openai-chat"
   },
   {
-    "id": "vynaa_ep_426",
+    "id": "ZORO_ep_426",
     "label": "Search - OpenAI Image Generator",
     "category": "Search",
     "group": "Search",
@@ -10907,7 +10907,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/openai-image"
   },
   {
-    "id": "vynaa_ep_427",
+    "id": "ZORO_ep_427",
     "label": "Search - Pinterest",
     "category": "Search",
     "group": "Search",
@@ -10934,7 +10934,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/pinterest"
   },
   {
-    "id": "vynaa_ep_428",
+    "id": "ZORO_ep_428",
     "label": "Search - Play Store",
     "category": "Search",
     "group": "Search",
@@ -10961,7 +10961,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/playstore"
   },
   {
-    "id": "vynaa_ep_429",
+    "id": "ZORO_ep_429",
     "label": "Search - Ringtone",
     "category": "Search",
     "group": "Search",
@@ -10988,7 +10988,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/ringtone"
   },
   {
-    "id": "vynaa_ep_430",
+    "id": "ZORO_ep_430",
     "label": "Search - SFile",
     "category": "Search",
     "group": "Search",
@@ -11015,7 +11015,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/sfile"
   },
   {
-    "id": "vynaa_ep_431",
+    "id": "ZORO_ep_431",
     "label": "Search - SFile Mobi",
     "category": "Search",
     "group": "Search",
@@ -11042,7 +11042,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/sfilemobi"
   },
   {
-    "id": "vynaa_ep_432",
+    "id": "ZORO_ep_432",
     "label": "Search - Spotify",
     "category": "Search",
     "group": "Search",
@@ -11069,7 +11069,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/spotify"
   },
   {
-    "id": "vynaa_ep_433",
+    "id": "ZORO_ep_433",
     "label": "Search - Stable Diffusion",
     "category": "Search",
     "group": "Search",
@@ -11096,7 +11096,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/stablediffusion"
   },
   {
-    "id": "vynaa_ep_434",
+    "id": "ZORO_ep_434",
     "label": "Search - Sticker",
     "category": "Search",
     "group": "Search",
@@ -11123,7 +11123,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/sticker"
   },
   {
-    "id": "vynaa_ep_435",
+    "id": "ZORO_ep_435",
     "label": "Search - TikTok Search",
     "category": "Search",
     "group": "Search",
@@ -11150,7 +11150,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/tiktoks"
   },
   {
-    "id": "vynaa_ep_436",
+    "id": "ZORO_ep_436",
     "label": "Search - Wikimedia",
     "category": "Search",
     "group": "Search",
@@ -11177,7 +11177,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/wikimedia"
   },
   {
-    "id": "vynaa_ep_437",
+    "id": "ZORO_ep_437",
     "label": "Search - Wikipedia",
     "category": "Search",
     "group": "Search",
@@ -11204,7 +11204,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/wikipedia"
   },
   {
-    "id": "vynaa_ep_438",
+    "id": "ZORO_ep_438",
     "label": "Search - YouTube Search",
     "category": "Search",
     "group": "Search",
@@ -11231,7 +11231,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/search/yts"
   },
   {
-    "id": "vynaa_ep_439",
+    "id": "ZORO_ep_439",
     "label": "Stalk - Free Fire",
     "category": "Stalk",
     "group": "Stalk",
@@ -11258,7 +11258,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/ff"
   },
   {
-    "id": "vynaa_ep_440",
+    "id": "ZORO_ep_440",
     "label": "Stalk - Genshin Impact",
     "category": "Stalk",
     "group": "Stalk",
@@ -11285,7 +11285,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/genshin"
   },
   {
-    "id": "vynaa_ep_441",
+    "id": "ZORO_ep_441",
     "label": "Stalk - GitHub User",
     "category": "Stalk",
     "group": "Stalk",
@@ -11312,7 +11312,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/github"
   },
   {
-    "id": "vynaa_ep_442",
+    "id": "ZORO_ep_442",
     "label": "Stalk - Honor of Kings",
     "category": "Stalk",
     "group": "Stalk",
@@ -11339,7 +11339,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/hok"
   },
   {
-    "id": "vynaa_ep_443",
+    "id": "ZORO_ep_443",
     "label": "Stalk - Instagram",
     "category": "Stalk",
     "group": "Stalk",
@@ -11366,7 +11366,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/ig"
   },
   {
-    "id": "vynaa_ep_444",
+    "id": "ZORO_ep_444",
     "label": "Stalk - Mobile Legends V2",
     "category": "Stalk",
     "group": "Stalk",
@@ -11399,7 +11399,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/ml-v2"
   },
   {
-    "id": "vynaa_ep_445",
+    "id": "ZORO_ep_445",
     "label": "Stalk - Mobile Legends",
     "category": "Stalk",
     "group": "Stalk",
@@ -11432,7 +11432,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/ml"
   },
   {
-    "id": "vynaa_ep_446",
+    "id": "ZORO_ep_446",
     "label": "Stalk - NPM Package",
     "category": "Stalk",
     "group": "Stalk",
@@ -11459,7 +11459,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/npm"
   },
   {
-    "id": "vynaa_ep_447",
+    "id": "ZORO_ep_447",
     "label": "Stalk - GitHub Repo Search",
     "category": "Stalk",
     "group": "Stalk",
@@ -11486,7 +11486,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/repo"
   },
   {
-    "id": "vynaa_ep_448",
+    "id": "ZORO_ep_448",
     "label": "Stalk - Roblox",
     "category": "Stalk",
     "group": "Stalk",
@@ -11513,7 +11513,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/roblox"
   },
   {
-    "id": "vynaa_ep_449",
+    "id": "ZORO_ep_449",
     "label": "Stalk - SnackVideo",
     "category": "Stalk",
     "group": "Stalk",
@@ -11540,7 +11540,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/snackvideo"
   },
   {
-    "id": "vynaa_ep_450",
+    "id": "ZORO_ep_450",
     "label": "Stalk - Super Sus",
     "category": "Stalk",
     "group": "Stalk",
@@ -11567,7 +11567,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/supersus"
   },
   {
-    "id": "vynaa_ep_451",
+    "id": "ZORO_ep_451",
     "label": "Stalk - TikTok",
     "category": "Stalk",
     "group": "Stalk",
@@ -11594,7 +11594,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/tt"
   },
   {
-    "id": "vynaa_ep_452",
+    "id": "ZORO_ep_452",
     "label": "Stalk - Twitter / X",
     "category": "Stalk",
     "group": "Stalk",
@@ -11621,7 +11621,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/twitter"
   },
   {
-    "id": "vynaa_ep_453",
+    "id": "ZORO_ep_453",
     "label": "Stalk - YouTube",
     "category": "Stalk",
     "group": "Stalk",
@@ -11648,7 +11648,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/stalk/yt"
   },
   {
-    "id": "vynaa_ep_454",
+    "id": "ZORO_ep_454",
     "label": "Sticker - Among Us",
     "category": "Sticker",
     "group": "Sticker",
@@ -11664,7 +11664,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/among"
   },
   {
-    "id": "vynaa_ep_455",
+    "id": "ZORO_ep_455",
     "label": "Sticker - Anime",
     "category": "Sticker",
     "group": "Sticker",
@@ -11680,7 +11680,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/anime"
   },
   {
-    "id": "vynaa_ep_456",
+    "id": "ZORO_ep_456",
     "label": "Sticker - Anime GIF",
     "category": "Sticker",
     "group": "Sticker",
@@ -11696,7 +11696,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/animegif"
   },
   {
-    "id": "vynaa_ep_457",
+    "id": "ZORO_ep_457",
     "label": "Sticker - Bucin",
     "category": "Sticker",
     "group": "Sticker",
@@ -11712,7 +11712,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/bucin"
   },
   {
-    "id": "vynaa_ep_458",
+    "id": "ZORO_ep_458",
     "label": "Sticker - Chat",
     "category": "Sticker",
     "group": "Sticker",
@@ -11728,7 +11728,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/chat"
   },
   {
-    "id": "vynaa_ep_459",
+    "id": "ZORO_ep_459",
     "label": "Sticker - Dadu",
     "category": "Sticker",
     "group": "Sticker",
@@ -11744,7 +11744,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/dadu"
   },
   {
-    "id": "vynaa_ep_460",
+    "id": "ZORO_ep_460",
     "label": "Sticker - Dino Kuning",
     "category": "Sticker",
     "group": "Sticker",
@@ -11760,7 +11760,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/dinokuning"
   },
   {
-    "id": "vynaa_ep_461",
+    "id": "ZORO_ep_461",
     "label": "Sticker - Doge",
     "category": "Sticker",
     "group": "Sticker",
@@ -11776,7 +11776,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/doge"
   },
   {
-    "id": "vynaa_ep_462",
+    "id": "ZORO_ep_462",
     "label": "Sticker - Gojo Satoru",
     "category": "Sticker",
     "group": "Sticker",
@@ -11792,7 +11792,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/gojosatoru"
   },
   {
-    "id": "vynaa_ep_463",
+    "id": "ZORO_ep_463",
     "label": "Sticker - Gura",
     "category": "Sticker",
     "group": "Sticker",
@@ -11808,7 +11808,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/gura"
   },
   {
-    "id": "vynaa_ep_464",
+    "id": "ZORO_ep_464",
     "label": "Sticker - Kawan SpongeBob",
     "category": "Sticker",
     "group": "Sticker",
@@ -11824,7 +11824,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/kawanspongebob"
   },
   {
-    "id": "vynaa_ep_465",
+    "id": "ZORO_ep_465",
     "label": "Sticker - Manusia Lidi",
     "category": "Sticker",
     "group": "Sticker",
@@ -11840,7 +11840,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/manusialidi"
   },
   {
-    "id": "vynaa_ep_466",
+    "id": "ZORO_ep_466",
     "label": "Sticker - Muka Lu",
     "category": "Sticker",
     "group": "Sticker",
@@ -11856,7 +11856,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/mukalu"
   },
   {
-    "id": "vynaa_ep_467",
+    "id": "ZORO_ep_467",
     "label": "Sticker - Paimon",
     "category": "Sticker",
     "group": "Sticker",
@@ -11872,7 +11872,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/paimon"
   },
   {
-    "id": "vynaa_ep_468",
+    "id": "ZORO_ep_468",
     "label": "Sticker - Patrick",
     "category": "Sticker",
     "group": "Sticker",
@@ -11888,7 +11888,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/patrick"
   },
   {
-    "id": "vynaa_ep_469",
+    "id": "ZORO_ep_469",
     "label": "Sticker - Patrick GIF",
     "category": "Sticker",
     "group": "Sticker",
@@ -11904,7 +11904,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/patrickgif"
   },
   {
-    "id": "vynaa_ep_470",
+    "id": "ZORO_ep_470",
     "label": "Sticker - Pentol",
     "category": "Sticker",
     "group": "Sticker",
@@ -11920,7 +11920,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/pentol"
   },
   {
-    "id": "vynaa_ep_471",
+    "id": "ZORO_ep_471",
     "label": "Sticker - Rabbit",
     "category": "Sticker",
     "group": "Sticker",
@@ -11936,7 +11936,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/rabbit"
   },
   {
-    "id": "vynaa_ep_472",
+    "id": "ZORO_ep_472",
     "label": "Sticker - Random",
     "category": "Sticker",
     "group": "Sticker",
@@ -11952,7 +11952,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/random"
   },
   {
-    "id": "vynaa_ep_473",
+    "id": "ZORO_ep_473",
     "label": "Sticker - SpongeBob",
     "category": "Sticker",
     "group": "Sticker",
@@ -11968,7 +11968,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sticker/spongebob"
   },
   {
-    "id": "vynaa_ep_474",
+    "id": "ZORO_ep_474",
     "label": "Story - Cerpen Anak",
     "category": "Story",
     "group": "Story",
@@ -11988,7 +11988,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-anak"
   },
   {
-    "id": "vynaa_ep_475",
+    "id": "ZORO_ep_475",
     "label": "Story - Cerpen Budaya",
     "category": "Story",
     "group": "Story",
@@ -12008,7 +12008,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-budaya"
   },
   {
-    "id": "vynaa_ep_476",
+    "id": "ZORO_ep_476",
     "label": "Story - Cerpen Cinta",
     "category": "Story",
     "group": "Story",
@@ -12028,7 +12028,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-cinta"
   },
   {
-    "id": "vynaa_ep_477",
+    "id": "ZORO_ep_477",
     "label": "Story - Cerpen Galau",
     "category": "Story",
     "group": "Story",
@@ -12048,7 +12048,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-galau"
   },
   {
-    "id": "vynaa_ep_478",
+    "id": "ZORO_ep_478",
     "label": "Story - Cerpen Gokil",
     "category": "Story",
     "group": "Story",
@@ -12068,7 +12068,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-gokil"
   },
   {
-    "id": "vynaa_ep_479",
+    "id": "ZORO_ep_479",
     "label": "Story - Cerpen Inspiratif",
     "category": "Story",
     "group": "Story",
@@ -12088,7 +12088,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-inspiratif"
   },
   {
-    "id": "vynaa_ep_480",
+    "id": "ZORO_ep_480",
     "label": "Story - Cerpen Jepang",
     "category": "Story",
     "group": "Story",
@@ -12108,7 +12108,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-jepang"
   },
   {
-    "id": "vynaa_ep_481",
+    "id": "ZORO_ep_481",
     "label": "Story - Cerpen Kehidupan",
     "category": "Story",
     "group": "Story",
@@ -12128,7 +12128,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-kehidupan"
   },
   {
-    "id": "vynaa_ep_482",
+    "id": "ZORO_ep_482",
     "label": "Story - Cerpen Keluarga",
     "category": "Story",
     "group": "Story",
@@ -12148,7 +12148,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-keluarga"
   },
   {
-    "id": "vynaa_ep_483",
+    "id": "ZORO_ep_483",
     "label": "Story - Cerpen Korea",
     "category": "Story",
     "group": "Story",
@@ -12168,7 +12168,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-korea"
   },
   {
-    "id": "vynaa_ep_484",
+    "id": "ZORO_ep_484",
     "label": "Story - Cerpen Kristen",
     "category": "Story",
     "group": "Story",
@@ -12188,7 +12188,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-kristen"
   },
   {
-    "id": "vynaa_ep_485",
+    "id": "ZORO_ep_485",
     "label": "Story - Cerpen Liburan",
     "category": "Story",
     "group": "Story",
@@ -12208,7 +12208,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-liburan"
   },
   {
-    "id": "vynaa_ep_486",
+    "id": "ZORO_ep_486",
     "label": "Story - Cerpen Lingkungan",
     "category": "Story",
     "group": "Story",
@@ -12228,7 +12228,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-lingkungan"
   },
   {
-    "id": "vynaa_ep_487",
+    "id": "ZORO_ep_487",
     "label": "Story - Cerpen Mengharukan",
     "category": "Story",
     "group": "Story",
@@ -12248,7 +12248,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-mengharukan"
   },
   {
-    "id": "vynaa_ep_488",
+    "id": "ZORO_ep_488",
     "label": "Story - Cerpen Misteri",
     "category": "Story",
     "group": "Story",
@@ -12268,7 +12268,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-misteri"
   },
   {
-    "id": "vynaa_ep_489",
+    "id": "ZORO_ep_489",
     "label": "Story - Cerpen Motivasi",
     "category": "Story",
     "group": "Story",
@@ -12288,7 +12288,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-motivasi"
   },
   {
-    "id": "vynaa_ep_490",
+    "id": "ZORO_ep_490",
     "label": "Story - Cerpen Nasihat",
     "category": "Story",
     "group": "Story",
@@ -12308,7 +12308,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-nasihat"
   },
   {
-    "id": "vynaa_ep_491",
+    "id": "ZORO_ep_491",
     "label": "Story - Cerpen Pendidikan",
     "category": "Story",
     "group": "Story",
@@ -12328,7 +12328,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-pendidikan"
   },
   {
-    "id": "vynaa_ep_492",
+    "id": "ZORO_ep_492",
     "label": "Story - Cerpen Perjuangan",
     "category": "Story",
     "group": "Story",
@@ -12348,7 +12348,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-perjuangan"
   },
   {
-    "id": "vynaa_ep_493",
+    "id": "ZORO_ep_493",
     "label": "Story - Cerpen Persahabatan",
     "category": "Story",
     "group": "Story",
@@ -12368,7 +12368,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-persahabatan"
   },
   {
-    "id": "vynaa_ep_494",
+    "id": "ZORO_ep_494",
     "label": "Story - Cerpen Petualangan",
     "category": "Story",
     "group": "Story",
@@ -12388,7 +12388,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-petualangan"
   },
   {
-    "id": "vynaa_ep_495",
+    "id": "ZORO_ep_495",
     "label": "Story - Cerpen Ramadhan",
     "category": "Story",
     "group": "Story",
@@ -12408,7 +12408,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-ramadhan"
   },
   {
-    "id": "vynaa_ep_496",
+    "id": "ZORO_ep_496",
     "label": "Story - Cerpen Remaja",
     "category": "Story",
     "group": "Story",
@@ -12428,7 +12428,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-remaja"
   },
   {
-    "id": "vynaa_ep_497",
+    "id": "ZORO_ep_497",
     "label": "Story - Cerpen Romantis",
     "category": "Story",
     "group": "Story",
@@ -12448,7 +12448,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-romantis"
   },
   {
-    "id": "vynaa_ep_498",
+    "id": "ZORO_ep_498",
     "label": "Story - Cerpen Sastra",
     "category": "Story",
     "group": "Story",
@@ -12468,7 +12468,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/story/cerpen-sastra"
   },
   {
-    "id": "vynaa_ep_499",
+    "id": "ZORO_ep_499",
     "label": "TextToSound - German",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12495,7 +12495,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-de"
   },
   {
-    "id": "vynaa_ep_500",
+    "id": "ZORO_ep_500",
     "label": "TextToSound - English (US)",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12522,7 +12522,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-en"
   },
   {
-    "id": "vynaa_ep_501",
+    "id": "ZORO_ep_501",
     "label": "TextToSound - Filipino",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12549,7 +12549,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-fil"
   },
   {
-    "id": "vynaa_ep_502",
+    "id": "ZORO_ep_502",
     "label": "TextToSound - French",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12576,7 +12576,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-fr"
   },
   {
-    "id": "vynaa_ep_503",
+    "id": "ZORO_ep_503",
     "label": "TextToSound - Hindi",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12603,7 +12603,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-hi"
   },
   {
-    "id": "vynaa_ep_504",
+    "id": "ZORO_ep_504",
     "label": "TextToSound - Indonesian",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12630,7 +12630,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-id"
   },
   {
-    "id": "vynaa_ep_505",
+    "id": "ZORO_ep_505",
     "label": "TextToSound - Italian",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12657,7 +12657,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-it"
   },
   {
-    "id": "vynaa_ep_506",
+    "id": "ZORO_ep_506",
     "label": "TextToSound - Japanese",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12684,7 +12684,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-ja"
   },
   {
-    "id": "vynaa_ep_507",
+    "id": "ZORO_ep_507",
     "label": "TextToSound - Korean",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12711,7 +12711,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-ko"
   },
   {
-    "id": "vynaa_ep_508",
+    "id": "ZORO_ep_508",
     "label": "TextToSound - Burmese / Malay",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12738,7 +12738,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-my"
   },
   {
-    "id": "vynaa_ep_509",
+    "id": "ZORO_ep_509",
     "label": "TextToSound - Russian",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12765,7 +12765,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-ru"
   },
   {
-    "id": "vynaa_ep_510",
+    "id": "ZORO_ep_510",
     "label": "TextToSound - Thai",
     "category": "Text To Sound",
     "group": "Text To Sound",
@@ -12792,7 +12792,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/sound/tts-th"
   },
   {
-    "id": "vynaa_ep_511",
+    "id": "ZORO_ep_511",
     "label": "TextPro - 1917",
     "category": "TextPro",
     "group": "TextPro",
@@ -12819,7 +12819,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/1917"
   },
   {
-    "id": "vynaa_ep_512",
+    "id": "ZORO_ep_512",
     "label": "TextPro - 3D Gradient",
     "category": "TextPro",
     "group": "TextPro",
@@ -12846,7 +12846,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/3d-gradient"
   },
   {
-    "id": "vynaa_ep_513",
+    "id": "ZORO_ep_513",
     "label": "TextPro - 3D Stone",
     "category": "TextPro",
     "group": "TextPro",
@@ -12873,7 +12873,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/3dstone"
   },
   {
-    "id": "vynaa_ep_514",
+    "id": "ZORO_ep_514",
     "label": "TextPro - Art Paper",
     "category": "TextPro",
     "group": "TextPro",
@@ -12900,7 +12900,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/art-papper"
   },
   {
-    "id": "vynaa_ep_515",
+    "id": "ZORO_ep_515",
     "label": "TextPro - A-Stone",
     "category": "TextPro",
     "group": "TextPro",
@@ -12927,7 +12927,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/astone"
   },
   {
-    "id": "vynaa_ep_516",
+    "id": "ZORO_ep_516",
     "label": "TextPro - Avengers Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -12960,7 +12960,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/avengers-logo"
   },
   {
-    "id": "vynaa_ep_517",
+    "id": "ZORO_ep_517",
     "label": "TextPro - Batman Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -12987,7 +12987,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/batman-logo"
   },
   {
-    "id": "vynaa_ep_518",
+    "id": "ZORO_ep_518",
     "label": "TextPro - Black Pink",
     "category": "TextPro",
     "group": "TextPro",
@@ -13014,7 +13014,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/black-pink"
   },
   {
-    "id": "vynaa_ep_519",
+    "id": "ZORO_ep_519",
     "label": "TextPro - Black Pink 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -13041,7 +13041,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/black-pink2"
   },
   {
-    "id": "vynaa_ep_520",
+    "id": "ZORO_ep_520",
     "label": "TextPro - Blood",
     "category": "TextPro",
     "group": "TextPro",
@@ -13068,7 +13068,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/blood"
   },
   {
-    "id": "vynaa_ep_521",
+    "id": "ZORO_ep_521",
     "label": "TextPro - Bread",
     "category": "TextPro",
     "group": "TextPro",
@@ -13095,7 +13095,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/bread"
   },
   {
-    "id": "vynaa_ep_522",
+    "id": "ZORO_ep_522",
     "label": "TextPro - Broken Glass",
     "category": "TextPro",
     "group": "TextPro",
@@ -13122,7 +13122,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/broken-glass"
   },
   {
-    "id": "vynaa_ep_523",
+    "id": "ZORO_ep_523",
     "label": "TextPro - Captain",
     "category": "TextPro",
     "group": "TextPro",
@@ -13149,7 +13149,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/captain"
   },
   {
-    "id": "vynaa_ep_524",
+    "id": "ZORO_ep_524",
     "label": "TextPro - Christmas",
     "category": "TextPro",
     "group": "TextPro",
@@ -13176,7 +13176,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/christmas"
   },
   {
-    "id": "vynaa_ep_525",
+    "id": "ZORO_ep_525",
     "label": "TextPro - Deluxe Silver",
     "category": "TextPro",
     "group": "TextPro",
@@ -13203,7 +13203,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/deluxe-silver"
   },
   {
-    "id": "vynaa_ep_526",
+    "id": "ZORO_ep_526",
     "label": "TextPro - Drop Water",
     "category": "TextPro",
     "group": "TextPro",
@@ -13230,7 +13230,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/drop-water"
   },
   {
-    "id": "vynaa_ep_527",
+    "id": "ZORO_ep_527",
     "label": "TextPro - Engraved",
     "category": "TextPro",
     "group": "TextPro",
@@ -13257,7 +13257,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/engraved"
   },
   {
-    "id": "vynaa_ep_528",
+    "id": "ZORO_ep_528",
     "label": "TextPro - Fabric",
     "category": "TextPro",
     "group": "TextPro",
@@ -13284,7 +13284,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/fabric"
   },
   {
-    "id": "vynaa_ep_529",
+    "id": "ZORO_ep_529",
     "label": "TextPro - Giraffe",
     "category": "TextPro",
     "group": "TextPro",
@@ -13311,7 +13311,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/giraffe"
   },
   {
-    "id": "vynaa_ep_530",
+    "id": "ZORO_ep_530",
     "label": "TextPro - Glitch",
     "category": "TextPro",
     "group": "TextPro",
@@ -13344,7 +13344,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/glitch"
   },
   {
-    "id": "vynaa_ep_531",
+    "id": "ZORO_ep_531",
     "label": "TextPro - Glitch 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -13377,7 +13377,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/glitch2"
   },
   {
-    "id": "vynaa_ep_532",
+    "id": "ZORO_ep_532",
     "label": "TextPro - Glitch 3",
     "category": "TextPro",
     "group": "TextPro",
@@ -13404,7 +13404,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/glitch3"
   },
   {
-    "id": "vynaa_ep_533",
+    "id": "ZORO_ep_533",
     "label": "TextPro - Glossy",
     "category": "TextPro",
     "group": "TextPro",
@@ -13431,7 +13431,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/glossy"
   },
   {
-    "id": "vynaa_ep_534",
+    "id": "ZORO_ep_534",
     "label": "TextPro - Glue Text",
     "category": "TextPro",
     "group": "TextPro",
@@ -13458,7 +13458,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/glue-text"
   },
   {
-    "id": "vynaa_ep_535",
+    "id": "ZORO_ep_535",
     "label": "TextPro - Grafity Text",
     "category": "TextPro",
     "group": "TextPro",
@@ -13485,7 +13485,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/grafity-text"
   },
   {
-    "id": "vynaa_ep_536",
+    "id": "ZORO_ep_536",
     "label": "TextPro - Grafity Text 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -13518,7 +13518,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/grafity-text2"
   },
   {
-    "id": "vynaa_ep_537",
+    "id": "ZORO_ep_537",
     "label": "TextPro - Halloween Text",
     "category": "TextPro",
     "group": "TextPro",
@@ -13545,7 +13545,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/hallowen-text"
   },
   {
-    "id": "vynaa_ep_538",
+    "id": "ZORO_ep_538",
     "label": "TextPro - Halloween",
     "category": "TextPro",
     "group": "TextPro",
@@ -13572,7 +13572,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/hallowen"
   },
   {
-    "id": "vynaa_ep_539",
+    "id": "ZORO_ep_539",
     "label": "TextPro - Harry Potter",
     "category": "TextPro",
     "group": "TextPro",
@@ -13599,7 +13599,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/harry-potter"
   },
   {
-    "id": "vynaa_ep_540",
+    "id": "ZORO_ep_540",
     "label": "TextPro - Holographic",
     "category": "TextPro",
     "group": "TextPro",
@@ -13626,7 +13626,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/holograpic"
   },
   {
-    "id": "vynaa_ep_541",
+    "id": "ZORO_ep_541",
     "label": "TextPro - Honey",
     "category": "TextPro",
     "group": "TextPro",
@@ -13653,7 +13653,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/honey"
   },
   {
-    "id": "vynaa_ep_542",
+    "id": "ZORO_ep_542",
     "label": "TextPro - Horror Blood",
     "category": "TextPro",
     "group": "TextPro",
@@ -13680,7 +13680,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/horor-blood"
   },
   {
-    "id": "vynaa_ep_543",
+    "id": "ZORO_ep_543",
     "label": "TextPro - Ice",
     "category": "TextPro",
     "group": "TextPro",
@@ -13707,7 +13707,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/ice"
   },
   {
-    "id": "vynaa_ep_544",
+    "id": "ZORO_ep_544",
     "label": "TextPro - Joker Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -13734,7 +13734,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/joker-logo"
   },
   {
-    "id": "vynaa_ep_545",
+    "id": "ZORO_ep_545",
     "label": "TextPro - Koi",
     "category": "TextPro",
     "group": "TextPro",
@@ -13761,7 +13761,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/koi"
   },
   {
-    "id": "vynaa_ep_546",
+    "id": "ZORO_ep_546",
     "label": "TextPro - Larva",
     "category": "TextPro",
     "group": "TextPro",
@@ -13788,7 +13788,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/larva"
   },
   {
-    "id": "vynaa_ep_547",
+    "id": "ZORO_ep_547",
     "label": "TextPro - Lion Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -13821,7 +13821,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/lion-logo"
   },
   {
-    "id": "vynaa_ep_548",
+    "id": "ZORO_ep_548",
     "label": "TextPro - Wolf Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -13854,7 +13854,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/logo-wolf"
   },
   {
-    "id": "vynaa_ep_549",
+    "id": "ZORO_ep_549",
     "label": "TextPro - Wolf Logo 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -13887,7 +13887,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/logo-wolf2"
   },
   {
-    "id": "vynaa_ep_550",
+    "id": "ZORO_ep_550",
     "label": "TextPro - Magma",
     "category": "TextPro",
     "group": "TextPro",
@@ -13914,7 +13914,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/magma"
   },
   {
-    "id": "vynaa_ep_551",
+    "id": "ZORO_ep_551",
     "label": "TextPro - Marvel Logo 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -13947,7 +13947,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/marvel-logo2"
   },
   {
-    "id": "vynaa_ep_552",
+    "id": "ZORO_ep_552",
     "label": "TextPro - Marvel Logo 3",
     "category": "TextPro",
     "group": "TextPro",
@@ -13980,7 +13980,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/marvel-logo3"
   },
   {
-    "id": "vynaa_ep_553",
+    "id": "ZORO_ep_553",
     "label": "TextPro - Multi Color",
     "category": "TextPro",
     "group": "TextPro",
@@ -14007,7 +14007,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/multi-color"
   },
   {
-    "id": "vynaa_ep_554",
+    "id": "ZORO_ep_554",
     "label": "TextPro - Natural Leaves",
     "category": "TextPro",
     "group": "TextPro",
@@ -14034,7 +14034,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/natural-leaves"
   },
   {
-    "id": "vynaa_ep_555",
+    "id": "ZORO_ep_555",
     "label": "TextPro - Neon Devil",
     "category": "TextPro",
     "group": "TextPro",
@@ -14061,7 +14061,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/neon-devil"
   },
   {
-    "id": "vynaa_ep_556",
+    "id": "ZORO_ep_556",
     "label": "TextPro - Neon Galaxy",
     "category": "TextPro",
     "group": "TextPro",
@@ -14088,7 +14088,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/neon-galaxy"
   },
   {
-    "id": "vynaa_ep_557",
+    "id": "ZORO_ep_557",
     "label": "TextPro - Neon Green",
     "category": "TextPro",
     "group": "TextPro",
@@ -14115,7 +14115,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/neon-green"
   },
   {
-    "id": "vynaa_ep_558",
+    "id": "ZORO_ep_558",
     "label": "TextPro - Neon Light",
     "category": "TextPro",
     "group": "TextPro",
@@ -14142,7 +14142,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/neon-light"
   },
   {
-    "id": "vynaa_ep_559",
+    "id": "ZORO_ep_559",
     "label": "TextPro - Neon Online",
     "category": "TextPro",
     "group": "TextPro",
@@ -14169,7 +14169,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/neon-online"
   },
   {
-    "id": "vynaa_ep_560",
+    "id": "ZORO_ep_560",
     "label": "TextPro - Ninja Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -14202,7 +14202,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/ninja-logo"
   },
   {
-    "id": "vynaa_ep_561",
+    "id": "ZORO_ep_561",
     "label": "TextPro - PornHub Logo",
     "category": "TextPro",
     "group": "TextPro",
@@ -14235,7 +14235,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/pornhub"
   },
   {
-    "id": "vynaa_ep_562",
+    "id": "ZORO_ep_562",
     "label": "TextPro - Robot",
     "category": "TextPro",
     "group": "TextPro",
@@ -14262,7 +14262,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/robot"
   },
   {
-    "id": "vynaa_ep_563",
+    "id": "ZORO_ep_563",
     "label": "TextPro - Rusty",
     "category": "TextPro",
     "group": "TextPro",
@@ -14289,7 +14289,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/rusty"
   },
   {
-    "id": "vynaa_ep_564",
+    "id": "ZORO_ep_564",
     "label": "TextPro - Sci-Fi",
     "category": "TextPro",
     "group": "TextPro",
@@ -14316,7 +14316,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/scifi"
   },
   {
-    "id": "vynaa_ep_565",
+    "id": "ZORO_ep_565",
     "label": "TextPro - Sky Text",
     "category": "TextPro",
     "group": "TextPro",
@@ -14343,7 +14343,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/sky-text"
   },
   {
-    "id": "vynaa_ep_566",
+    "id": "ZORO_ep_566",
     "label": "TextPro - Space",
     "category": "TextPro",
     "group": "TextPro",
@@ -14376,7 +14376,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/space"
   },
   {
-    "id": "vynaa_ep_567",
+    "id": "ZORO_ep_567",
     "label": "TextPro - Stroberi",
     "category": "TextPro",
     "group": "TextPro",
@@ -14403,7 +14403,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/stroberi"
   },
   {
-    "id": "vynaa_ep_568",
+    "id": "ZORO_ep_568",
     "label": "TextPro - Thunder 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -14430,7 +14430,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/thunder2"
   },
   {
-    "id": "vynaa_ep_569",
+    "id": "ZORO_ep_569",
     "label": "TextPro - Toxic Bokeh",
     "category": "TextPro",
     "group": "TextPro",
@@ -14457,7 +14457,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/toxic-bokeh"
   },
   {
-    "id": "vynaa_ep_570",
+    "id": "ZORO_ep_570",
     "label": "TextPro - Valentine",
     "category": "TextPro",
     "group": "TextPro",
@@ -14484,7 +14484,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/valentine"
   },
   {
-    "id": "vynaa_ep_571",
+    "id": "ZORO_ep_571",
     "label": "TextPro - Valentine 2",
     "category": "TextPro",
     "group": "TextPro",
@@ -14511,7 +14511,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/valentine2"
   },
   {
-    "id": "vynaa_ep_572",
+    "id": "ZORO_ep_572",
     "label": "TextPro - Vintage",
     "category": "TextPro",
     "group": "TextPro",
@@ -14544,7 +14544,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/vintage"
   },
   {
-    "id": "vynaa_ep_573",
+    "id": "ZORO_ep_573",
     "label": "TextPro - Water Color",
     "category": "TextPro",
     "group": "TextPro",
@@ -14571,7 +14571,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/water-color"
   },
   {
-    "id": "vynaa_ep_574",
+    "id": "ZORO_ep_574",
     "label": "TextPro - Wicker",
     "category": "TextPro",
     "group": "TextPro",
@@ -14598,7 +14598,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/wicker"
   },
   {
-    "id": "vynaa_ep_575",
+    "id": "ZORO_ep_575",
     "label": "TextPro - Writing",
     "category": "TextPro",
     "group": "TextPro",
@@ -14625,7 +14625,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/textpro/writing"
   },
   {
-    "id": "vynaa_ep_576",
+    "id": "ZORO_ep_576",
     "label": "Tools - 2FA Code Generator",
     "category": "Tools",
     "group": "Tools",
@@ -14652,7 +14652,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/2fa"
   },
   {
-    "id": "vynaa_ep_577",
+    "id": "ZORO_ep_577",
     "label": "Tools - Audio to Video",
     "category": "Tools",
     "group": "Tools",
@@ -14679,7 +14679,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/audio2video"
   },
   {
-    "id": "vynaa_ep_578",
+    "id": "ZORO_ep_578",
     "label": "Tools - Base Encode/Decode",
     "category": "Tools",
     "group": "Tools",
@@ -14718,7 +14718,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/base"
   },
   {
-    "id": "vynaa_ep_579",
+    "id": "ZORO_ep_579",
     "label": "Tools - Bitly",
     "category": "Tools",
     "group": "Tools",
@@ -14745,7 +14745,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/linkshort/bitly"
   },
   {
-    "id": "vynaa_ep_580",
+    "id": "ZORO_ep_580",
     "label": "Tools - Bypass City",
     "category": "Tools",
     "group": "Tools",
@@ -14772,7 +14772,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/bypasscity"
   },
   {
-    "id": "vynaa_ep_581",
+    "id": "ZORO_ep_581",
     "label": "Tools - Cek E-Wallet",
     "category": "Tools",
     "group": "Tools",
@@ -14805,7 +14805,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cek-ewallet"
   },
   {
-    "id": "vynaa_ep_582",
+    "id": "ZORO_ep_582",
     "label": "Tools - Cek Pesan Temp Mail",
     "category": "Tools",
     "group": "Tools",
@@ -14832,7 +14832,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cek-msg-tmp-mail"
   },
   {
-    "id": "vynaa_ep_583",
+    "id": "ZORO_ep_583",
     "label": "Tools - Cek Bill PLN",
     "category": "Tools",
     "group": "Tools",
@@ -14859,7 +14859,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cekbillpln"
   },
   {
-    "id": "vynaa_ep_584",
+    "id": "ZORO_ep_584",
     "label": "Tools - Cek Redirect",
     "category": "Tools",
     "group": "Tools",
@@ -14886,7 +14886,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cekredirect"
   },
   {
-    "id": "vynaa_ep_585",
+    "id": "ZORO_ep_585",
     "label": "Tools - Countdown",
     "category": "Tools",
     "group": "Tools",
@@ -14925,7 +14925,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/countdown"
   },
   {
-    "id": "vynaa_ep_586",
+    "id": "ZORO_ep_586",
     "label": "Tools - Create Subdomain",
     "category": "Tools",
     "group": "Tools",
@@ -14976,7 +14976,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/create-subdo"
   },
   {
-    "id": "vynaa_ep_587",
+    "id": "ZORO_ep_587",
     "label": "Tools - Create Temp Mail",
     "category": "Tools",
     "group": "Tools",
@@ -14996,7 +14996,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/create-temp-mail"
   },
   {
-    "id": "vynaa_ep_588",
+    "id": "ZORO_ep_588",
     "label": "Tools - Cuaca",
     "category": "Tools",
     "group": "Tools",
@@ -15023,7 +15023,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cuaca"
   },
   {
-    "id": "vynaa_ep_589",
+    "id": "ZORO_ep_589",
     "label": "Tools - Cuttly",
     "category": "Tools",
     "group": "Tools",
@@ -15050,7 +15050,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/linkshort/cuttly"
   },
   {
-    "id": "vynaa_ep_590",
+    "id": "ZORO_ep_590",
     "label": "Tools - Konversi Mata Uang",
     "category": "Tools",
     "group": "Tools",
@@ -15089,7 +15089,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/cvuang"
   },
   {
-    "id": "vynaa_ep_591",
+    "id": "ZORO_ep_591",
     "label": "Tools - Ephoto Radio",
     "category": "Tools",
     "group": "Tools",
@@ -15116,7 +15116,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/ephoto-radio"
   },
   {
-    "id": "vynaa_ep_592",
+    "id": "ZORO_ep_592",
     "label": "Tools - Free Proxy List",
     "category": "Tools",
     "group": "Tools",
@@ -15136,7 +15136,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/free-proxy"
   },
   {
-    "id": "vynaa_ep_593",
+    "id": "ZORO_ep_593",
     "label": "Tools - HD Video",
     "category": "Tools",
     "group": "Tools",
@@ -15163,7 +15163,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/hdvideo"
   },
   {
-    "id": "vynaa_ep_594",
+    "id": "ZORO_ep_594",
     "label": "Tools - Image to Prompt",
     "category": "Tools",
     "group": "Tools",
@@ -15190,7 +15190,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/img2prompt"
   },
   {
-    "id": "vynaa_ep_595",
+    "id": "ZORO_ep_595",
     "label": "Tools - Jadwal Shalat",
     "category": "Tools",
     "group": "Tools",
@@ -15217,7 +15217,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/jadwalshalat"
   },
   {
-    "id": "vynaa_ep_596",
+    "id": "ZORO_ep_596",
     "label": "Tools - Jadwal Shalat V2",
     "category": "Tools",
     "group": "Tools",
@@ -15244,7 +15244,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/jadwalshalatv2"
   },
   {
-    "id": "vynaa_ep_597",
+    "id": "ZORO_ep_597",
     "label": "Tools - NSFW Detect",
     "category": "Tools",
     "group": "Tools",
@@ -15271,7 +15271,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/nsfw-detect"
   },
   {
-    "id": "vynaa_ep_598",
+    "id": "ZORO_ep_598",
     "label": "Tools - Random Address",
     "category": "Tools",
     "group": "Tools",
@@ -15298,7 +15298,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/random-address"
   },
   {
-    "id": "vynaa_ep_599",
+    "id": "ZORO_ep_599",
     "label": "Tools - Recolor (Colorize)",
     "category": "Tools",
     "group": "Tools",
@@ -15325,7 +15325,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/recolor"
   },
   {
-    "id": "vynaa_ep_600",
+    "id": "ZORO_ep_600",
     "label": "Tools - Remini V2",
     "category": "Tools",
     "group": "Tools",
@@ -15352,7 +15352,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/remini-v2"
   },
   {
-    "id": "vynaa_ep_601",
+    "id": "ZORO_ep_601",
     "label": "Tools - Remini V3",
     "category": "Tools",
     "group": "Tools",
@@ -15385,7 +15385,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/remini-v3"
   },
   {
-    "id": "vynaa_ep_602",
+    "id": "ZORO_ep_602",
     "label": "Tools - Remini V4",
     "category": "Tools",
     "group": "Tools",
@@ -15418,7 +15418,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/remini-v4"
   },
   {
-    "id": "vynaa_ep_603",
+    "id": "ZORO_ep_603",
     "label": "Tools - Remini",
     "category": "Tools",
     "group": "Tools",
@@ -15445,7 +15445,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/remini"
   },
   {
-    "id": "vynaa_ep_604",
+    "id": "ZORO_ep_604",
     "label": "Tools - Remove Background",
     "category": "Tools",
     "group": "Tools",
@@ -15472,7 +15472,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/removebg"
   },
   {
-    "id": "vynaa_ep_605",
+    "id": "ZORO_ep_605",
     "label": "Tools - VCC Generator v2",
     "category": "Tools",
     "group": "Tools",
@@ -15499,7 +15499,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/vcc-generator"
   },
   {
-    "id": "vynaa_ep_606",
+    "id": "ZORO_ep_606",
     "label": "Tools - Web to ZIP v2",
     "category": "Tools",
     "group": "Tools",
@@ -15526,7 +15526,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/web2zip-v2"
   },
   {
-    "id": "vynaa_ep_607",
+    "id": "ZORO_ep_607",
     "label": "Tools - Screenshot to Code",
     "category": "Tools",
     "group": "Tools",
@@ -15553,7 +15553,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/ss2code"
   },
   {
-    "id": "vynaa_ep_608",
+    "id": "ZORO_ep_608",
     "label": "Tools - Screenshot Web (HP)",
     "category": "Tools",
     "group": "Tools",
@@ -15580,7 +15580,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/sshp"
   },
   {
-    "id": "vynaa_ep_609",
+    "id": "ZORO_ep_609",
     "label": "Tools - Screenshot Web (Tablet)",
     "category": "Tools",
     "group": "Tools",
@@ -15607,7 +15607,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/sstablet"
   },
   {
-    "id": "vynaa_ep_610",
+    "id": "ZORO_ep_610",
     "label": "Tools - Screenshot Web (Desktop)",
     "category": "Tools",
     "group": "Tools",
@@ -15634,7 +15634,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/ssweb"
   },
   {
-    "id": "vynaa_ep_611",
+    "id": "ZORO_ep_611",
     "label": "Tools - Style Text",
     "category": "Tools",
     "group": "Tools",
@@ -15661,7 +15661,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/styletext"
   },
   {
-    "id": "vynaa_ep_612",
+    "id": "ZORO_ep_612",
     "label": "Tools - Subdomain Finder",
     "category": "Tools",
     "group": "Tools",
@@ -15688,7 +15688,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/subdomain-finder"
   },
   {
-    "id": "vynaa_ep_613",
+    "id": "ZORO_ep_613",
     "label": "Tools - Temp Mail v1 (Buat)",
     "category": "Tools",
     "group": "Tools",
@@ -15708,7 +15708,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/tempmail/v1/create"
   },
   {
-    "id": "vynaa_ep_614",
+    "id": "ZORO_ep_614",
     "label": "Tools - Temp Mail v1 (Inbox)",
     "category": "Tools",
     "group": "Tools",
@@ -15735,7 +15735,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/tempmail/v1/inbox"
   },
   {
-    "id": "vynaa_ep_615",
+    "id": "ZORO_ep_615",
     "label": "Tools - Temp Mail v2 (Buat)",
     "category": "Tools",
     "group": "Tools",
@@ -15755,7 +15755,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/tempmail/v2/create"
   },
   {
-    "id": "vynaa_ep_616",
+    "id": "ZORO_ep_616",
     "label": "Tools - Temp Mail v2 (Inbox)",
     "category": "Tools",
     "group": "Tools",
@@ -15782,7 +15782,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/tempmail/v2/inbox"
   },
   {
-    "id": "vynaa_ep_617",
+    "id": "ZORO_ep_617",
     "label": "Tools - TinyURL",
     "category": "Tools",
     "group": "Tools",
@@ -15809,7 +15809,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/linkshort/tinyurl"
   },
   {
-    "id": "vynaa_ep_618",
+    "id": "ZORO_ep_618",
     "label": "Tools - TinyURL With Alias",
     "category": "Tools",
     "group": "Tools",
@@ -15842,7 +15842,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/linkshort/tinyurlwithalias"
   },
   {
-    "id": "vynaa_ep_619",
+    "id": "ZORO_ep_619",
     "label": "Tools - Translate",
     "category": "Tools",
     "group": "Tools",
@@ -15875,7 +15875,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/translate"
   },
   {
-    "id": "vynaa_ep_620",
+    "id": "ZORO_ep_620",
     "label": "Tools - VCC Generator",
     "category": "Tools",
     "group": "Tools",
@@ -15902,7 +15902,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/vccgen"
   },
   {
-    "id": "vynaa_ep_621",
+    "id": "ZORO_ep_621",
     "label": "Tools - Video to Audio",
     "category": "Tools",
     "group": "Tools",
@@ -15929,7 +15929,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/video2audio"
   },
   {
-    "id": "vynaa_ep_622",
+    "id": "ZORO_ep_622",
     "label": "Tools - Voice Remover",
     "category": "Tools",
     "group": "Tools",
@@ -15956,7 +15956,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/voiceremover"
   },
   {
-    "id": "vynaa_ep_623",
+    "id": "ZORO_ep_623",
     "label": "Tools - Web to Zip",
     "category": "Tools",
     "group": "Tools",
@@ -15983,7 +15983,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/web2zip"
   },
   {
-    "id": "vynaa_ep_624",
+    "id": "ZORO_ep_624",
     "label": "Tools - WebP to MP4",
     "category": "Tools",
     "group": "Tools",
@@ -16010,7 +16010,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/webp2mp4"
   },
   {
-    "id": "vynaa_ep_625",
+    "id": "ZORO_ep_625",
     "label": "Tools - WebP to PNG",
     "category": "Tools",
     "group": "Tools",
@@ -16037,7 +16037,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/webp2png"
   },
   {
-    "id": "vynaa_ep_626",
+    "id": "ZORO_ep_626",
     "label": "Tools - WhatMusic (Shazam)",
     "category": "Tools",
     "group": "Tools",
@@ -16064,7 +16064,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/whatmusic"
   },
   {
-    "id": "vynaa_ep_627",
+    "id": "ZORO_ep_627",
     "label": "Tools - Whois Subdomain",
     "category": "Tools",
     "group": "Tools",
@@ -16097,7 +16097,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/whois-subdo"
   },
   {
-    "id": "vynaa_ep_628",
+    "id": "ZORO_ep_628",
     "label": "Tools - YouTube Transcript",
     "category": "Tools",
     "group": "Tools",
@@ -16124,7 +16124,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/tools/yt-transcript"
   },
   {
-    "id": "vynaa_ep_629",
+    "id": "ZORO_ep_629",
     "label": "VIP - Bypass reCAPTCHA v3",
     "category": "VIP",
     "group": "VIP",
@@ -16157,7 +16157,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vip/bypassrecaptcha"
   },
   {
-    "id": "vynaa_ep_630",
+    "id": "ZORO_ep_630",
     "label": "Vokal - HALAH",
     "category": "Vokal",
     "group": "Vokal",
@@ -16184,7 +16184,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vokal/halah"
   },
   {
-    "id": "vynaa_ep_631",
+    "id": "ZORO_ep_631",
     "label": "Vokal - HELEH",
     "category": "Vokal",
     "group": "Vokal",
@@ -16211,7 +16211,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vokal/heleh"
   },
   {
-    "id": "vynaa_ep_632",
+    "id": "ZORO_ep_632",
     "label": "Vokal - HILIH",
     "category": "Vokal",
     "group": "Vokal",
@@ -16238,7 +16238,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vokal/hilih"
   },
   {
-    "id": "vynaa_ep_633",
+    "id": "ZORO_ep_633",
     "label": "Vokal - HOLOH",
     "category": "Vokal",
     "group": "Vokal",
@@ -16265,7 +16265,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vokal/holoh"
   },
   {
-    "id": "vynaa_ep_634",
+    "id": "ZORO_ep_634",
     "label": "Vokal - HULUH",
     "category": "Vokal",
     "group": "Vokal",
@@ -16292,7 +16292,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/vokal/huluh"
   },
   {
-    "id": "vynaa_ep_635",
+    "id": "ZORO_ep_635",
     "label": "Wallpaper - Aesthetic",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16312,7 +16312,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/aesthetic"
   },
   {
-    "id": "vynaa_ep_636",
+    "id": "ZORO_ep_636",
     "label": "Wallpaper - Anjing",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16332,7 +16332,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/anjing"
   },
   {
-    "id": "vynaa_ep_637",
+    "id": "ZORO_ep_637",
     "label": "Wallpaper - Boneka Chucky",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16352,7 +16352,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/boneka-chucky"
   },
   {
-    "id": "vynaa_ep_638",
+    "id": "ZORO_ep_638",
     "label": "Wallpaper - Cecan",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16372,7 +16372,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cecan"
   },
   {
-    "id": "vynaa_ep_639",
+    "id": "ZORO_ep_639",
     "label": "Wallpaper - Cecan V2",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16392,7 +16392,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cecan2"
   },
   {
-    "id": "vynaa_ep_640",
+    "id": "ZORO_ep_640",
     "label": "Wallpaper - Cogan",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16412,7 +16412,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cogan"
   },
   {
-    "id": "vynaa_ep_641",
+    "id": "ZORO_ep_641",
     "label": "Wallpaper - Cogan V2",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16432,7 +16432,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cogan2"
   },
   {
-    "id": "vynaa_ep_642",
+    "id": "ZORO_ep_642",
     "label": "Wallpaper - Cosplay",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16452,7 +16452,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cosplay"
   },
   {
-    "id": "vynaa_ep_643",
+    "id": "ZORO_ep_643",
     "label": "Wallpaper - Couple PP",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16472,7 +16472,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/randomgambar/couplepp"
   },
   {
-    "id": "vynaa_ep_644",
+    "id": "ZORO_ep_644",
     "label": "Wallpaper - Cyberspace",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16492,7 +16492,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/cyberspace"
   },
   {
-    "id": "vynaa_ep_645",
+    "id": "ZORO_ep_645",
     "label": "Wallpaper - Dark Jokes",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16512,7 +16512,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/darkjokes"
   },
   {
-    "id": "vynaa_ep_646",
+    "id": "ZORO_ep_646",
     "label": "Wallpaper - Gaming",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16532,7 +16532,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/gaming"
   },
   {
-    "id": "vynaa_ep_647",
+    "id": "ZORO_ep_647",
     "label": "Wallpaper - Hacker",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16552,7 +16552,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/hacker"
   },
   {
-    "id": "vynaa_ep_648",
+    "id": "ZORO_ep_648",
     "label": "Wallpaper - Islami",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16572,7 +16572,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/islami"
   },
   {
-    "id": "vynaa_ep_649",
+    "id": "ZORO_ep_649",
     "label": "Wallpaper - Justina",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16592,7 +16592,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/justina"
   },
   {
-    "id": "vynaa_ep_650",
+    "id": "ZORO_ep_650",
     "label": "Wallpaper - Kartun",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16612,7 +16612,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/kartun"
   },
   {
-    "id": "vynaa_ep_651",
+    "id": "ZORO_ep_651",
     "label": "Wallpaper - Kata-kata",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16632,7 +16632,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/katakata"
   },
   {
-    "id": "vynaa_ep_652",
+    "id": "ZORO_ep_652",
     "label": "Wallpaper - K-Pop",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16652,7 +16652,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/kpop"
   },
   {
-    "id": "vynaa_ep_653",
+    "id": "ZORO_ep_653",
     "label": "Wallpaper - Kucing",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16672,7 +16672,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/kucing"
   },
   {
-    "id": "vynaa_ep_654",
+    "id": "ZORO_ep_654",
     "label": "Wallpaper - Meme",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16692,7 +16692,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/random/meme"
   },
   {
-    "id": "vynaa_ep_655",
+    "id": "ZORO_ep_655",
     "label": "Wallpaper - Mobil",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16712,7 +16712,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/mobil"
   },
   {
-    "id": "vynaa_ep_656",
+    "id": "ZORO_ep_656",
     "label": "Wallpaper - Motor",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16732,7 +16732,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/motor"
   },
   {
-    "id": "vynaa_ep_657",
+    "id": "ZORO_ep_657",
     "label": "Wallpaper - Mountain",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16752,7 +16752,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/mountain"
   },
   {
-    "id": "vynaa_ep_658",
+    "id": "ZORO_ep_658",
     "label": "Wallpaper - Programing",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16772,7 +16772,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/programing"
   },
   {
-    "id": "vynaa_ep_659",
+    "id": "ZORO_ep_659",
     "label": "Wallpaper - PUBG",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16792,7 +16792,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/pubg"
   },
   {
-    "id": "vynaa_ep_660",
+    "id": "ZORO_ep_660",
     "label": "Wallpaper - Tata Surya",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16812,7 +16812,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/tatasurya"
   },
   {
-    "id": "vynaa_ep_661",
+    "id": "ZORO_ep_661",
     "label": "Wallpaper - Teknologi",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16832,7 +16832,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/teknologi"
   },
   {
-    "id": "vynaa_ep_662",
+    "id": "ZORO_ep_662",
     "label": "Wallpaper - HP",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16852,7 +16852,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/wallhp"
   },
   {
-    "id": "vynaa_ep_663",
+    "id": "ZORO_ep_663",
     "label": "Wallpaper - HP V2",
     "category": "Wallpaper",
     "group": "Wallpaper",
@@ -16872,7 +16872,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/wallpaper/wallhp2"
   },
   {
-    "id": "vynaa_ep_664",
+    "id": "ZORO_ep_664",
     "label": "Webzone - Gore",
     "category": "Webzone",
     "group": "Webzone",
@@ -16892,7 +16892,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/gore"
   },
   {
-    "id": "vynaa_ep_665",
+    "id": "ZORO_ep_665",
     "label": "Webzone - Grow & Garden Stock",
     "category": "Webzone",
     "group": "Webzone",
@@ -16912,7 +16912,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/grow-and-garden-stock"
   },
   {
-    "id": "vynaa_ep_666",
+    "id": "ZORO_ep_666",
     "label": "Webzone - Grow & Garden Weather",
     "category": "Webzone",
     "group": "Webzone",
@@ -16932,7 +16932,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/grow-and-garden-weather"
   },
   {
-    "id": "vynaa_ep_667",
+    "id": "ZORO_ep_667",
     "label": "Webzone - GSMArena",
     "category": "Webzone",
     "group": "Webzone",
@@ -16959,7 +16959,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/gsmarena"
   },
   {
-    "id": "vynaa_ep_668",
+    "id": "ZORO_ep_668",
     "label": "Webzone - Nhentai Detail",
     "category": "Webzone",
     "group": "Webzone",
@@ -16986,7 +16986,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/nhentai-detail"
   },
   {
-    "id": "vynaa_ep_669",
+    "id": "ZORO_ep_669",
     "label": "Webzone - Nhentai Search",
     "category": "Webzone",
     "group": "Webzone",
@@ -17013,7 +17013,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/nhentai-search"
   },
   {
-    "id": "vynaa_ep_670",
+    "id": "ZORO_ep_670",
     "label": "Webzone - WhatAnime",
     "category": "Webzone",
     "group": "Webzone",
@@ -17040,7 +17040,7 @@ export const GENERATED_VYNAA_ENDPOINTS: VynaaEndpoint[] = [
     "rawUrl": "https://api.vtech.biz.id/api/webzone/whatanime"
   },
   {
-    "id": "vynaa_ep_671",
+    "id": "ZORO_ep_671",
     "label": "Webzone - Whois",
     "category": "Webzone",
     "group": "Webzone",

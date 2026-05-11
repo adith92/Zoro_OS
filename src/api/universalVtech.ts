@@ -1,21 +1,21 @@
 import { useSettingsStore } from "@/store/useStore";
-import type { VynaaCallResult, VynaaEndpoint } from "@/types/vynaa";
+import type { VtechCallResult, VtechEndpoint } from "@/types/vtech";
 
-const VYNAA_BASE_URL = "https://api.vtech.biz.id";
+const VTECH_BASE_URL = import.meta.env.VITE_VTECH_BASE_URL || "https://api.vtech.biz.id";
 
-export type VynaaParams = Record<string, string | number | boolean | undefined>;
+export type VtechParams = Record<string, string | number | boolean | undefined>;
 
-export function buildVynaaUrl(endpoint: string, apiKey: string, params: VynaaParams = {}) {
+export function buildVtechUrl(endpoint: string, apiKey: string, params: VtechParams = {}) {
   const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
   
   // If use proxy is enabled in store
-  const { useVynaaProxy } = useSettingsStore.getState();
+  const { useVtechProxy } = useSettingsStore.getState();
   
-  const baseUrl = useVynaaProxy ? "/api/vynaa-proxy" : VYNAA_BASE_URL;
-  const url = new URL(cleanEndpoint, typeof window !== 'undefined' && useVynaaProxy ? window.location.origin : VYNAA_BASE_URL);
+  const baseUrl = useVtechProxy ? "/api/vtech-proxy" : VTECH_BASE_URL;
+  const url = new URL(cleanEndpoint, typeof window !== 'undefined' && useVtechProxy ? window.location.origin : VTECH_BASE_URL);
   
-  if (useVynaaProxy) {
-      url.pathname = `/api/vynaa-proxy${cleanEndpoint}`;
+  if (useVtechProxy) {
+      url.pathname = `/api/vtech-proxy${cleanEndpoint}`;
   }
 
   url.searchParams.set("apikey", apiKey);
@@ -29,13 +29,16 @@ export function buildVynaaUrl(endpoint: string, apiKey: string, params: VynaaPar
   return url;
 }
 
-export async function callVynaaEndpoint(
-  endpoint: VynaaEndpoint,
-  params: VynaaParams = {}
-): Promise<VynaaCallResult> {
-  const { vynaaApiKey } = useSettingsStore.getState();
+export async function callVtechEndpoint(
+  endpoint: VtechEndpoint,
+  params: VtechParams = {}
+): Promise<VtechCallResult> {
+  let { vtechApiKey } = useSettingsStore.getState();
+  if (!vtechApiKey && import.meta.env.VITE_VTECH_API_KEY) {
+    vtechApiKey = import.meta.env.VITE_VTECH_API_KEY;
+  }
 
-  if (!vynaaApiKey) {
+  if (!vtechApiKey) {
     return {
       endpointId: endpoint.id,
       endpointLabel: endpoint.label,
@@ -43,14 +46,14 @@ export async function callVynaaEndpoint(
       requestedAt: new Date().toISOString(),
       ok: false,
       outputType: endpoint.outputType,
-      error: "Vynaa API key belum diisi. Buka Settings lalu simpan API key dulu.",
+      error: "VTECH API key belum diisi. Buka Settings lalu simpan API key dulu.",
     };
   }
 
   const startedAt = new Date().toISOString();
 
   try {
-    const url = buildVynaaUrl(endpoint.endpoint, vynaaApiKey, params);
+    const url = buildVtechUrl(endpoint.endpoint, vtechApiKey, params);
 
     const response = await fetch(url.toString(), {
       method: endpoint.method || "GET",
@@ -62,7 +65,7 @@ export async function callVynaaEndpoint(
     const contentType = response.headers.get("content-type") || "";
 
     if (!response.ok) {
-      let message = `Vynaa API error: ${response.status}`;
+      let message = `VTECH API error: ${response.status}`;
       try {
         const err = await response.json();
         message = err?.message || err?.error || JSON.stringify(err);
@@ -176,32 +179,32 @@ export async function callVynaaEndpoint(
       requestedAt: startedAt,
       ok: false,
       outputType: endpoint.outputType,
-      error: error?.message || "Unknown Vynaa API error",
+      error: error?.message || "Unknown VTECH API error",
     };
   }
 }
 
-export async function testVynaaPing() {
-  return await callVynaaEndpoint({
+export async function testVtechPing() {
+  return await callVtechEndpoint({
     id: "ping", label: "Ping (BMKG)", category: "status", group: "status", endpoint: "/api/info/bmkg", method: "GET", params: [], description: "Ping test via BMKG endpoint", outputType: "json", safe: true, enabledByDefault: true, tags: []
   });
 }
 
 // These endpoints might not exist natively on the new API as user profile routes, 
 // so we'll mock or fallback to BMKG info if they don't exist to prevent errors,
-// since the prompt says "Perbaiki Settings API Test. Test Vyna harus benar-benar call endpoint ringan yang aman."
-export async function getVynaaHealth() {
-  return await testVynaaPing();
+// since the prompt says "Perbaiki Settings API Test. Test API harus benar-benar call endpoint ringan yang aman."
+export async function getVtechHealth() {
+  return await testVtechPing();
 }
 
-export async function getVynaaStatus() {
-  return await testVynaaPing();
+export async function getVtechStatus() {
+  return await testVtechPing();
 }
 
-export async function getVynaaUserLimit() {
-  return await testVynaaPing();
+export async function getVtechUserLimit() {
+  return await testVtechPing();
 }
 
-export async function getVynaaUserProfile() {
-  return await testVynaaPing();
+export async function getVtechUserProfile() {
+  return await testVtechPing();
 }

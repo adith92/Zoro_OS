@@ -8,7 +8,7 @@ import { GlowButton } from '@/components/ui/GlowButton';
 
 const navItems = [
   { icon: Home, label: 'Dashboard', path: '/' },
-  { icon: MessageSquare, label: 'Zoro AI Chat', path: '/chat' },
+  { icon: MessageSquare, label: 'Zoro Universe Chat', path: '/chat' },
   { icon: Terminal, label: 'AI Hub', path: '/hub' },
   { icon: ImageIcon, label: 'Image Lab', path: '/image' },
   { icon: Download, label: 'Downloader Galaxy', path: '/downloader' },
@@ -22,7 +22,6 @@ const navItems = [
 ];
 
 export function Sidebar({ onNavClick }: { onNavClick?: () => void }) {
-  const { selectedProvider, setSelectedProvider } = useSettingsStore();
   const location = useLocation();
 
   return (
@@ -37,30 +36,11 @@ export function Sidebar({ onNavClick }: { onNavClick?: () => void }) {
           <span className="text-xl relative z-10">🐱</span>
         </div>
         <h1 className="text-xl font-bold font-mono text-glow-purple tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-space-violet to-space-cyan hidden md:block">
-          ZORO_OS
+          ZORO UNIVERSE
         </h1>
         <h1 className="text-lg font-bold font-mono text-glow-purple tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-space-violet to-space-cyan md:hidden truncate">
           MENU
         </h1>
-      </div>
-
-      <div className="px-4 mb-6">
-        <div className="text-xs font-mono text-gray-400 mb-2 tracking-widest pl-2">PROVIDER</div>
-        <div className="flex bg-space-dark/60 rounded-xl p-1 border border-white/5 shadow-inner gap-1">
-          {(['vynaa', 'sumopod', 'dual'] as const).map((provider) => (
-            <GlowButton
-              key={provider}
-              onClick={() => setSelectedProvider(provider)}
-              variant={selectedProvider === provider ? 'cyan' : 'ghost'}
-              size="sm"
-              className={cn(
-                "flex-1 px-1 py-1.5 text-[10px] capitalize rounded-lg min-w-0"
-              )}
-            >
-              <span className="truncate">{provider}</span>
-            </GlowButton>
-          ))}
-        </div>
       </div>
 
       <nav className="flex-1 px-4 space-y-1">

@@ -1,17 +1,17 @@
-import { VynaaEndpoint } from '@/types/vynaa';
-import { FALLBACK_VYNAA_ENDPOINTS } from './vynaaEndpoints.fallback';
+import { VtechEndpoint } from '@/types/vtech';
+import { FALLBACK_VTECH_ENDPOINTS } from './vtechEndpoints.fallback';
 
 // We generated it in the prebuild script, it SHOULD exist. We did generate it even if empty!
-import { GENERATED_VYNAA_ENDPOINTS as Generated } from './vynaaEndpoints.generated';
+import { GENERATED_VTECH_ENDPOINTS as Generated } from './vtechEndpoints.generated';
 
 // Merge and fix up
-const allEndpoints = [...(Generated || []), ...FALLBACK_VYNAA_ENDPOINTS];
+const allEndpoints = [...(Generated || []), ...FALLBACK_VTECH_ENDPOINTS];
 
-const uniqueEndpointsMap = new Map<string, VynaaEndpoint>();
+const uniqueEndpointsMap = new Map<string, VtechEndpoint>();
 
 allEndpoints.forEach(ep => {
    // Fix missing fields
-   const safeEp: VynaaEndpoint = {
+   const safeEp: VtechEndpoint = {
        ...ep,
        group: ep.group || ep.category,
        tags: ep.tags || []
@@ -25,34 +25,34 @@ allEndpoints.forEach(ep => {
 });
 
 // Sort by category then label
-export const VYNAA_ENDPOINTS = Array.from(uniqueEndpointsMap.values()).sort((a, b) => {
+export const VTECH_ENDPOINTS = Array.from(uniqueEndpointsMap.values()).sort((a, b) => {
     if (a.category === b.category) {
         return a.label.localeCompare(b.label);
     }
     return a.category.localeCompare(b.category);
 });
 
-export function getSafeVynaaEndpoints() {
-    return VYNAA_ENDPOINTS.filter(e => e.safe && e.enabledByDefault);
+export function getSafeVtechEndpoints() {
+    return VTECH_ENDPOINTS.filter(e => e.safe && e.enabledByDefault);
 }
 
 export function getEndpointsByCategory(category: string) {
-    return VYNAA_ENDPOINTS.filter(e => e.category === category);
+    return VTECH_ENDPOINTS.filter(e => e.category === category);
 }
 
 export function getEndpointById(id: string) {
-    return VYNAA_ENDPOINTS.find(e => e.id === id);
+    return VTECH_ENDPOINTS.find(e => e.id === id);
 }
 
-export function getVynaaCategories() {
+export function getZOROCategories() {
     const cats = new Set<string>();
-    VYNAA_ENDPOINTS.forEach(e => cats.add(e.category));
+    VTECH_ENDPOINTS.forEach(e => cats.add(e.category));
     return Array.from(cats);
 }
 
-export function searchVynaaEndpoints(query: string) {
+export function searchVtechEndpoints(query: string) {
     const lower = query.toLowerCase();
-    return VYNAA_ENDPOINTS.filter(e => 
+    return VTECH_ENDPOINTS.filter(e => 
         e.label.toLowerCase().includes(lower) || 
         e.endpoint.toLowerCase().includes(lower) ||
         e.description.toLowerCase().includes(lower)

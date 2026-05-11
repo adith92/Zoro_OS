@@ -1,6 +1,6 @@
 # Project Overview
 
-Zoro OS is a Soft SpaceShip AI Cockpit powered by VYNAA APIs, SumoPod, and a cosmic cat assistant named Zoro. 
+Zoro Endpoint Engine is a Soft SpaceShip AI Cockpit powered by Zoro APIs, Zoro AI, and a cosmic cat assistant named Zoro. 
 
 ## Key Philosophy
 1. Interactive Cockpit: A web environment that acts as an operating system, offering various "modules" instead of standard pages.

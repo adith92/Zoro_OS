@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Zoro Endpoint Engine 🚀🛠️
 
-# Run and deploy your AI Studio app
+Zoro Endpoint Engine is a Soft SpaceShip AI Cockpit powered by a unified API endpoint registry and Zoro the cosmic cat assistant. It acts as an interactive web sandbox allowing you to consume 600+ different API endpoints in a seamless UI.
 
-This contains everything you need to run your app locally.
+## Features
+- **Interactive UI:** A cosmic-themed OS layout with universal endpoint parsing.
+- **Zoro Assistant:** A character-driven feedback helper.
+- **Universal Tool Engine:** Instantly execute APIs, handle parameters, parse outputs, and play media dynamically.
+- **Safety Gating:** Unsafe content is hidden by default.
 
-View your app in AI Studio: https://ai.studio/apps/92ecc401-b4a5-4cd1-bc0b-082e98b86b80
+## Environment Validation
+You must provide your own API credentials via local environment variables. Never hardcode them in the source layout! 
 
-## Run Locally
+```env
+VITE_ZORO_API_BASE_URL=https://api.vtech.biz.id
+VITE_ZORO_API_KEY=your_api_key_here
+```
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Or configure them via the secure frontend `Settings` page.

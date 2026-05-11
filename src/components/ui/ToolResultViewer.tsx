@@ -1,14 +1,17 @@
 import React from 'react';
-import { VynaaEndpoint, VynaaCallResult } from '@/types/vynaa';
-import { Download, ExternalLink, Copy } from 'lucide-react';
+import { VtechEndpoint, VtechCallResult } from '@/types/vtech';
+import { Download, ExternalLink, Copy, Bug } from 'lucide-react';
 import { GlowButton } from './GlowButton';
+import { useSettingsStore } from '@/store/useStore';
 
 interface ToolResultViewerProps {
-  endpoint: VynaaEndpoint;
-  result: VynaaCallResult | null;
+  endpoint: VtechEndpoint;
+  result: VtechCallResult | null;
 }
 
 export function ToolResultViewer({ endpoint, result }: ToolResultViewerProps) {
+  const { developerUnsafeMode } = useSettingsStore();
+  
   if (!result) return null;
 
   const handleCopy = () => {
@@ -85,11 +88,34 @@ export function ToolResultViewer({ endpoint, result }: ToolResultViewerProps) {
   };
 
   return (
-    <div className="mt-6 flex flex-col space-y-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
-      <div className="flex items-center gap-2 mb-2">
-        <span className="text-xs font-mono text-gray-400">OUTPUT TERMINAL</span>
+    <div className="mt-6 flex flex-col space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs font-mono text-gray-400">OUTPUT TERMINAL</span>
+        </div>
+        {renderContent()}
       </div>
-      {renderContent()}
+      
+      {developerUnsafeMode && (
+         <div className="p-4 bg-gray-900/60 border border-gray-500/30 rounded-lg space-y-2 mt-4 mt-8">
+            <h3 className="font-mono text-xs text-yellow-500 flex items-center gap-2 mb-3">
+               <Bug className="w-4 h-4" /> DEVELOPER DEBUG PANEL
+            </h3>
+            <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-gray-400">
+               <div><strong>ID:</strong> {endpoint.id}</div>
+               <div><strong>Category:</strong> {endpoint.category}</div>
+               <div><strong>Expected Output:</strong> {result.outputType}</div>
+               <div><strong>Content-Type:</strong> {result.contentType || 'UNKNOWN'}</div>
+               <div><strong>Status Code:</strong> {result.status || 'UNKNOWN'}</div>
+               <div><strong>Success:</strong> {result.ok ? 'TRUE' : 'FALSE'}</div>
+            </div>
+            {result.error && (
+               <div className="mt-2 text-[10px] font-mono text-red-400 p-2 bg-red-900/20 rounded">
+                  <strong>Error:</strong> {result.error}
+               </div>
+            )}
+         </div>
+      )}
     </div>
   );
 }

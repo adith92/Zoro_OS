@@ -24,7 +24,7 @@ export interface ZoroThemeSettings {
 
 export interface ZoroVoiceSettings {
   voiceEnabled: boolean;
-  voiceProvider: "browser" | "vynaa";
+  voiceProvider: "browser" | "ZORO";
   zoroVoiceVolume: number;
   zoroVoicePitch: number;
   zoroVoiceRate: number;
@@ -43,22 +43,19 @@ export interface ZoroPersonalitySettings {
 
 import { ZoroAppAction } from "@/lib/zoroContext";
 
-type Provider = 'vynaa' | 'sumopod' | 'dual';
 type ApiStatus = 'idle' | 'checking' | 'success' | 'failed';
 
 interface SettingsState {
-  vynaaApiKey: string;
-  sumoPodApiKey: string;
+  vtechApiKey: string;
   voiceEnabled: boolean;
-  selectedProvider: Provider;
-  selectedModel: string;
-  selectedVynaaCategory: string;
-  vynaaApiStatus: ApiStatus;
-  vynaaUserProfile: any;
-  vynaaLimit: any;
+  selectedVtechCategory: string;
+  vtechApiStatus: ApiStatus;
+  vtechUserProfile: any;
+  vtechLimit: any;
   endpointHistory: any[];
   developerUnsafeMode: boolean;
-  useVynaaProxy: boolean;
+  useVtechProxy: boolean;
+  selectedVtechAiEndpointId: string;
 
   themeSettings: ZoroThemeSettings;
   voiceSettings: ZoroVoiceSettings;
@@ -70,18 +67,18 @@ interface SettingsState {
   currentToolLabel: string;
   currentToolCategory: string;
 
-  setVynaaApiKey: (key: string) => void;
-  setSumoPodApiKey: (key: string) => void;
+  favoriteEndpointIds: string[];
+
+  setVtechApiKey: (key: string) => void;
   setVoiceEnabled: (enabled: boolean) => void;
-  setSelectedProvider: (provider: Provider) => void;
-  setSelectedModel: (model: string) => void;
-  setSelectedVynaaCategory: (cat: string) => void;
-  setVynaaApiStatus: (status: ApiStatus) => void;
-  setVynaaUserProfile: (profile: any) => void;
-  setVynaaLimit: (limit: any) => void;
+  setSelectedVtechCategory: (cat: string) => void;
+  setVtechApiStatus: (status: ApiStatus) => void;
+  setVtechUserProfile: (profile: any) => void;
+  setVtechLimit: (limit: any) => void;
   addEndpointHistory: (entry: any) => void;
   setDeveloperUnsafeMode: (enabled: boolean) => void;
-  setUseVynaaProxy: (enabled: boolean) => void;
+  setUseVtechProxy: (enabled: boolean) => void;
+  setSelectedVtechAiEndpointId: (id: string) => void;
 
   setThemePalette: (paletteId: ThemePaletteId, colors: Partial<ZoroThemeSettings>) => void;
   setCustomThemeColor: (key: keyof ZoroThemeSettings, color: string) => void;
@@ -95,23 +92,25 @@ interface SettingsState {
   addZoroAction: (action: ZoroAppAction) => void;
   setCurrentRouteLabel: (label: string) => void;
   setCurrentToolContext: (label: string, category: string) => void;
+  
+  toggleFavoriteEndpoint: (id: string) => void;
+  addFavoriteEndpoint: (id: string) => void;
+  removeFavoriteEndpoint: (id: string) => void;
 }
 
 export const useSettingsStore = create<SettingsState>()(
   persist(
     (set) => ({
-      vynaaApiKey: '',
-      sumoPodApiKey: '',
+      vtechApiKey: '',
       voiceEnabled: true,
-      selectedProvider: 'vynaa',
-      selectedModel: 'gpt-3.5-turbo',
-      selectedVynaaCategory: 'ai',
-      vynaaApiStatus: 'idle',
-      vynaaUserProfile: null,
-      vynaaLimit: null,
+      selectedVtechCategory: 'ai',
+      vtechApiStatus: 'idle',
+      vtechUserProfile: null,
+      vtechLimit: null,
       endpointHistory: [],
       developerUnsafeMode: false,
-      useVynaaProxy: false,
+      useVtechProxy: false,
+      selectedVtechAiEndpointId: 'ai_claude',
       
       themeSettings: {
         paletteId: "zoro-classic",
@@ -147,21 +146,20 @@ export const useSettingsStore = create<SettingsState>()(
       currentRouteLabel: "",
       currentToolLabel: "",
       currentToolCategory: "",
+      favoriteEndpointIds: [],
 
-      setVynaaApiKey: (key) => set({ vynaaApiKey: key }),
-      setSumoPodApiKey: (key) => set({ sumoPodApiKey: key }),
+      setVtechApiKey: (key) => set({ vtechApiKey: key }),
       setVoiceEnabled: (enabled) => set({ voiceEnabled: enabled }),
-      setSelectedProvider: (provider) => set({ selectedProvider: provider }),
-      setSelectedModel: (model) => set({ selectedModel: model }),
-      setSelectedVynaaCategory: (cat) => set({ selectedVynaaCategory: cat }),
-      setVynaaApiStatus: (status) => set({ vynaaApiStatus: status }),
-      setVynaaUserProfile: (profile) => set({ vynaaUserProfile: profile }),
-      setVynaaLimit: (limit) => set({ vynaaLimit: limit }),
+      setSelectedVtechCategory: (cat) => set({ selectedVtechCategory: cat }),
+      setVtechApiStatus: (status) => set({ vtechApiStatus: status }),
+      setVtechUserProfile: (profile) => set({ vtechUserProfile: profile }),
+      setVtechLimit: (limit) => set({ vtechLimit: limit }),
       addEndpointHistory: (entry) => set((state) => ({ 
         endpointHistory: [entry, ...state.endpointHistory].slice(0, 50) 
       })),
       setDeveloperUnsafeMode: (enabled) => set({ developerUnsafeMode: enabled }),
-      setUseVynaaProxy: (enabled) => set({ useVynaaProxy: enabled }),
+      setUseVtechProxy: (enabled) => set({ useVtechProxy: enabled }),
+      setSelectedVtechAiEndpointId: (id) => set({ selectedVtechAiEndpointId: id }),
 
       setThemePalette: (paletteId, colors) => set((state) => ({
         themeSettings: { ...state.themeSettings, paletteId, ...colors }
@@ -208,9 +206,25 @@ export const useSettingsStore = create<SettingsState>()(
       })),
       setCurrentRouteLabel: (label) => set({ currentRouteLabel: label }),
       setCurrentToolContext: (label, category) => set({ currentToolLabel: label, currentToolCategory: category }),
+      
+      toggleFavoriteEndpoint: (id) => set((state) => {
+        const isFav = state.favoriteEndpointIds.includes(id);
+        const newFavs = isFav 
+          ? state.favoriteEndpointIds.filter(f => f !== id)
+          : [...state.favoriteEndpointIds, id];
+        return { favoriteEndpointIds: newFavs };
+      }),
+      addFavoriteEndpoint: (id) => set((state) => ({
+        favoriteEndpointIds: state.favoriteEndpointIds.includes(id) 
+          ? state.favoriteEndpointIds 
+          : [...state.favoriteEndpointIds, id]
+      })),
+      removeFavoriteEndpoint: (id) => set((state) => ({
+        favoriteEndpointIds: state.favoriteEndpointIds.filter(f => f !== id)
+      })),
     }),
     {
-      name: 'zoro-os-settings',
+      name: 'zoro-universe-settings',
       version: 2,
       migrate: (persistedState: any, version: number) => {
         if (version === 0 || version === 1 || !persistedState.themeSettings) {
@@ -250,12 +264,14 @@ export const useSettingsStore = create<SettingsState>()(
             currentRouteLabel: "",
             currentToolLabel: "",
             currentToolCategory: "",
+            favoriteEndpointIds: [],
+            selectedVtechAiEndpointId: 'ai_claude',
           } as SettingsState;
         }
         return persistedState;
       },
       partialize: (state) => Object.fromEntries(
-        Object.entries(state).filter(([key]) => !['vynaaApiStatus', 'endpointHistory'].includes(key))
+        Object.entries(state).filter(([key]) => !['vtechApiStatus', 'endpointHistory'].includes(key))
       ),
     }
   )

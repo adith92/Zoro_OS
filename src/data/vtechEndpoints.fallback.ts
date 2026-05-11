@@ -1,6 +1,6 @@
-import { VynaaEndpoint } from '@/types/vynaa';
+import { VtechEndpoint } from '@/types/vtech';
 
-export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
+export const FALLBACK_VTECH_ENDPOINTS: VtechEndpoint[] = ([
   // --- STATUS ---
   {
     id: "status_ping",
@@ -9,7 +9,7 @@ export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
     endpoint: "/status/serverstatus/ping",
     method: "GET",
     params: [],
-    description: "Check Vynaa API connectivity",
+    description: "Check VTECH API connectivity",
     outputType: "json",
     safe: true,
     enabledByDefault: true
@@ -21,7 +21,7 @@ export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
     endpoint: "/status/serverstatus/cekk",
     method: "GET",
     params: [],
-    description: "Check your Vynaa limit and profile status",
+    description: "Check your ZORO limit and profile status",
     outputType: "json",
     safe: true,
     enabledByDefault: true
@@ -47,7 +47,7 @@ export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
     endpoint: "/ai/simsimi/ai/simi",
     method: "GET",
     params: [{ name: "text", label: "Message", type: "text", required: true }],
-    description: "Chat using Vynaa SimSimi endpoint",
+    description: "Chat using ZORO SimSimi endpoint",
     outputType: "json",
     safe: true,
     enabledByDefault: true
@@ -607,4 +607,4 @@ export const FALLBACK_VYNAA_ENDPOINTS: VynaaEndpoint[] = ([
     safe: true,
     enabledByDefault: true
   }
-] as unknown as VynaaEndpoint[]);
+] as unknown as VtechEndpoint[]);

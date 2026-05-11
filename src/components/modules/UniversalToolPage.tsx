@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { VynaaEndpoint } from '@/types/vynaa';
-import { callVynaaEndpoint } from '@/api/universalVynaa';
-import { VYNAA_ENDPOINTS } from '@/data/vynaaRegistry';
+import { useNavigate } from 'react-router-dom';
+import { VtechEndpoint } from '@/types/vtech';
+import { callVtechEndpoint } from '@/api/universalVtech';
+import { VTECH_ENDPOINTS } from '@/data/vtechRegistry';
 import { PageTransition } from '@/components/ui/PageTransition';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { EndpointForm } from '@/components/ui/EndpointForm';
 import { ToolResultViewer } from '@/components/ui/ToolResultViewer';
-import { Box, Code } from 'lucide-react';
+import { Box, Code, Star } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { useSettingsStore } from '@/store/useStore';
@@ -18,12 +19,13 @@ interface UniversalToolPageProps {
 }
 
 export function UniversalToolPage({ category, title, icon: Icon }: UniversalToolPageProps) {
-  const [selectedTool, setSelectedTool] = useState<VynaaEndpoint | null>(null);
+  const navigate = useNavigate();
+  const [selectedTool, setSelectedTool] = useState<VtechEndpoint | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
-  const { addEndpointHistory, addZoroAction, setCurrentToolContext, setZoroMascotState } = useSettingsStore();
+  const { addEndpointHistory, addZoroAction, setCurrentToolContext, setZoroMascotState, favoriteEndpointIds, toggleFavoriteEndpoint } = useSettingsStore();
 
-  const tools = VYNAA_ENDPOINTS.filter(e => e.category === category && e.safe && e.enabledByDefault);
+  const tools = VTECH_ENDPOINTS.filter(e => e.category === category && e.safe && e.enabledByDefault);
 
   useEffect(() => {
     // Whenever category changes, clear selection
@@ -32,7 +34,7 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
     setCurrentToolContext('', '');
   }, [category]);
 
-  const handleToolSelect = (tool: VynaaEndpoint) => {
+  const handleToolSelect = (tool: VtechEndpoint) => {
     setSelectedTool(tool); 
     setResult(null);
     setCurrentToolContext(tool.label, tool.category);
@@ -57,7 +59,7 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
     });
 
     try {
-      const res = await callVynaaEndpoint(selectedTool, data);
+      const res = await callVtechEndpoint(selectedTool, data);
       addEndpointHistory(res);
       if (res && res.ok !== false && (res as any).status !== false) {
           setResult(res);
@@ -111,15 +113,16 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-1 space-y-3 max-h-[60vh] overflow-y-auto cyber-scrollbar pr-2">
-                {tools.map(tool => (
+                {tools.map((tool, idx) => (
                     <button
-                        key={tool.id}
+                        key={`tool_${tool.id}_${idx}`}
                         onClick={() => handleToolSelect(tool)}
                         className={`w-full text-left p-4 rounded-xl transition-all font-mono shadow-sm group border ${selectedTool?.id === tool.id ? 'bg-space-cyan/20 border-space-cyan text-space-cyan' : 'bg-space-dark/60 border-white/5 text-gray-400 hover:bg-space-cyan/10 hover:border-space-cyan/30'}`}
                     >
                         <div className="flex items-center gap-2 mb-1">
-                            {selectedTool?.id === tool.id ? <Code className="w-4 h-4 text-space-cyan animate-pulse" /> : <Box className="w-4 h-4 group-hover:text-space-cyan transition-colors" />}
-                            <span className="font-bold text-sm tracking-wide group-hover:text-white transition-colors">{tool.label}</span>
+                            {selectedTool?.id === tool.id ? <Code className="w-4 h-4 text-space-cyan animate-pulse shrink-0" /> : <Box className="w-4 h-4 group-hover:text-space-cyan transition-colors shrink-0" />}
+                            <span className="font-bold text-sm tracking-wide group-hover:text-white transition-colors truncate flex-1">{tool.label}</span>
+                            {favoriteEndpointIds.includes(tool.id) && <Star className="w-3 h-3 text-yellow-400 shrink-0" fill="currentColor" />}
                         </div>
                         <p className="text-xs opacity-70 truncate" title={tool.description}>{tool.description}</p>
                     </button>
@@ -130,8 +133,39 @@ export function UniversalToolPage({ category, title, icon: Icon }: UniversalTool
                 {selectedTool ? (
                     <GlassCard className="p-6">
                         <div className="mb-6 border-b border-white/10 pb-4">
-                            <h2 className="text-xl font-bold font-mono text-white mb-2">{selectedTool.label}</h2>
-                            <p className="text-sm text-gray-400 font-mono">{selectedTool.description}</p>
+                            <div className="flex justify-between items-start mb-2">
+                              <h2 className="text-xl font-bold font-mono text-white">{selectedTool.label}</h2>
+                              <button 
+                                onClick={() => {
+                                  toggleFavoriteEndpoint(selectedTool.id);
+                                  toast.success(favoriteEndpointIds.includes(selectedTool.id) ? 'Removed from Favorites' : 'Added to Favorites');
+                                  addZoroAction({
+                                    type: favoriteEndpointIds.includes(selectedTool.id) ? "tool_success" : "tool_open",
+                                    toolId: selectedTool.id,
+                                    timestamp: new Date().toISOString(),
+                                    toolLabel: favoriteEndpointIds.includes(selectedTool.id) ? "Removed from Favorites" : "Added to Favorites"
+                                  } as any);
+                                }}
+                                className={`p-1.5 rounded-lg transition-colors border ${favoriteEndpointIds.includes(selectedTool.id) ? 'bg-yellow-400/20 border-yellow-400/50 text-yellow-400' : 'bg-white/5 border-white/10 text-gray-400 hover:text-yellow-400 hover:border-yellow-400/30'}`}
+                                title={favoriteEndpointIds.includes(selectedTool.id) ? "Remove from Favorites" : "Add to Favorites"}
+                              >
+                                <Star className="w-4 h-4" fill={favoriteEndpointIds.includes(selectedTool.id) ? "currentColor" : "none"} />
+                              </button>
+                            </div>
+                            <p className="text-sm text-gray-400 font-mono mb-4">{selectedTool.description}</p>
+                            
+                            {category === 'ai' && (
+                                <button 
+                                    onClick={() => {
+                                        useSettingsStore.getState().setSelectedVtechAiEndpointId(selectedTool.id);
+                                        toast.success(`${selectedTool.label} dipakai sebagai model Chat`);
+                                        navigate('/chat');
+                                    }}
+                                    className="px-3 py-1 bg-space-violet/20 hover:bg-space-violet/40 border border-space-violet text-space-violet text-xs font-mono rounded-lg transition-colors"
+                                >
+                                    Use this model in Chat {selectedTool.id.toLowerCase().includes('simsimi') ? '(Fun)' : ''}
+                                </button>
+                            )}
                         </div>
                         
                         <EndpointForm 
